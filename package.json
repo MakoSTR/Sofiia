@@ -1,0 +1,22 @@
+{
+  "name": "chicken-kitchen-extreme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/petrosyuk.sofiya/chicken-kitchen-extreme.git"
+  },
+  "author": "Sofiia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/petrosyuk.sofiya/chicken-kitchen-extreme/issues"
+  },
+  "homepage": "https://gitlab.com/petrosyuk.sofiya/chicken-kitchen-extreme#readme",
+  "devDependencies": {
+    "jest": "^27.2.4"
+  }
+}
