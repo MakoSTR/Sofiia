@@ -1,32 +1,53 @@
-// const fs = require('fs');
 const jsonData = require('./data.json');
 
 const regularCustomer = jsonData['Regular customer'];
 const food = jsonData.Food;
-const baseingredients = jsonData['Base ingredients'];
+const base = jsonData['Base ingredients'];
+
+// recursion - checkAllIngredients
+
+let userIngredients = [];
+
+const checkAllIngredients = (order) => {
+    const ingredients = food[order];
+
+    for ( let i = 0; i < ingredients.length; i++ ) {
+        if (base.find(item => ingredients[i] === item )) {
+            userIngredients.push(ingredients[i])
+        } else {
+            checkAllIngredients(ingredients[i])
+        }
+    };
+};
+
+const sendResult = (foundAllergies, name, order) => {
+    //main logic
+    if (foundAllergies) {
+        console.log(`${name} can’t order ${order}, allergic to: ${foundAllergies}`)
+    }
+    else console.log(`${name} - ${order}: success`)
+};
 
 const fn = (name, order) => {
-        const allergies = regularCustomer[name];
-        const ingredients = food[order];
-        allergies.forEach(element => {
-            const foundAllergies = ingredients.find(item => {
-                if (item === element) {
-                    return true
-                }
-            });
-            if (foundAllergies) {
-                console.log(`${name} can’t order ${order}, allergic to: ${foundAllergies}`)
+    checkAllIngredients(order)
+    const allergies = regularCustomer[name];
+    const foundAllergies = allergies.find(element => {
+        return userIngredients.find(item => {
+            if (item === element) {
+                return true
             }
-            else console.log(`Hello ${name} - ${order}: success`)   
-           
         });
-}
+    });
+    sendResult(foundAllergies, name, order);
+};
 
-fn('Julie Mirage', 'Fries');
-fn('Barbara Smith', 'Tuna Cake');
-fn('Bernard Unfortunate', 'Smashed Potatoes');
+// fn('Julie Mirage', 'Fries');
+// fn('Barbara Smith', 'Tuna Cake');
+// fn('Bernard Unfortunate', 'Smashed Potatoes');
 fn('Julie Mirage', 'Fish In Water');
-fn('Elon Carousel', 'Fish In Water');
+// fn('Elon Carousel', 'Emperor Chicken');
+
+
 
 
 
