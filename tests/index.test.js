@@ -1,4 +1,5 @@
-const getFood = require('./app');
+const getFood = require('../app');
+const { alrg } = require('../app')
 
 
 // test('name', () => {

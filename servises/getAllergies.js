@@ -1,0 +1,1 @@
+const { getAllergies } = require('../app');
