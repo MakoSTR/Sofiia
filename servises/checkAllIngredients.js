@@ -1,1 +1,0 @@
-const { checkAllIngredients } = require('../app');
