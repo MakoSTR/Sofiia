@@ -24,12 +24,10 @@ describe('checkAllIngredients func', () => {
         const userIngredients = [];
         const res = checkAllIngredients('Ruby Salad', userIngredients);
 
-        // expect(res()).toBe("Tomatoes", "Vinegar", "Chocolate");
         expect(userIngredients[0]).toEqual("Tomatoes");
         expect(userIngredients[1]).toEqual("Vinegar");
         expect(userIngredients[2]).toEqual("Chocolate");
         expect(userIngredients.length).toBe(3);
-
     });
 });
 
@@ -37,7 +35,8 @@ describe('getAllergies func', () => {
     test('getAllergies false', () => {
         const name = 'Julie Mirage';
         const userIngredients = ["Tomatoes", "Vinegar", "Chocolate"];
-        expect(getAllergies(name, userIngredients)).toEqual(undefined);
+        const foundAllergies = getAllergies(name, userIngredients);
+        expect(foundAllergies).toBe(undefined);
     });
     test('getAllergies true', () => {
         const name = 'Elon Carousel';

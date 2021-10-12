@@ -13,7 +13,6 @@ let userIngredients = [];
 // checkAllIngredients (recursion)
 const checkAllIngredients = (order, userIngredients) => {
     const ingredients = food[order];
-
     for ( let i = 0; i < ingredients.length; i++ ) {
         if (base.find(item => ingredients[i] === item )) {
             userIngredients.push(ingredients[i])
@@ -41,15 +40,20 @@ const getSum = (ingredients, sumArray) => {
     return sumArray.reduce((total, amount) => total + amount);
 };
 
+// const getBudget = (name, sum) => {
+//     let bud = [];
+//     return budget[name] - sum;
+// };
+
 const sendResult = (foundAllergies, name, order) => {
     let sum = getSum(userIngredients, sumArr);
     if (foundAllergies) {
         console.log(`${name} can’t order ${order}, allergic to: ${foundAllergies}`)
     } else
-    if (sum > budget[name] ) {
+    if (sum > budget[name]) {
         console.log(`${name} – can’t order, budget ${budget[name]} and ${order} costs ${sum}`)
     }
-    else console.log(`${name} - ${order}: success`)
+    else console.log(`${name} - ${order}: success`);
 };
 
 const result = (name, order) => {
@@ -61,10 +65,10 @@ const result = (name, order) => {
 };
 
 // result('Julie Mirage', 'Fries'); //Julie Mirage, Fries
-// result('Barbara Smith', 'Tuna Cake'); // Barbara Smith, Tuna Cake
 // result('Bernard Unfortunate', 'Smashed Potatoes'); // Bernard Unfortunate, Smashed Potatoes
+// result('Barbara Smith', 'Tuna Cake'); // Barbara Smith, Tuna Cake
 // result('Julie Mirage', 'Fish In Water'); // Julie Mirage, Fish In Water
-// result('Elon Carousel', 'Emperor Chicken'); Elon Carousel, Emperor Chicken
+// result('Elon Carousel', 'Emperor Chicken'); Elon Carousel, Emperor Chicken   ///$
 // result('Elon Carousel', 'Fish In Water'); Elon Carousel, Fish In Water
 
 // console.log('outside', sum());
@@ -74,4 +78,4 @@ module.exports = {
     getSum,
     checkAllIngredients,
     getAllergies
-}
+};
