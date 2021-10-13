@@ -30,7 +30,6 @@ const getAllergies = (name, userIngredients) => {
             }
         });
     });
-
     return foundAllergy ? [foundAllergy] : [];
 };
 
@@ -46,20 +45,18 @@ const getTotalBudget = (sum, totalBudget) => {
 
 const sendResult = (foundAllergies, name, order, userIngredients) => {
     let sum = getSum(userIngredients);
-    if (!clientBudget) {
+    if (!clientBudget && clientBudget !== 0) {
         clientBudget = budget[name];
     }
-
     if (foundAllergies) {
-        console.log(`${name} can’t order ${order}, allergic to: ${foundAllergies}`)
+        return `${name} can’t order ${order}, allergic to: ${foundAllergies}`
     } else
     if (clientBudget < sum) {
-        console.log(`${name} – can’t order, budget ${clientBudget} and ${order} costs ${sum}`)
+       return `${name} – can’t order, budget ${clientBudget} and ${order} costs ${sum}`
     }
     else {
-        console.log(`${name} - ${order}: success`);
-
         clientBudget = getTotalBudget(sum, clientBudget);
+        return `${name} - ${order}: success`;
     }
 };
 
@@ -68,11 +65,12 @@ const result = (name, order) => {
 
     checkAllIngredients(order, userIngredients)
 
-    const foundAllergy = getAllergies(name, userIngredients)[0];
+    const foundAllergy = getAllergies(name, userIngredients)[0] || '';
 
-    sendResult(foundAllergy, name, order, userIngredients);
+    const sendRes = sendResult(foundAllergy, name, order, userIngredients);
+    console.log(sendRes);
 
-    return clientBudget;
+    return getBudget();
 };
 
 const getBudget = () => {
@@ -93,5 +91,7 @@ module.exports = {
     getSum,
     checkAllIngredients,
     getAllergies,
-    getBudget
+    getBudget,
+    getTotalBudget,
+    sendResult
 };
