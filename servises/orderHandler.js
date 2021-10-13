@@ -7,8 +7,7 @@ const food = jsonData.Food;
 const base = jsonData['Base ingredients'];
 const price = priceData['Base ingredients'];
 const budget = budgetData['Regular customer budget'];
-
-let userIngredients = [];
+let clientBudget;
 
 // checkAllIngredients (recursion)
 const checkAllIngredients = (order, userIngredients) => {
@@ -19,52 +18,68 @@ const checkAllIngredients = (order, userIngredients) => {
         } else {
             checkAllIngredients(ingredients[i], userIngredients)
         }
-    };
+    }
 };
 
 const getAllergies = (name, userIngredients) => {
     const allergies = regularCustomer[name];
-    return  allergies.find(element => {
+    const foundAllergy = allergies.find(element => {
         return userIngredients.find(item => {
             if (item === element) {
                 return true
-            };
+            }
         });
     });
+
+    return foundAllergy ? [foundAllergy] : [];
 };
 
-let sumArr = [];
-
-const getSum = (ingredients, sumArray) => {
+const getSum = (ingredients) => {
+    const sumArray = [];
     ingredients.forEach(i => sumArray.push(price[i]));
     return sumArray.reduce((total, amount) => total + amount);
 };
 
-// const getBudget = (name, sum) => {
-//     let bud = [];
-//     return budget[name] - sum;
-// };
+const getTotalBudget = (sum, totalBudget) => {
+     return totalBudget - sum
+};
 
-const sendResult = (foundAllergies, name, order) => {
-    let sum = getSum(userIngredients, sumArr);
+const sendResult = (foundAllergies, name, order, userIngredients) => {
+    let sum = getSum(userIngredients);
+    if (!clientBudget) {
+        clientBudget = budget[name];
+    }
+
     if (foundAllergies) {
         console.log(`${name} can’t order ${order}, allergic to: ${foundAllergies}`)
     } else
-    if (sum > budget[name]) {
-        console.log(`${name} – can’t order, budget ${budget[name]} and ${order} costs ${sum}`)
+    if (clientBudget < sum) {
+        console.log(`${name} – can’t order, budget ${clientBudget} and ${order} costs ${sum}`)
     }
-    else console.log(`${name} - ${order}: success`);
+    else {
+        console.log(`${name} - ${order}: success`);
+
+        clientBudget = getTotalBudget(sum, clientBudget);
+    }
 };
 
 const result = (name, order) => {
+    const userIngredients = [];
+
     checkAllIngredients(order, userIngredients)
 
-    const foundAllergies = getAllergies(name, userIngredients);
+    const foundAllergy = getAllergies(name, userIngredients)[0];
 
-    sendResult(foundAllergies, name, order);
+    sendResult(foundAllergy, name, order, userIngredients);
+
+    return clientBudget;
 };
 
-// result('Julie Mirage', 'Fries'); //Julie Mirage, Fries
+const getBudget = () => {
+    return clientBudget;
+};
+
+// result('Julie Mirage', 'Fries'); //Julie Mirage, Fries    //Julie Mirage, Youth Sauce    //Julie Mirage, Ruby Salad
 // result('Bernard Unfortunate', 'Smashed Potatoes'); // Bernard Unfortunate, Smashed Potatoes
 // result('Barbara Smith', 'Tuna Cake'); // Barbara Smith, Tuna Cake
 // result('Julie Mirage', 'Fish In Water'); // Julie Mirage, Fish In Water
@@ -77,5 +92,6 @@ module.exports = {
     result,
     getSum,
     checkAllIngredients,
-    getAllergies
+    getAllergies,
+    getBudget
 };

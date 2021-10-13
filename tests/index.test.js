@@ -1,17 +1,12 @@
 const { getSum, checkAllIngredients, getAllergies } = require('../servises/orderHandler');
 
-describe('getSum func', () => {
-    test('sum', () => {
+describe('getSum function', () => {
+    test('should add all the ingredients in the array', () => {
         const userIngredients = ["Tomatoes", "Vinegar", "Chocolate"];
-        const sumArr = [];
-
-        const res = getSum(userIngredients, sumArr);
-
+        const res = getSum(userIngredients);
         expect(res).toBe(10);
-        expect(sumArr).toEqual([4,1,5])
     });
-
-    test('to be defined', () => {
+    test('should be defined', () => {
         const userIngredients = ["Tomatoes", "Vinegar", "Chocolate"];
         const sumArr = [];
         expect(getSum(userIngredients, sumArr)).toBeDefined();
@@ -19,11 +14,10 @@ describe('getSum func', () => {
     });
 });
 
-describe('checkAllIngredients func', () => {
-    test('checkAllIngredients', () => {
+describe('checkAllIngredients function', () => {
+    test('should contain all ingredients', () => {
         const userIngredients = [];
         const res = checkAllIngredients('Ruby Salad', userIngredients);
-
         expect(userIngredients[0]).toEqual("Tomatoes");
         expect(userIngredients[1]).toEqual("Vinegar");
         expect(userIngredients[2]).toEqual("Chocolate");
@@ -31,16 +25,16 @@ describe('checkAllIngredients func', () => {
     });
 });
 
-describe('getAllergies func', () => {
-    test('getAllergies false', () => {
+describe('getAllergies function', () => {
+    test('should contain an empty array', () => {
         const name = 'Julie Mirage';
         const userIngredients = ["Tomatoes", "Vinegar", "Chocolate"];
         const foundAllergies = getAllergies(name, userIngredients);
-        expect(foundAllergies).toBe(undefined);
+        expect(foundAllergies).toHaveLength(0);
     });
-    test('getAllergies true', () => {
+    test('should return the allergy', () => {
         const name = 'Elon Carousel';
         const userIngredients = ["Tomatoes", "Vinegar", "Chocolate"];
-        expect(getAllergies(name, userIngredients)).toEqual("Vinegar");
+        expect(getAllergies(name, userIngredients)).toEqual(["Vinegar"]);
     });
 });
