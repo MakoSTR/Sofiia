@@ -1,50 +1,53 @@
 const readline = require('readline');
-const { result } = require("./orderHandler");
-const { getBudget } = require("./orderHandler");
+const { OrderHandler } = require("./orderHandler");
+const { FileReader } = require('./fileReader');
 
+const orderHandler = new OrderHandler();
+const fileReader = new FileReader();
 
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
-//
-// rl.question('Write who buys what', (answer) => {
-//     // TODO: Log the answer in a database
-//     let input = answer.split(', ');
-//     let person = input[0];
-//     let order = input[1]
-//     result(person, order); //person, order,
-//
-//     rl.close();
-// });
 
-// alt
-rl.setPrompt("Write who buys what");
+rl.setPrompt("Write file name");
 rl.prompt();
 
 rl.on('line', function(answer) {
-    // switch(line.trim()) {
-    //     case 'hello':
-    //         console.log('world!');
-    //         break;
-    //     default:
-    //         console.log('Say what? I might have heard `' + line.trim() + '`');
-    //         break;
-    // }
-    let input = answer.split(', ');
-    let person = input[0];
-    let order = input[1];
-    const clientBudget = result(person, order); //person, order
+    const input = fileReader.readFile(answer);
+    const dataArray = input.split('\r\n');
 
-    if (clientBudget >= 0) {
-        rl.prompt();
-    } else {
-        rl.close()
-    }
+    const newArr = dataArray.map(e => e.split(', '));
+    newArr.forEach(i => {
+        if (i.length === 3) {
+            let person = i[1];
+            let order = i[2];
+            orderHandler.result(person, order)
+            // const clientBudget = orderHandler.result(person, order);
+            // if (clientBudget >= 0) {
+            //     rl.prompt();
+            // } else {
+            //     rl.close()
+            // }
+        }
+    })
+
+    // let person = dataArray[1];
+    // let order = dataArray[2];
+    // console.log('input', input);
+    // console.log('dataArray', dataArray);
+    // console.log('dataArray0', dataArray0);
+    // console.log('dataArray1', dataArray1);
+
+    // const clientBudget = orderHandler.result(person, order); //person, order
+
+    // if (clientBudget >= 0) {
+    //     rl.prompt();
+    // } else {
+    //     rl.close()
+    // }
 
 }).on('close', function() {
     console.log('Have a great day!');
     process.exit(0);
 });
-
-//Julie Mirage, Fries
