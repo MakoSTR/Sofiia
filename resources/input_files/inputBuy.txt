@@ -1,5 +1,4 @@
-Buy, Julie Mirage, Princess Chicken
-Buy, Barbara Smith, Tuna Cake
-Sadkl,jaslkdjasldkjaskldjsa
-Buy, Julie Mirage,
-Buy, Adam Smith, Fries
+Budget, +, 300
+Budget, -, 100
+Budget, =, 50
+Budget, -, 450

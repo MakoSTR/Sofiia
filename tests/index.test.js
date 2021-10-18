@@ -6,7 +6,7 @@ describe('getSum function', () => {
     test('should add all the ingredients in the array', () => {
         const userIngredients = ["Tomatoes", "Vinegar", "Chocolate"];
         const res = orderHandler.getSum(userIngredients);
-        expect(res).toBe(10);
+        expect(res).toBe(13);
     });
     test('should be defined', () => {
         const userIngredients = ["Tomatoes", "Vinegar", "Chocolate"];
@@ -61,9 +61,9 @@ describe('sendResult function', () => {
         const foundAllergies = '';
         const name = 'Julie Mirage';
         const order = 'Ruby Salad';
-        const userIngredients = ["Tomatoes", "Vinegar", "Chocolate"];
-        const res = orderHandler.sendResult(foundAllergies, name, order, userIngredients);
-        expect(res).toBe(`${name} - ${order}: success`);
+        const sum = 34;
+        const res = orderHandler.sendResult(foundAllergies, name, order, sum);
+        expect(res).toBe(`${name} - ${order} costs ${sum}: success`);
     });
     test('should block the order due to allergies', () => {
         const foundAllergies = 'Vinegar';
@@ -77,9 +77,8 @@ describe('sendResult function', () => {
     //     const foundAllergies = '';
     //     const name = 'Elon Carousel';
     //     const order = 'Emperor Chicken';
-    //     const userIngredients = ["Asparagus:", "Asparagus:", "Asparagus:", "Asparagus:", "Asparagus:", "Asparagus:", "Asparagus", "Asparagus", "Asparagus", "Asparagus", "Asparagus", "Asparagus"];
-    //
-    //     const res = orderHandler.sendResult(foundAllergies, name, order, userIngredients);
+    //     const sum = 284;
+    //     const res = orderHandler.sendResult(foundAllergies, name, order, sum);
     //     expect(res).toBe(`Elon Carousel – can’t order, budget 50 and Emperor Chicken costs 284`);
     // });
 });

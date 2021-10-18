@@ -1,6 +1,6 @@
-Julie Mirage - Princess Chicken: successBarbara Smith can’t order Tuna Cake, allergic to: ChocolateAdam Smith - Fries: successJulie Mirage - Princess Chicken: success + 
-Barbara Smith can’t order Tuna Cake, allergic to: Chocolate + 
-Adam Smith - Fries: success + 
-Julie Mirage – can’t order, budget 7 and Princess Chicken costs 90 + 
-Barbara Smith can’t order Tuna Cake, allergic to: Chocolate + 
-Adam Smith - Fries: success + 
+Restaurant budget: 500
+Restaurant budget: 800
+Restaurant budget: 700
+Restaurant budget: 50
+RESTAURANT BANKRUPT
+RESTAURANT BANKRUPT
