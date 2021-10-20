@@ -1,4 +1,4 @@
-Budget, +, 300
-Budget, -, 100
-Budget, =, 50
-Budget, -, 450
+Budget, =, 300
+Buy, Julie Mirage, Princess Chicken
+Buy, Elon Carousel, Tuna Cake
+Order, Tuna, 5

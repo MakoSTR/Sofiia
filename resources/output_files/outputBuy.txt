@@ -1,6 +1,5 @@
-Restaurant budget: 500
-Restaurant budget: 800
-Restaurant budget: 700
-Restaurant budget: 50
-RESTAURANT BANKRUPT
-RESTAURANT BANKRUPT
+Restaurant budget: 175
+Restaurant budget: 300
+Julie Mirage – can’t order, budget 100 and Princess Chicken costs 117
+Elon Carousel – can’t order, budget 50 and Tuna Cake costs 130
+Restaurant budget: 175

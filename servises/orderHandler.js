@@ -78,36 +78,35 @@ class OrderHandler {
         return { foundAllergy, sum }
     }
 
+    order = (ingredient, number) => {
+        return price[ingredient] * number
+    }
+
     increaseRestaurantBudget = (sum) => {
-        this.restaurantBudget += sum
+        return this.restaurantBudget += sum
     }
 
-    decreaseRestaurantBudget = (ingredient, amount) => {
-        const orderAmount = this.order(ingredient, amount);
-        this.restaurantBudget -= orderAmount;
-    }
-
-    order = (ingredient, amount) => {
-        return price[ingredient] * amount
+    decreaseRestaurantBudget = (ingredient, number) => {
+        const orderAmount = this.order(ingredient, number);
+        return this.restaurantBudget -= orderAmount;
     }
 
     modifyRestaurantBudget = (sign, amount) => {
         if (sign === '=') {
-            this.restaurantBudget = amount;
+            return this.restaurantBudget = amount;
         }
         if (sign === '+') {
-            this.restaurantBudget += amount;
+            return this.restaurantBudget += amount;
         }
         if (sign === '-') {
-            this.restaurantBudget -= amount;
+            return this.restaurantBudget -= amount;
         }
-        // return `Restaurant budget: ${this.restaurantBudget}`;
     }
 
-    result = async (name, order) => {
+    result = (name, order) => {
         const { foundAllergy, sum } = this.buy(name, order);
         const sendRes = this.sendResult(foundAllergy, name, order, sum);
-        await fileReader.appendFile(sendRes);
+        fileReader.appendFile(sendRes);
         console.log(sendRes);
 
         const clientBudget = this.getClientBudget(name);

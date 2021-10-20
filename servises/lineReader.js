@@ -13,24 +13,27 @@ const rl = readline.createInterface({
 rl.setPrompt("Write file name");
 rl.prompt();
 
-rl.on('line', async function(answer) {
+rl.on('line',  function(answer) {
     const input = fileReader.readFile(answer);
     const dataArray = input.split('\r\n');
 
-    await sendRestaurantBudget();
+    sendRestaurantBudget();
 
     const newArr = dataArray.map(e => e.split(', '));
-    newArr.forEach(i => {
+
+    for (const i of newArr) {
         if (i.length === 3) {
             let action = i[0];
             switch (action) {
                 case 'Buy' :
                     let person = i[1];
                     let order = i[2];
-
                     orderHandler.result(person, order)
                     break;
                 case 'Order' :
+                    let ingredient = i[1];
+                    let number = i[2];
+                    orderHandler.decreaseRestaurantBudget(ingredient, number);
                     console.log('Order')
                     break;
                 case 'Budget' :
@@ -45,6 +48,35 @@ rl.on('line', async function(answer) {
                 default:
                     console.log('default');
             }
+    }
+
+    // newArr.forEach(i => {
+        // if (i.length === 3) {
+        //     let action = i[0];
+        //     switch (action) {
+        //         case 'Buy' :
+        //             let person = i[1];
+        //             let order = i[2];
+        //             orderHandler.result(person, order)
+        //             break;
+        //         case 'Order' :
+        //             let ingredient = i[1];
+        //             let number = i[2];
+        //             orderHandler.decreaseRestaurantBudget(ingredient, number);
+        //             console.log('Order')
+        //             break;
+        //         case 'Budget' :
+        //             let sign = i[1];
+        //             let amount = parseInt(i[2]);
+        //             orderHandler.modifyRestaurantBudget(sign, amount)
+        //             sendRestaurantBudget();
+        //             break;
+        //         case 'Table' :
+        //             console.log('Table')
+        //             break;
+        //         default:
+        //             console.log('default');
+        //     }
 
             // const clientBudget = orderHandler.result(person, order);
             // if (clientBudget >= 0) {
@@ -52,9 +84,10 @@ rl.on('line', async function(answer) {
             // } else {
             //     rl.close()
             // }
-        }
-    })
-    await sendRestaurantBudget();
+    //     }
+    }
+    // )
+    sendRestaurantBudget();
 
     // let person = dataArray[1];
     // let order = dataArray[2];
@@ -76,10 +109,12 @@ rl.on('line', async function(answer) {
     process.exit(0);
 });
 
-const sendRestaurantBudget = async () => {
+const sendRestaurantBudget = () => {
     const restaurantBudget = orderHandler.getRestaurantBudget();
     if (restaurantBudget > 0) {
         const modifiedRestaurantBudget = `Restaurant budget: ${restaurantBudget}`;
-        await fileReader.appendFile(modifiedRestaurantBudget);
-    } else await  fileReader.appendFile(`RESTAURANT BANKRUPT`);
-}
+        fileReader.appendFile(modifiedRestaurantBudget);
+    } else if (restaurantBudget <= 0) {
+        fileReader.appendFile(`RESTAURANT BANKRUPT`);
+    }
+};

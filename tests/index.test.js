@@ -19,7 +19,7 @@ describe('getSum function', () => {
 describe('checkAllIngredients function', () => {
     test('should contain all ingredients', () => {
         const userIngredients = [];
-        const res = orderHandler.checkAllIngredients('Ruby Salad', userIngredients);
+        orderHandler.checkAllIngredients('Ruby Salad', userIngredients);
         expect(userIngredients[0]).toEqual("Tomatoes");
         expect(userIngredients[1]).toEqual("Vinegar");
         expect(userIngredients[2]).toEqual("Chocolate");
@@ -81,4 +81,59 @@ describe('sendResult function', () => {
     //     const res = orderHandler.sendResult(foundAllergies, name, order, sum);
     //     expect(res).toBe(`Elon Carousel – can’t order, budget 50 and Emperor Chicken costs 284`);
     // });
+});
+
+describe('RestaurantBudget at all', () => {
+    beforeEach(() => {
+        orderHandler.restaurantBudget = 500;
+    });
+    describe('modifyRestaurantBudget function', () => {
+        test('should add 300 to budget', () => {
+            const sign = '+';
+            const amount = 300;
+            const res = orderHandler.modifyRestaurantBudget(sign, amount);
+            expect(res).toBe(800);
+        });
+        test('should subtract 300 to budget', () => {
+            const sign = '-';
+            const amount = 300;
+            const res = orderHandler.modifyRestaurantBudget(sign, amount);
+            expect(res).toBe(200);
+        });
+        test('should to equate budget to 300', () => {
+            const sign = '=';
+            const amount = 300;
+            const res = orderHandler.modifyRestaurantBudget(sign, amount);
+            expect(res).toBe(300);
+        });
+    });
+
+    describe('increaseRestaurantBudget function', () => {
+        test('should add 100 to budget', () => {
+            const sum = 100;
+            const res = orderHandler.increaseRestaurantBudget(sum);
+            expect(res).toBe(600);
+        });
+    });
+
+    describe('decreaseRestaurantBudget function', () => {
+        beforeEach(() => {
+
+        });
+        test('decreaseRestaurantBudget ', () => {
+            const ingredient = 'Tuna';
+            const number = 10;
+            const res = orderHandler.decreaseRestaurantBudget(ingredient, number);
+            expect(res).toBe(250);
+        });
+    });
+});
+
+describe('order function', () => {
+    test('should multiply the price of the ingredient by the quantity', () => {
+        const ingredient = 'Tuna';
+        const number = 10;
+        const res = orderHandler.order(ingredient, number);
+        expect(res).toBe(250);
+    });
 });

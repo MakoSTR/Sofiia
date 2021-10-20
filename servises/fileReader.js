@@ -6,12 +6,7 @@ class FileReader {
         return fs.readFileSync(filePath + fileName, {encoding:'utf8'});
     };
     appendFile = data => {
-        return new Promise((res) => {
-            fs.appendFile('./resources/output_files/outputBuy.txt', `${data}\r\n`, (err) => {
-                if (err) return console.log(err);
-            });
-            res();
-        });
+        fs.appendFileSync('./resources/output_files/outputBuy.txt', `${data}\r\n`);
     };
 }
 
