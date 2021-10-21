@@ -6,7 +6,7 @@ class FileReader {
         return fs.readFileSync(filePath + fileName, {encoding:'utf8'});
     };
     appendFile = data => {
-        fs.appendFileSync('./resources/output_files/outputBuy.txt', `${data}\r\n`);
+        fs.appendFileSync('./resources/output_files/output.txt', `${data}\r\n`);
     };
 }
 

@@ -1,6 +1,7 @@
 const jsonData = require('../resources/input_files/data.json');
 const priceData = require('../resources/input_files/price.json');
 const budgetData = require('../resources/input_files/budget.json');
+const messageCodes = require('../resources/messageCodes.json');
 const { FileReader } = require('./fileReader');
 
 const fileReader = new FileReader;
@@ -49,7 +50,6 @@ class OrderHandler {
     getTotalBudget = (sum, totalBudget) => {
         return totalBudget - sum
     };
-
     sendResult = (foundAllergies, name, order, sum) => {
         if (foundAllergies) {
             return `${name} can’t order ${order}, allergic to: ${foundAllergies}`
@@ -64,18 +64,40 @@ class OrderHandler {
         }
     };
 
-    buy = (name, order) => {
+    buy = (person, order) => {
         const userIngredients = [];
         this.checkAllIngredients(order, userIngredients);
 
-        const foundAllergy =  this.getAllergies(name, userIngredients)[0] || '';
+        const foundAllergy =  this.getAllergies(person, userIngredients)[0] || '';
 
         let sum = this.getSum(userIngredients);
-        if (!this.clientBudget[name] && this.clientBudget[name] !== 0) {
-            this.clientBudget[name] = budget[name];
+        if (!this.clientBudget[person] && this.clientBudget[person] !== 0) {
+            this.clientBudget[person] = budget[person];
         }
+        const sendRes = this.sendResult(foundAllergy, person, order, sum);
+        fileReader.appendFile(sendRes);  //???
+        // return sum;
+        return { sendRes, sum };
+        //
+    }
 
-        return { foundAllergy, sum }
+    buyForTable = (person, order) => {
+        const userIngredients = [];
+        this.checkAllIngredients(order, userIngredients);
+
+        const foundAllergy =  this.getAllergies(person, userIngredients)[0] || '';
+
+        let sum = this.getSum(userIngredients);
+        if (!this.clientBudget[person] && this.clientBudget[person] !== 0) {
+            this.clientBudget[person] = budget[person];
+        }
+        if (foundAllergy) {
+            return { code: messageCodes.allergy, message: `FAILURE. ${person} can’t order ${order}, allergic to: ${foundAllergy}. So, whole table fails.` };
+        } else if (this.clientBudget[person] < sum) {
+            return { code: messageCodes.budget, message: `FAILURE. ${person} – can’t order, budget ${this.clientBudget[person]} and ${order} costs ${sum}. So, whole table fails.` };
+        } else {
+            return { code: messageCodes.success, sum, message: `${person} - ${order} costs ${sum}: success`};
+        }
     }
 
     order = (ingredient, number) => {
@@ -103,17 +125,29 @@ class OrderHandler {
         }
     }
 
-    result = (name, order) => {
-        const { foundAllergy, sum } = this.buy(name, order);
-        const sendRes = this.sendResult(foundAllergy, name, order, sum);
-        fileReader.appendFile(sendRes);
-        console.log(sendRes);
-
-        const clientBudget = this.getClientBudget(name);
-        const restaurantBudget = this.getRestaurantBudget();
-
-        return { clientBudget, restaurantBudget }
-    };
+    table = (person1, order1, person2, order2) => {
+        const res1 = this.buyForTable(person1, order1);
+        const res2 = this.buyForTable(person2, order2);
+        if (res1.code === messageCodes.success && res2.code === messageCodes.success ) {
+            this.clientBudget[person1] = this.getTotalBudget(res1.sum, this.clientBudget[person1]);
+            this.increaseRestaurantBudget(res1.sum);
+            this.clientBudget[person2] = this.getTotalBudget(res2.sum, this.clientBudget[person2]);
+            this.increaseRestaurantBudget(res2.sum);
+            const message = `Success: money amount ${res1.sum + res2.sum}
+            {
+             ${res1.message}
+             ${res2.message}
+            }`;
+            fileReader.appendFile(message);
+            return message;
+        } else if (res1.code !== messageCodes.success) {
+            fileReader.appendFile(res1.message);
+            return res1.message;
+        } else if (res2.code !== messageCodes.success) {
+            fileReader.appendFile(res2.message);
+            return res2.message;
+        }
+    }
 
     getClientBudget = (name) => {
         return this.clientBudget[name];

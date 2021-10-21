@@ -1,0 +1,6 @@
+{
+  "allergy": "One of users has allergy",
+  "budget": "One of users has no enough money",
+  "sameName": "Two user with same name",
+  "success": "Success"
+}

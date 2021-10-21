@@ -1,5 +1,9 @@
-Restaurant budget: 175
-Restaurant budget: 300
+Restaurant budget: 548
 Julie Mirage – can’t order, budget 100 and Princess Chicken costs 117
-Elon Carousel – can’t order, budget 50 and Tuna Cake costs 130
-Restaurant budget: 175
+Barbara Smith can’t order Tuna Cake, allergic to: Chocolate
+Success: money amount 44
+            {
+             Barbara Smith - Irish Fish costs 40: success
+             Adam Smith - Fries costs 4: success
+            }
+Restaurant budget: 592
