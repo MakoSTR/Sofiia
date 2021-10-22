@@ -1,6 +1,5 @@
-const { OrderHandler } = require('../servises/orderHandler');
-
-const orderHandler = new OrderHandler();
+const orderHandler = require('../servises/orderHandler');
+const restaurantBudget = require("../servises/restaurantBudget");
 
 describe('getSum function', () => {
     test('should add all the ingredients in the array', () => {
@@ -83,57 +82,11 @@ describe('sendResult function', () => {
     // });
 });
 
-describe('RestaurantBudget at all', () => {
-    beforeEach(() => {
-        orderHandler.restaurantBudget = 500;
-    });
-    describe('modifyRestaurantBudget function', () => {
-        test('should add 300 to budget', () => {
-            const sign = '+';
-            const amount = 300;
-            const res = orderHandler.modifyRestaurantBudget(sign, amount);
-            expect(res).toBe(800);
-        });
-        test('should subtract 300 to budget', () => {
-            const sign = '-';
-            const amount = 300;
-            const res = orderHandler.modifyRestaurantBudget(sign, amount);
-            expect(res).toBe(200);
-        });
-        test('should to equate budget to 300', () => {
-            const sign = '=';
-            const amount = 300;
-            const res = orderHandler.modifyRestaurantBudget(sign, amount);
-            expect(res).toBe(300);
-        });
-    });
-
-    describe('increaseRestaurantBudget function', () => {
-        test('should add 100 to budget', () => {
-            const sum = 100;
-            const res = orderHandler.increaseRestaurantBudget(sum);
-            expect(res).toBe(600);
-        });
-    });
-
-    describe('decreaseRestaurantBudget function', () => {
-        beforeEach(() => {
-
-        });
-        test('decreaseRestaurantBudget ', () => {
-            const ingredient = 'Tuna';
-            const number = 10;
-            const res = orderHandler.decreaseRestaurantBudget(ingredient, number);
-            expect(res).toBe(250);
-        });
-    });
-});
-
 describe('order action', () => {
     test('should multiply the price of the ingredient by the quantity', () => {
         const ingredient = 'Tuna';
         const number = 10;
-        const res = orderHandler.order(ingredient, number);
+        const res = restaurantBudget.order(ingredient, number);
         expect(res).toBe(250);
     });
 });

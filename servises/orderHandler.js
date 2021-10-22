@@ -2,9 +2,11 @@ const jsonData = require('../resources/input_files/data.json');
 const priceData = require('../resources/input_files/price.json');
 const budgetData = require('../resources/input_files/budget.json');
 const messageCodes = require('../resources/messageCodes.json');
-const { FileReader } = require('./fileReader');
+const FileReader = require('./fileReader');
+const restaurantBudgetService = require('./restaurantBudget');
+const warehousesHandler = require('./warehousesHandler');
 
-const fileReader = new FileReader;
+const fileReader = new FileReader();
 
 const regularCustomer = jsonData['Regular customer'];
 const food = jsonData.Food;
@@ -15,7 +17,6 @@ const budget = budgetData['Regular customer budget'];
 class OrderHandler {
     constructor() {
         this.clientBudget = {};
-        this.restaurantBudget = 500;
     }
     // checkAllIngredients (recursion)
     checkAllIngredients = (order, userIngredients) => {
@@ -50,8 +51,10 @@ class OrderHandler {
     getTotalBudget = (sum, totalBudget) => {
         return totalBudget - sum
     };
+
     sendResult = (foundAllergies, name, order, sum) => {
         if (foundAllergies) {
+            warehousesHandler.reduceQuantities(order);
             return `${name} can’t order ${order}, allergic to: ${foundAllergies}`
         } else
         if (this.clientBudget[name] < sum) {
@@ -59,7 +62,8 @@ class OrderHandler {
         }
         else {
             this.clientBudget[name] = this.getTotalBudget(sum, this.clientBudget[name]);
-            this.increaseRestaurantBudget(sum);
+            restaurantBudgetService.increaseRestaurantBudget(sum);
+            warehousesHandler.reduceQuantities(order);
             return `${name} - ${order} costs ${sum}: success`;
         }
     };
@@ -75,10 +79,8 @@ class OrderHandler {
             this.clientBudget[person] = budget[person];
         }
         const sendRes = this.sendResult(foundAllergy, person, order, sum);
-        fileReader.appendFile(sendRes);  //???
-        // return sum;
+        fileReader.appendFile(sendRes);
         return { sendRes, sum };
-        //
     }
 
     buyForTable = (person, order) => {
@@ -100,39 +102,16 @@ class OrderHandler {
         }
     }
 
-    order = (ingredient, number) => {
-        return price[ingredient] * number
-    }
-
-    increaseRestaurantBudget = (sum) => {
-        return this.restaurantBudget += sum
-    }
-
-    decreaseRestaurantBudget = (ingredient, number) => {
-        const orderAmount = this.order(ingredient, number);
-        return this.restaurantBudget -= orderAmount;
-    }
-
-    modifyRestaurantBudget = (sign, amount) => {
-        if (sign === '=') {
-            return this.restaurantBudget = amount;
-        }
-        if (sign === '+') {
-            return this.restaurantBudget += amount;
-        }
-        if (sign === '-') {
-            return this.restaurantBudget -= amount;
-        }
-    }
-
     table = (person1, order1, person2, order2) => {
         const res1 = this.buyForTable(person1, order1);
         const res2 = this.buyForTable(person2, order2);
         if (res1.code === messageCodes.success && res2.code === messageCodes.success ) {
             this.clientBudget[person1] = this.getTotalBudget(res1.sum, this.clientBudget[person1]);
-            this.increaseRestaurantBudget(res1.sum);
+            restaurantBudgetService.increaseRestaurantBudget(res1.sum);
+            warehousesHandler.reduceQuantities(order1);
             this.clientBudget[person2] = this.getTotalBudget(res2.sum, this.clientBudget[person2]);
-            this.increaseRestaurantBudget(res2.sum);
+            restaurantBudgetService.increaseRestaurantBudget(res2.sum);
+            warehousesHandler.reduceQuantities(order2);
             const message = `Success: money amount ${res1.sum + res2.sum}
             {
              ${res1.message}
@@ -152,12 +131,8 @@ class OrderHandler {
     getClientBudget = (name) => {
         return this.clientBudget[name];
     };
-
-    getRestaurantBudget = () => {
-        return this.restaurantBudget;
-    }
 }
 
-module.exports = {
-    OrderHandler
-};
+const orderHandler = new OrderHandler();
+
+module.exports = orderHandler;
