@@ -2,9 +2,10 @@ const jsonData = require('../resources/input_files/data.json');
 const priceData = require('../resources/input_files/price.json');
 const budgetData = require('../resources/input_files/budget.json');
 const messageCodes = require('../resources/messageCodes.json');
+const warehouses = require("../resources/input_files/warehouses.json");
 const FileReader = require('./fileReader');
 const restaurantBudgetService = require('./restaurantBudget');
-const warehousesHandler = require('./warehousesHandler');
+const warehousesService = require('./warehousesHandler');
 
 const fileReader = new FileReader();
 
@@ -54,7 +55,7 @@ class OrderHandler {
 
     sendResult = (foundAllergies, name, order, sum) => {
         if (foundAllergies) {
-            warehousesHandler.reduceQuantities(order);
+            warehousesService.reduceQuantities(order, warehouses);
             return `${name} can’t order ${order}, allergic to: ${foundAllergies}`
         } else
         if (this.clientBudget[name] < sum) {
@@ -63,7 +64,7 @@ class OrderHandler {
         else {
             this.clientBudget[name] = this.getTotalBudget(sum, this.clientBudget[name]);
             restaurantBudgetService.increaseRestaurantBudget(sum);
-            warehousesHandler.reduceQuantities(order);
+            warehousesService.reduceQuantities(order, warehouses);
             return `${name} - ${order} costs ${sum}: success`;
         }
     };
@@ -102,29 +103,34 @@ class OrderHandler {
         }
     }
 
-    table = (person1, order1, person2, order2) => {
-        const res1 = this.buyForTable(person1, order1);
-        const res2 = this.buyForTable(person2, order2);
-        if (res1.code === messageCodes.success && res2.code === messageCodes.success ) {
-            this.clientBudget[person1] = this.getTotalBudget(res1.sum, this.clientBudget[person1]);
-            restaurantBudgetService.increaseRestaurantBudget(res1.sum);
-            warehousesHandler.reduceQuantities(order1);
-            this.clientBudget[person2] = this.getTotalBudget(res2.sum, this.clientBudget[person2]);
-            restaurantBudgetService.increaseRestaurantBudget(res2.sum);
-            warehousesHandler.reduceQuantities(order2);
-            const message = `Success: money amount ${res1.sum + res2.sum}
-            {
-             ${res1.message}
-             ${res2.message}
-            }`;
-            fileReader.appendFile(message);
-            return message;
-        } else if (res1.code !== messageCodes.success) {
-            fileReader.appendFile(res1.message);
-            return res1.message;
-        } else if (res2.code !== messageCodes.success) {
-            fileReader.appendFile(res2.message);
-            return res2.message;
+    table = (customers, dishes) => {
+        const resArr = [];
+        customers.forEach((customer, index) => {
+            const res = this.buyForTable(customer, dishes[index]);
+            resArr.push(res);
+        });
+
+        const checkResSuccess = resArr.every(res => res.code === messageCodes.success);
+
+        if (checkResSuccess) {
+            const totalSum = resArr.reduce((previousValue, currentValue) => {
+                return previousValue + currentValue.sum;
+            }, 0);
+            fileReader.appendFile(`Success: money amount ${totalSum}\n{`);
+            customers.forEach((customer, index) => {
+                this.clientBudget[customer] = this.getTotalBudget(resArr[index].sum, this.clientBudget[customer]);
+                restaurantBudgetService.increaseRestaurantBudget(resArr[index].sum);
+                warehousesService.reduceQuantities(dishes[index], warehouses);
+                fileReader.appendFile(`    ${resArr[index].message}`);
+            });
+            fileReader.appendFile(`}`);
+            return messageCodes.success
+        } else {
+            const errorMessage = resArr.find(res => {
+                return res.code !== messageCodes.success;
+            }).message;
+            fileReader.appendFile(errorMessage);
+            return errorMessage;
         }
     }
 

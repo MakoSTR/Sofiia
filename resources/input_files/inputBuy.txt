@@ -1,5 +1,2 @@
 Budget, =, 400
-Buy, Julie Mirage, Princess Chicken
-Buy, Elon Carousel, Tuna Cake
-Order, Tuna, 5
-Buy, Julie Mirage, Fries
+Table, Barbara Smith, Adam Smith, Irish Fish, Fries

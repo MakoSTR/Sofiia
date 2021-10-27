@@ -1,5 +1,7 @@
 const orderHandler = require('../servises/orderHandler');
 const restaurantBudget = require("../servises/restaurantBudget");
+const fs = require("fs");
+const messageCodes = require("../resources/messageCodes.json");
 
 describe('getSum function', () => {
     test('should add all the ingredients in the array', () => {
@@ -93,32 +95,21 @@ describe('order action', () => {
 
 describe('table action', () => {
     test('should return success message', () => {
-        const person1 = 'Barbara Smith';
-        const person2 = 'Adam Smith';
-        const order1 = 'Irish Fish';
-        const order2 = 'Fries';
-        const res = orderHandler.table(person1, order1, person2, order2);
-        expect(res).toBe(`Success: money amount 44
-            {
-             Barbara Smith - Irish Fish costs 40: success
-             Adam Smith - Fries costs 4: success
-            }`);
+        const persons = ['Barbara Smith', 'Adam Smith'];
+        const orders = ['Smashed Potatoes', 'Fries'];
+        const res = orderHandler.table(persons, orders);
+        expect(res).toBe(messageCodes.success);
     });
     test('should return FAILURE(foundAllergy)', () => {
-        const foundAllergy = 'Chocolate';
-        const person1 = 'Barbara Smith';
-        const person2 = 'Adam Smith';
-        const order1 = 'Tuna Cake';
-        const order2 = 'Fries';
-        const res = orderHandler.table(person1, order1, person2, order2);
-        expect(res).toBe(`FAILURE. ${person1} can’t order ${order1}, allergic to: ${foundAllergy}. So, whole table fails.`);
+        const persons = ['Barbara Smith', 'Adam Smith'];
+        const orders = ['Tuna Cake', 'Fries'];
+        const res = orderHandler.table(persons, orders);
+        expect(res).toBe(`FAILURE. Barbara Smith can’t order Tuna Cake, allergic to: Chocolate. So, whole table fails.`);
     });
     test('should return FAILURE(lack of budget)', () => {
-        const person1 = 'Julie Mirage';
-        const person2 = 'Adam Smith';
-        const order1 = 'Princess Chicken';
-        const order2 = 'Fries';
-        const res = orderHandler.table(person1, order1, person2, order2);
-        expect(res).toBe(`FAILURE. ${person1} – can’t order, budget 100 and ${order1} costs 117. So, whole table fails.`);
+        const persons = ['Julie Mirage', 'Adam Smith'];
+        const orders = ['Princess Chicken', 'Fries'];
+        const res = orderHandler.table(persons, orders);
+        expect(res).toBe(`FAILURE. Julie Mirage – can’t order, budget 100 and Princess Chicken costs 117. So, whole table fails.`);
     });
 });

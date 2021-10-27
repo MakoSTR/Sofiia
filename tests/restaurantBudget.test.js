@@ -34,14 +34,28 @@ describe('RestaurantBudget at all', () => {
     });
 
     describe('decreaseRestaurantBudget function', () => {
-        beforeEach(() => {
-
-        });
         test('decreaseRestaurantBudget ', () => {
             const ingredient = 'Tuna';
             const number = 10;
-            const res = restaurantBudget.decreaseRestaurantBudget(ingredient, number);
+            restaurantBudget.decreaseRestaurantBudget(ingredient, number);
+            expect(restaurantBudget.restaurantBudget).toBe(250);
+        });
+    });
+    describe('order function', () => {
+        test('should multiply ', () => {
+            const ingredient = 'Tuna';
+            const number = 10;
+            const res = restaurantBudget.order(ingredient, number);
             expect(res).toBe(250);
+        });
+    });
+    describe('addIngredients function', () => {
+        test('should add quantities in the warehouses', () => {
+            const warehouses = {'Tuna': 10}
+            const ingredient = 'Tuna';
+            const number = 10;
+            restaurantBudget.addIngredients(warehouses, ingredient, number);
+            expect(warehouses[ingredient]).toBe(20);
         });
     });
 });

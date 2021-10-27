@@ -1,35 +1,20 @@
 Restaurant budget: 500
-Restaurant budget: 400
+Adam Smith - Fries costs 4: success
 Julie Mirage – can’t order, budget 100 and Princess Chicken costs 117
-Elon Carousel – can’t order, budget 50 and Tuna Cake costs 130
-Julie Mirage - Fries costs 4: success
-Restaurant budget: 279
-Restaurant budget: 279
-Julie Mirage – can’t order, budget 96 and Princess Chicken costs 117
 Barbara Smith can’t order Tuna Cake, allergic to: Chocolate
-Success: money amount 44
-            {
-             Barbara Smith - Irish Fish costs 40: success
-             Adam Smith - Fries costs 4: success
-            }
-FAILURE. Barbara Smith can’t order Tuna Cake, allergic to: Chocolate. So, whole table fails.
-Restaurant budget: 323
-Restaurant budget: 500
-Restaurant budget: 400
+Alexandra Smith - Fries costs 4: success
+You cannot order something which is NOT a basic ingredient
+Restaurant budget: 502
+Restaurant budget: 502
+Adam Smith - Fries costs 4: success
 Julie Mirage – can’t order, budget 100 and Princess Chicken costs 117
-Elon Carousel – can’t order, budget 50 and Tuna Cake costs 130
-Julie Mirage - Fries costs 4: success
-Restaurant budget: 279
-Restaurant budget: 279
-Restaurant budget: 400
-Julie Mirage – can’t order, budget 96 and Princess Chicken costs 117
-Elon Carousel – can’t order, budget 50 and Tuna Cake costs 130
-Julie Mirage - Fries costs 4: success
-Restaurant budget: 279
+Barbara Smith can’t order Tuna Cake, allergic to: Chocolate
+Alexandra Smith - Fries costs 4: success
+You cannot order something which is NOT a basic ingredient
+FAILURE. Bernard Unfortunate can’t order Fries, allergic to: Potatoes. So, whole table fails.
 Success: money amount 44
-            {
-             Barbara Smith - Irish Fish costs 40: success
-             Adam Smith - Fries costs 4: success
-            }
-FAILURE. Barbara Smith can’t order Tuna Cake, allergic to: Chocolate. So, whole table fails.
-FAILURE. Julie Mirage – can’t order, budget 100 and Princess Chicken costs 117. So, whole table fails.
+{
+    Alexandra Smith - Irish Fish costs 40: success
+    Adam Smith - Fries costs 4: success
+}
+Restaurant budget: 527

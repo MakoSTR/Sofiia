@@ -1,4 +1,9 @@
+Order, Potatoes, 2
+Buy, Adam Smith, Fries
 Buy, Julie Mirage, Princess Chicken
 Buy, Barbara Smith, Tuna Cake
-Table, Barbara Smith, Adam Smith, Irish Fish, Fries
-Table, Barbara Smith, Adam Smith, Tuna Cake, Fries
+Buy, Alexandra Smith, Fries
+Order, Princess Chicken, 2
+Order, Potatoes, 7
+Table, Alexandra Smith, Bernard Unfortunate, Irish Fish, Fries
+Table, Alexandra Smith, Adam Smith, Irish Fish, Fries
