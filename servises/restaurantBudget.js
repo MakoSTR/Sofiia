@@ -1,10 +1,5 @@
 const priceData = require("../resources/input_files/price.json");
-const warehousesService = require('./warehousesHandler');
-const FileReader = require('./fileReader');
 const price = priceData['Base ingredients'];
-const warehouses = require('../resources/input_files/warehouses.json');
-
-const fileReader = new FileReader();
 
 class RestaurantBudgetService {
     constructor() {
@@ -19,8 +14,8 @@ class RestaurantBudgetService {
         return this.restaurantBudget += sum
     }
 
-    addIngredients = (warehouses, ingredient, number) => {
-        warehouses[ingredient] += number;
+    addIngredients = (warehouses, ingredient, quantity) => {
+        return warehouses[ingredient] = parseInt(quantity) + warehouses[ingredient];
     }
 
     decreaseRestaurantBudget = (ingredient, number) => {

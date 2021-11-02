@@ -1,1 +1,1 @@
-require('./servises/lineReader');
+require('./main/main');

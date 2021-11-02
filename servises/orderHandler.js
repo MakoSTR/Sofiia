@@ -8,6 +8,7 @@ const restaurantBudgetService = require('./restaurantBudget');
 const warehousesService = require('./warehousesHandler');
 
 const fileReader = new FileReader();
+const filePathForOutput = './resources/output_files/output.txt';
 
 const regularCustomer = jsonData['Regular customer'];
 const food = jsonData.Food;
@@ -80,7 +81,7 @@ class OrderHandler {
             this.clientBudget[person] = budget[person];
         }
         const sendRes = this.sendResult(foundAllergy, person, order, sum);
-        fileReader.appendFile(sendRes);
+        fileReader.appendFile(filePathForOutput, sendRes);
         return { sendRes, sum };
     }
 
@@ -116,20 +117,21 @@ class OrderHandler {
             const totalSum = resArr.reduce((previousValue, currentValue) => {
                 return previousValue + currentValue.sum;
             }, 0);
-            fileReader.appendFile(`Success: money amount ${totalSum}\n{`);
+            fileReader.appendFile(filePathForOutput, `Success: money amount ${totalSum}\n{`);
             customers.forEach((customer, index) => {
                 this.clientBudget[customer] = this.getTotalBudget(resArr[index].sum, this.clientBudget[customer]);
                 restaurantBudgetService.increaseRestaurantBudget(resArr[index].sum);
                 warehousesService.reduceQuantities(dishes[index], warehouses);
-                fileReader.appendFile(`    ${resArr[index].message}`);
+                fileReader.appendFile(filePathForOutput, `    ${resArr[index].message}`);
             });
-            fileReader.appendFile(`}`);
+            fileReader.appendFile(filePathForOutput, `}`);
             return messageCodes.success
         } else {
             const errorMessage = resArr.find(res => {
                 return res.code !== messageCodes.success;
             }).message;
-            fileReader.appendFile(errorMessage);
+            fileReader.appendFile(filePathForOutput, errorMessage);
+
             return errorMessage;
         }
     }

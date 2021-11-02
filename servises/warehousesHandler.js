@@ -12,17 +12,6 @@ class WarehousesHandler {
         this.warehouses = warehouses;
     }
 
-    // checkAllIngredients = (order, userIngredients) => {
-    //     const ingredients = food[order];
-    //     for ( let i = 0; i < ingredients.length; i++ ) {
-    //         if (base.find(item => ingredients[i] === item )) {
-    //             userIngredients.push(ingredients[i])
-    //         } else {
-    //             this.checkAllIngredients(ingredients[i], userIngredients)
-    //         }
-    //     }
-    // };
-
     checkAllIngredients = (order, userIngredients, warehouses) => {
         const ingredients = food[order];
         for ( let i = 0; i < ingredients.length; i++ ) {

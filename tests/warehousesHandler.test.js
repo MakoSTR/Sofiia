@@ -72,7 +72,7 @@ describe('reducer func', () => {
         warehousesHandler.setWarehouses(warehouses);
     })
     test('should return 0', () => {
-        const warehouses = {'Emperor Chicken': 1};
+        const warehouses = {'Emperor Chicken': 1, 'Lemon': 15, 'tuna': 1};
         const ingredient = 'Emperor Chicken'
         const res = warehousesHandler.reducer(ingredient, warehouses);
         expect(res).toBe(0);

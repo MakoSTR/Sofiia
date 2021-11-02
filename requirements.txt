@@ -1,0 +1,21 @@
+[12:40] Sofiia Kravets
+Hello Łukasz)our team have some question for u
+1. "6.4.2. What do we do with quantities?
+• If an order fails because of allergy, all ingredients and dishes are lost, and we don’t get any profit."So the question is: in the "Table" case, we also need to reduce quantities when it is allergy in one of the person? Or no, because whole table fails?2. Can u show us, please, how an output of the "Audit" comand should looks like for budget comand, when the restaurant bankruptthnx^^
+
+[12:47] Łukasz Januszek (Guest)
+hello
+
+[12:47] Łukasz Januszek (Guest)
+let me see
+
+[12:50] Łukasz Januszek (Guest)
+ad 1:in case of a Table command, whole table fails. The "whole table fails" takes precedence over any other rule.ad 2:when restaurant is bankrupt, Audit should replace the place where money would be with the text BANKRUPT in output. The amount of money doesn't matter for Audit - just the fact we are bankrupt.does this answer your questions?
+
+[12:54] Sofiia Kravets
+example for 2nd is more or less looks like :command: => Budget, -3000 => RESTAURANT BANKRUPTWarehouse: {"Chicken":10,"Tuna":1,"Potatoes":11.......}Restaurant Budget: RESTAURANT BANKRUPTAUDIT ENDright?
+
+[12:55] Łukasz Januszek (Guest)
+yes, I would accept this
+ like 1
+

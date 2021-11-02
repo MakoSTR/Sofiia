@@ -1,12 +1,11 @@
 const fs = require('fs');
-const filePath = './resources/input_files/'
 
 class FileReader {
-    readFile = fileName => {
-        return fs.readFileSync(filePath + fileName, {encoding:'utf8'});
+    readFile = (filePath, filename) => {
+        return fs.readFileSync(filePath + filename, {encoding:'utf8'});
     };
-    appendFile = data => {
-        fs.appendFileSync('./resources/output_files/output.txt', `${data}\r\n`);
+    appendFile = (filePath, data) => {
+        fs.appendFileSync(filePath, `${data}\r\n`);
     };
 }
 

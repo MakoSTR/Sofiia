@@ -1,0 +1,86 @@
+INIT
+            Warehouses: {"Chicken":10,"Tuna":1,"Potatoes":2,"Asparagus":10,"Milk":10,"Honey":10,"Paprika":10,"Garlic":10,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":10,"Feta":10,"Vinegar":1,"Rice":10,"Chocolate":10,"Emperor Chicken":1,"Fat Cat Chicken":10,"Princess Chicken":10,"Youth Sauce":10,"Spicy Sauce":10,"Omega Sauce":10,"Diamond Salad":10,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":10,"Tuna Cake":10,"Fish In Water":10,"Irish Fish":10}
+            Restaurant Budget: 500
+
+            START
+            
+command: => Order,Potatoes,10 => success
+            Warehouse: {"Chicken":10,"Tuna":1,"Potatoes":12,"Asparagus":10,"Milk":10,"Honey":10,"Paprika":10,"Garlic":10,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":10,"Feta":10,"Vinegar":1,"Rice":10,"Chocolate":10,"Emperor Chicken":1,"Fat Cat Chicken":10,"Princess Chicken":10,"Youth Sauce":10,"Spicy Sauce":10,"Omega Sauce":10,"Diamond Salad":10,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":10,"Tuna Cake":10,"Fish In Water":10,"Irish Fish":10}
+            Restaurant Budget: 470
+command: => Table,Julie Mirage,Princess Chicken => FAILURE. Julie Mirage – can’t order, budget 100 and Princess Chicken costs 117. So, whole table fails.
+            Warehouse: {"Chicken":10,"Tuna":1,"Potatoes":12,"Asparagus":10,"Milk":10,"Honey":10,"Paprika":10,"Garlic":10,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":10,"Feta":10,"Vinegar":1,"Rice":10,"Chocolate":10,"Emperor Chicken":1,"Fat Cat Chicken":10,"Princess Chicken":10,"Youth Sauce":10,"Spicy Sauce":10,"Omega Sauce":10,"Diamond Salad":10,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":10,"Tuna Cake":10,"Fish In Water":10,"Irish Fish":10}
+            Restaurant Budget: 470
+command: => Table,Alexandra Smith,Adam Smith,Irish Fish,Fries => Success
+            Warehouse: {"Chicken":10,"Tuna":1,"Potatoes":12,"Asparagus":10,"Milk":10,"Honey":10,"Paprika":10,"Garlic":10,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":10,"Feta":10,"Vinegar":1,"Rice":10,"Chocolate":10,"Emperor Chicken":1,"Fat Cat Chicken":10,"Princess Chicken":10,"Youth Sauce":10,"Spicy Sauce":10,"Omega Sauce":10,"Diamond Salad":10,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":10,"Tuna Cake":10,"Fish In Water":10,"Irish Fish":9}
+            Restaurant Budget: 514
+command: => Table,Alexandra Smith,Bernard Unfortunate,Irish Fish,Fries => FAILURE. Bernard Unfortunate can’t order Fries, allergic to: Potatoes. So, whole table fails.
+            Warehouse: {"Chicken":10,"Tuna":1,"Potatoes":12,"Asparagus":10,"Milk":10,"Honey":10,"Paprika":10,"Garlic":10,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":10,"Feta":10,"Vinegar":1,"Rice":10,"Chocolate":10,"Emperor Chicken":1,"Fat Cat Chicken":10,"Princess Chicken":10,"Youth Sauce":10,"Spicy Sauce":10,"Omega Sauce":10,"Diamond Salad":10,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":10,"Tuna Cake":10,"Fish In Water":10,"Irish Fish":9}
+            Restaurant Budget: 514
+command: => Table,Alexandra Smith,Adam Smith,Fries => ERROR. Every person needs something to eat. So, whole table fails.
+            Warehouse: {"Chicken":10,"Tuna":1,"Potatoes":12,"Asparagus":10,"Milk":10,"Honey":10,"Paprika":10,"Garlic":10,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":10,"Feta":10,"Vinegar":1,"Rice":10,"Chocolate":10,"Emperor Chicken":1,"Fat Cat Chicken":10,"Princess Chicken":10,"Youth Sauce":10,"Spicy Sauce":10,"Omega Sauce":10,"Diamond Salad":10,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":10,"Tuna Cake":10,"Fish In Water":10,"Irish Fish":9}
+            Restaurant Budget: 514
+command: => Table,Alexandra Smith,Fries,Irish Fish => ERROR. One person can have one type of food only. So, whole table fails.
+            Warehouse: {"Chicken":10,"Tuna":1,"Potatoes":12,"Asparagus":10,"Milk":10,"Honey":10,"Paprika":10,"Garlic":10,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":10,"Feta":10,"Vinegar":1,"Rice":10,"Chocolate":10,"Emperor Chicken":1,"Fat Cat Chicken":10,"Princess Chicken":10,"Youth Sauce":10,"Spicy Sauce":10,"Omega Sauce":10,"Diamond Salad":10,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":10,"Tuna Cake":10,"Fish In Water":10,"Irish Fish":9}
+            Restaurant Budget: 514
+command: => Table,Adam Smith,Adam Smith,Fries,Fries => ERROR. One person can appear only once at the table. So, whole table fails.
+            Warehouse: {"Chicken":10,"Tuna":1,"Potatoes":12,"Asparagus":10,"Milk":10,"Honey":10,"Paprika":10,"Garlic":10,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":10,"Feta":10,"Vinegar":1,"Rice":10,"Chocolate":10,"Emperor Chicken":1,"Fat Cat Chicken":10,"Princess Chicken":10,"Youth Sauce":10,"Spicy Sauce":10,"Omega Sauce":10,"Diamond Salad":10,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":10,"Tuna Cake":10,"Fish In Water":10,"Irish Fish":9}
+            Restaurant Budget: 514
+command: => Buy,Alexandra Smith,Fries => Alexandra Smith - Fries costs 4: success
+            Warehouse: {"Chicken":10,"Tuna":1,"Potatoes":11,"Asparagus":10,"Milk":10,"Honey":10,"Paprika":10,"Garlic":10,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":10,"Feta":10,"Vinegar":1,"Rice":10,"Chocolate":10,"Emperor Chicken":1,"Fat Cat Chicken":10,"Princess Chicken":10,"Youth Sauce":10,"Spicy Sauce":10,"Omega Sauce":10,"Diamond Salad":10,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":10,"Tuna Cake":10,"Fish In Water":10,"Irish Fish":9}
+            Restaurant Budget: 518
+command: => Buy,Alexandra Smith,Fries => Alexandra Smith - Fries costs 4: success
+            Warehouse: {"Chicken":10,"Tuna":1,"Potatoes":10,"Asparagus":10,"Milk":10,"Honey":10,"Paprika":10,"Garlic":10,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":10,"Feta":10,"Vinegar":1,"Rice":10,"Chocolate":10,"Emperor Chicken":1,"Fat Cat Chicken":10,"Princess Chicken":10,"Youth Sauce":10,"Spicy Sauce":10,"Omega Sauce":10,"Diamond Salad":10,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":10,"Tuna Cake":10,"Fish In Water":10,"Irish Fish":9}
+            Restaurant Budget: 522
+command: => Order,Potatoes,10 => success
+            Warehouse: {"Chicken":10,"Tuna":1,"Potatoes":20,"Asparagus":10,"Milk":10,"Honey":10,"Paprika":10,"Garlic":10,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":10,"Feta":10,"Vinegar":1,"Rice":10,"Chocolate":10,"Emperor Chicken":1,"Fat Cat Chicken":10,"Princess Chicken":10,"Youth Sauce":10,"Spicy Sauce":10,"Omega Sauce":10,"Diamond Salad":10,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":10,"Tuna Cake":10,"Fish In Water":10,"Irish Fish":9}
+            Restaurant Budget: 492
+command: => Budget,-,3000 => Restaurant budget: RESTAURANT BANKRUPT
+            Warehouse: {"Chicken":10,"Tuna":1,"Potatoes":20,"Asparagus":10,"Milk":10,"Honey":10,"Paprika":10,"Garlic":10,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":10,"Feta":10,"Vinegar":1,"Rice":10,"Chocolate":10,"Emperor Chicken":1,"Fat Cat Chicken":10,"Princess Chicken":10,"Youth Sauce":10,"Spicy Sauce":10,"Omega Sauce":10,"Diamond Salad":10,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":10,"Tuna Cake":10,"Fish In Water":10,"Irish Fish":9}
+            Restaurant Budget: RESTAURANT BANKRUPT
+AUDIT END
+INIT
+            Warehouses: {"Chicken":10,"Tuna":1,"Potatoes":2,"Asparagus":10,"Milk":10,"Honey":10,"Paprika":10,"Garlic":10,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":10,"Feta":10,"Vinegar":1,"Rice":10,"Chocolate":10,"Emperor Chicken":1,"Fat Cat Chicken":10,"Princess Chicken":10,"Youth Sauce":10,"Spicy Sauce":10,"Omega Sauce":10,"Diamond Salad":10,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":10,"Tuna Cake":10,"Fish In Water":10,"Irish Fish":10}
+            Restaurant Budget: 500
+
+            START
+            
+command: => Table,Julie Mirage,Princess Chicken => FAILURE. Julie Mirage – can’t order, budget 100 and Princess Chicken costs 117. So, whole table fails.
+            Warehouse: {"Chicken":10,"Tuna":1,"Potatoes":2,"Asparagus":10,"Milk":10,"Honey":10,"Paprika":10,"Garlic":10,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":10,"Feta":10,"Vinegar":1,"Rice":10,"Chocolate":10,"Emperor Chicken":1,"Fat Cat Chicken":10,"Princess Chicken":10,"Youth Sauce":10,"Spicy Sauce":10,"Omega Sauce":10,"Diamond Salad":10,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":10,"Tuna Cake":10,"Fish In Water":10,"Irish Fish":10}
+            Restaurant Budget: 500
+command: => Table,Alexandra Smith,Adam Smith,Irish Fish,Fries => Success
+            Warehouse: {"Chicken":10,"Tuna":1,"Potatoes":2,"Asparagus":10,"Milk":10,"Honey":10,"Paprika":10,"Garlic":10,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":10,"Feta":10,"Vinegar":1,"Rice":10,"Chocolate":10,"Emperor Chicken":1,"Fat Cat Chicken":10,"Princess Chicken":10,"Youth Sauce":10,"Spicy Sauce":10,"Omega Sauce":10,"Diamond Salad":10,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":10,"Tuna Cake":10,"Fish In Water":10,"Irish Fish":9}
+            Restaurant Budget: 544
+command: => Table,Alexandra Smith,Bernard Unfortunate,Irish Fish,Fries => FAILURE. Bernard Unfortunate can’t order Fries, allergic to: Potatoes. So, whole table fails.
+            Warehouse: {"Chicken":10,"Tuna":1,"Potatoes":2,"Asparagus":10,"Milk":10,"Honey":10,"Paprika":10,"Garlic":10,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":10,"Feta":10,"Vinegar":1,"Rice":10,"Chocolate":10,"Emperor Chicken":1,"Fat Cat Chicken":10,"Princess Chicken":10,"Youth Sauce":10,"Spicy Sauce":10,"Omega Sauce":10,"Diamond Salad":10,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":10,"Tuna Cake":10,"Fish In Water":10,"Irish Fish":9}
+            Restaurant Budget: 544
+command: => Table,Alexandra Smith,Adam Smith,Fries => ERROR. Every person needs something to eat. So, whole table fails.
+            Warehouse: {"Chicken":10,"Tuna":1,"Potatoes":2,"Asparagus":10,"Milk":10,"Honey":10,"Paprika":10,"Garlic":10,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":10,"Feta":10,"Vinegar":1,"Rice":10,"Chocolate":10,"Emperor Chicken":1,"Fat Cat Chicken":10,"Princess Chicken":10,"Youth Sauce":10,"Spicy Sauce":10,"Omega Sauce":10,"Diamond Salad":10,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":10,"Tuna Cake":10,"Fish In Water":10,"Irish Fish":9}
+            Restaurant Budget: 544
+command: => Table,Alexandra Smith,Fries,Irish Fish => ERROR. One person can have one type of food only. So, whole table fails.
+            Warehouse: {"Chicken":10,"Tuna":1,"Potatoes":2,"Asparagus":10,"Milk":10,"Honey":10,"Paprika":10,"Garlic":10,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":10,"Feta":10,"Vinegar":1,"Rice":10,"Chocolate":10,"Emperor Chicken":1,"Fat Cat Chicken":10,"Princess Chicken":10,"Youth Sauce":10,"Spicy Sauce":10,"Omega Sauce":10,"Diamond Salad":10,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":10,"Tuna Cake":10,"Fish In Water":10,"Irish Fish":9}
+            Restaurant Budget: 544
+command: => Table,Adam Smith,Adam Smith,Fries,Fries => ERROR. One person can appear only once at the table. So, whole table fails.
+            Warehouse: {"Chicken":10,"Tuna":1,"Potatoes":2,"Asparagus":10,"Milk":10,"Honey":10,"Paprika":10,"Garlic":10,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":10,"Feta":10,"Vinegar":1,"Rice":10,"Chocolate":10,"Emperor Chicken":1,"Fat Cat Chicken":10,"Princess Chicken":10,"Youth Sauce":10,"Spicy Sauce":10,"Omega Sauce":10,"Diamond Salad":10,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":10,"Tuna Cake":10,"Fish In Water":10,"Irish Fish":9}
+            Restaurant Budget: 544
+command: => Buy,Alexandra Smith,Fries => Alexandra Smith - Fries costs 4: success
+            Warehouse: {"Chicken":10,"Tuna":1,"Potatoes":1,"Asparagus":10,"Milk":10,"Honey":10,"Paprika":10,"Garlic":10,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":10,"Feta":10,"Vinegar":1,"Rice":10,"Chocolate":10,"Emperor Chicken":1,"Fat Cat Chicken":10,"Princess Chicken":10,"Youth Sauce":10,"Spicy Sauce":10,"Omega Sauce":10,"Diamond Salad":10,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":10,"Tuna Cake":10,"Fish In Water":10,"Irish Fish":9}
+            Restaurant Budget: 548
+command: => Buy,Alexandra Smith,Fries => Alexandra Smith - Fries costs 4: success
+            Warehouse: {"Chicken":10,"Tuna":1,"Potatoes":0,"Asparagus":10,"Milk":10,"Honey":10,"Paprika":10,"Garlic":10,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":10,"Feta":10,"Vinegar":1,"Rice":10,"Chocolate":10,"Emperor Chicken":1,"Fat Cat Chicken":10,"Princess Chicken":10,"Youth Sauce":10,"Spicy Sauce":10,"Omega Sauce":10,"Diamond Salad":10,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":10,"Tuna Cake":10,"Fish In Water":10,"Irish Fish":9}
+            Restaurant Budget: 552
+command: => Buy,Alexandra Smith,Fries => ERROR. Lack of ingredients
+            Warehouse: {"Chicken":10,"Tuna":1,"Potatoes":0,"Asparagus":10,"Milk":10,"Honey":10,"Paprika":10,"Garlic":10,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":10,"Feta":10,"Vinegar":1,"Rice":10,"Chocolate":10,"Emperor Chicken":1,"Fat Cat Chicken":10,"Princess Chicken":10,"Youth Sauce":10,"Spicy Sauce":10,"Omega Sauce":10,"Diamond Salad":10,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":10,"Tuna Cake":10,"Fish In Water":10,"Irish Fish":9}
+            Restaurant Budget: 552
+command: => Buy,Alexandra Smith,Fries => ERROR. Lack of ingredients
+            Warehouse: {"Chicken":10,"Tuna":1,"Potatoes":0,"Asparagus":10,"Milk":10,"Honey":10,"Paprika":10,"Garlic":10,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":10,"Feta":10,"Vinegar":1,"Rice":10,"Chocolate":10,"Emperor Chicken":1,"Fat Cat Chicken":10,"Princess Chicken":10,"Youth Sauce":10,"Spicy Sauce":10,"Omega Sauce":10,"Diamond Salad":10,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":10,"Tuna Cake":10,"Fish In Water":10,"Irish Fish":9}
+            Restaurant Budget: 552
+command: => Buy,Alexandra Smith,Fries => ERROR. Lack of ingredients
+            Warehouse: {"Chicken":10,"Tuna":1,"Potatoes":0,"Asparagus":10,"Milk":10,"Honey":10,"Paprika":10,"Garlic":10,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":10,"Feta":10,"Vinegar":1,"Rice":10,"Chocolate":10,"Emperor Chicken":1,"Fat Cat Chicken":10,"Princess Chicken":10,"Youth Sauce":10,"Spicy Sauce":10,"Omega Sauce":10,"Diamond Salad":10,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":10,"Tuna Cake":10,"Fish In Water":10,"Irish Fish":9}
+            Restaurant Budget: 552
+command: => Order,Potatoes,10 => success
+            Warehouse: {"Chicken":10,"Tuna":1,"Potatoes":10,"Asparagus":10,"Milk":10,"Honey":10,"Paprika":10,"Garlic":10,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":10,"Feta":10,"Vinegar":1,"Rice":10,"Chocolate":10,"Emperor Chicken":1,"Fat Cat Chicken":10,"Princess Chicken":10,"Youth Sauce":10,"Spicy Sauce":10,"Omega Sauce":10,"Diamond Salad":10,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":10,"Tuna Cake":10,"Fish In Water":10,"Irish Fish":9}
+            Restaurant Budget: 522
+command: => Budget,-,3000 => Restaurant budget: RESTAURANT BANKRUPT
+            Warehouse: {"Chicken":10,"Tuna":1,"Potatoes":10,"Asparagus":10,"Milk":10,"Honey":10,"Paprika":10,"Garlic":10,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":10,"Feta":10,"Vinegar":1,"Rice":10,"Chocolate":10,"Emperor Chicken":1,"Fat Cat Chicken":10,"Princess Chicken":10,"Youth Sauce":10,"Spicy Sauce":10,"Omega Sauce":10,"Diamond Salad":10,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":10,"Tuna Cake":10,"Fish In Water":10,"Irish Fish":9}
+            Restaurant Budget: RESTAURANT BANKRUPT
+AUDIT END
