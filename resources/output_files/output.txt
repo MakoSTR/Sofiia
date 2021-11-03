@@ -1,64 +1,42 @@
 Restaurant budget: 500
-FAILURE. Julie Mirage – can’t order, budget 100 and Princess Chicken costs 117. So, whole table fails.
+Alexandra Smith - Fries costs 4: success
+FAILURE. Barbara Smith can’t order Tuna Cake, allergic to: Chocolate. So, whole table fails.
 Success: money amount 44
 {
     Alexandra Smith - Irish Fish costs 40: success
     Adam Smith - Fries costs 4: success
 }
-FAILURE. Bernard Unfortunate can’t order Fries, allergic to: Potatoes. So, whole table fails.
-Table,Alexandra Smith,Adam Smith,Fries => ERROR. Every person needs something to eat. So, whole table fails.
-Table,Alexandra Smith,Fries,Irish Fish => ERROR. One person can have one type of food only. So, whole table fails.
-Table,Adam Smith,Adam Smith,Fries,Fries => ERROR. One person can appear only once at the table. So, whole table fails.
-Alexandra Smith - Fries costs 4: success
-Alexandra Smith - Fries costs 4: success
-RESTAURANT BANKRUPT
-RESTAURANT BANKRUPT
-RESTAURANT BANKRUPT
-RESTAURANT BANKRUPT
-RESTAURANT BANKRUPT
-RESTAURANT BANKRUPT
-RESTAURANT BANKRUPT
-RESTAURANT BANKRUPT
-Restaurant budget: 500
-FAILURE. Julie Mirage – can’t order, budget 100 and Princess Chicken costs 117. So, whole table fails.
+Morningstar command disabled
+Restaurant budget: 300
 Success: money amount 44
 {
     Alexandra Smith - Irish Fish costs 40: success
     Adam Smith - Fries costs 4: success
 }
-FAILURE. Bernard Unfortunate can’t order Fries, allergic to: Potatoes. So, whole table fails.
-Table,Alexandra Smith,Adam Smith,Fries => ERROR. Every person needs something to eat. So, whole table fails.
-Table,Alexandra Smith,Fries,Irish Fish => ERROR. One person can have one type of food only. So, whole table fails.
-Table,Adam Smith,Adam Smith,Fries,Fries => ERROR. One person can appear only once at the table. So, whole table fails.
+Morningstar command disabled
+Restaurant budget: 300
+Restaurant budget: 270
+Restaurant budget: 500
 Alexandra Smith - Fries costs 4: success
-Alexandra Smith - Fries costs 4: success
-Buy,Alexandra Smith,Fries => ERROR. Lack of ingredients
-Buy,Alexandra Smith,Fries => ERROR. Lack of ingredients
-Buy,Alexandra Smith,Fries => ERROR. Lack of ingredients
-RESTAURANT BANKRUPT
-RESTAURANT BANKRUPT
-RESTAURANT BANKRUPT
-RESTAURANT BANKRUPT
-RESTAURANT BANKRUPT
-RESTAURANT BANKRUPT
-RESTAURANT BANKRUPT
-RESTAURANT BANKRUPT
-Success: money amount 8
+FAILURE. Barbara Smith can’t order Tuna Cake, allergic to: Chocolate. So, whole table fails.
+Success: money amount 44
 {
-    Barbara Smith - Smashed Potatoes costs 4: success
+    Alexandra Smith - Irish Fish costs 40: success
     Adam Smith - Fries costs 4: success
 }
-FAILURE. Barbara Smith can’t order Tuna Cake, allergic to: Chocolate. So, whole table fails.
-FAILURE. Julie Mirage – can’t order, budget 100 and Princess Chicken costs 117. So, whole table fails.
-Success: money amount 8
+Morningstar command disabled
+Restaurant budget: 300
+Success: money amount 44
 {
-    Barbara Smith - Smashed Potatoes costs 4: success
+    Alexandra Smith - Irish Fish costs 40: success
     Adam Smith - Fries costs 4: success
 }
-FAILURE. Barbara Smith can’t order Tuna Cake, allergic to: Chocolate. So, whole table fails.
-FAILURE. Julie Mirage – can’t order, budget 100 and Princess Chicken costs 117. So, whole table fails.
+Morningstar command disabled
+Restaurant budget: 300
+Restaurant budget: 270
 Restaurant budget: 500
-Restaurant budget: 500
+Buy command disabled
+Audit command disabled
 Success: money amount 8
 {
     Barbara Smith - Smashed Potatoes costs 4: success

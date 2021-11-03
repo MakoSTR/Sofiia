@@ -1,20 +1,11 @@
-Table, Julie Mirage, Princess Chicken
+Buy, Alexandra Smith, Fries
+Table, Barbara Smith, Tuna Cake
 Table, Alexandra Smith, Adam Smith, Irish Fish, Fries
-Table, Alexandra Smith, Bernard Unfortunate, Irish Fish, Fries
-Table, Alexandra Smith, Adam Smith, Fries
-Table, Alexandra Smith, Fries, Irish Fish
-Table, Adam Smith, Adam Smith, Fries, Fries
-Buy, Alexandra Smith, Fries
-Buy, Alexandra Smith, Fries
-Buy, Alexandra Smith, Fries
-Buy, Alexandra Smith, Fries
-Buy, Alexandra Smith, Fries
-Order, Potatoes, 10
-Budget, -, 3000
+Morningstar, Alexandra Smith, Adam Smith, Irish Fish, Fries
+Budget, =, 300
 Order, Potatoes, 10
 Audit, Resources
-Buy, Alexandra Smith, Fries
-Buy, Alexandra Smith, Fries
-Order, Potatoes, 10
-Budget, -, 3000
+Table, Alexandra Smith, Adam Smith, Irish Fish, Fries
+Morningstar, Alexandra Smith, Adam Smith, Irish Fish, Fries
+Budget, =, 300
 Order, Potatoes, 10
