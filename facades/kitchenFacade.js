@@ -1,6 +1,7 @@
 const restaurantBudgetService = require("../servises/restaurantBudget");
 const warehousesService = require("../servises/warehousesHandler");
 const audit = require("../servises/audit");
+const taxService = require('../servises/taxService');
 const FileReader = require("../servises/fileReader");
 
 const fileReader = new FileReader();
@@ -27,17 +28,19 @@ class KitchenFacade {
         return false;
     };
 
-    order = (ingredient, number) => {
+    order = (ingredient, number, tax) => {
         const warehouses = warehousesService.getWarehouses();
         restaurantBudgetService.addIngredients(warehouses, ingredient, number);
-        restaurantBudgetService.decreaseRestaurantBudget(ingredient, number);
+        return restaurantBudgetService.decreaseRestaurantBudget(ingredient, number, tax);
+
     };
 
     auditAction = (message) => {
         const warehouses = warehousesService.getWarehouses();
         const warehousesCopy = { ...warehouses };
         const restaurantBudget = restaurantBudgetService.getRestaurantBudget();
-        audit.addToAudit({ res: message, budget: restaurantBudget, warehouses: warehousesCopy });
+        const transactionTax = taxService.getAlreadyCollectedTax()
+        audit.addToAudit({ res: message, budget: restaurantBudget, warehouses: warehousesCopy, transactionTax });
     };
 }
 

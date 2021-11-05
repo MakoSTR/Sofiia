@@ -26,21 +26,37 @@ describe('RestaurantBudget at all', () => {
     });
 
     describe('increaseRestaurantBudget function', () => {
-        test('should add 100 to budget', () => {
+        test('should add (100 - tax 10%) to budget / default tax', () => {
             const sum = 100;
-            const res = restaurantBudget.increaseRestaurantBudget(sum);
-            expect(res).toBe(600);
+            const tax = 0;
+            const res = restaurantBudget.increaseRestaurantBudget(sum, tax);
+            expect(res).toBe(590);
+        });
+        test('should add (100 - tax 20%) to budget', () => {
+            const sum = 100;
+            const tax = 20;
+            const res = restaurantBudget.increaseRestaurantBudget(sum, tax);
+            expect(res).toBe(580);
         });
     });
 
     describe('decreaseRestaurantBudget function', () => {
-        test('decreaseRestaurantBudget ', () => {
+        test('decreaseRestaurantBudget + default tax 10%', () => {
             const ingredient = 'Tuna';
             const number = 10;
-            restaurantBudget.decreaseRestaurantBudget(ingredient, number);
-            expect(restaurantBudget.restaurantBudget).toBe(250);
+            const tax = 0;
+            restaurantBudget.decreaseRestaurantBudget(ingredient, number, tax);
+            expect(restaurantBudget.restaurantBudget).toBe(275);
+        });
+        test('decreaseRestaurantBudget + 30% tax', () => {
+            const ingredient = 'Tuna';
+            const number = 10;
+            const tax = 30;
+            restaurantBudget.decreaseRestaurantBudget(ingredient, number, tax);
+            expect(restaurantBudget.restaurantBudget).toBe(325);
         });
     });
+
     describe('order function', () => {
         test('should multiply ', () => {
             const ingredient = 'Tuna';

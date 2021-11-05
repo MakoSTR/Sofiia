@@ -19,3 +19,59 @@ example for 2nd is more or less looks like :command: => Budget, -3000 => RESTAUR
 yes, I would accept this
  like 1
 
+///////
+ 6.7.2 On budgets and taxes
+
+[16:56] Łukasz Januszek (Guest)
+what we mean by PROFIT is end - start - all taxes
+
+[16:56] Łukasz Januszek (Guest)
+profit is a new "name"
+
+[16:56] Łukasz Januszek (Guest)
+and we want to tax profits and profits only
+
+[16:57] Łukasz Januszek (Guest)
+therefore, if you started at 500, ended at 677 and already paid 27 in taxes you have:677 - 500 - 27 = 150. Or so I remember
+
+[16:57] Łukasz Januszek (Guest)
+so you need to store info on how much you paid in taxes
+
+[16:57] Łukasz Januszek (Guest)
+makes sense?
+
+[17:11] Sofiia Kravets
+not understand you yet
+
+[17:11] Sofiia Kravets
+so we need to reduce budget at the each Transaction
+and we have: budget = budget - Transaction taxand in the end of the day we need to reduce all Transaction tax again?
+
+[17:11] Sofiia Kravets
+Restaurant budget: 500
+Alexandra Smith - Fries costs 4: success, tax = 1
+Alexandra Smith - Fries costs 4: success, tax = 1
+Alexandra Smith - Fries costs 4: success, tax = 1
+Restaurant budget: 509
+
+[17:12] Łukasz Januszek (Guest)
+answering:
+
+[17:12] Łukasz Januszek (Guest)
+ok, so lets assume 3*fries
+
+[17:12] Sofiia Kravets
+for this case profit = 509-500-3? right?
+
+[17:12] Łukasz Januszek (Guest)
+yes ^^
+
+[17:12] Łukasz Januszek (Guest)
+exactly this
+
+[17:12] Łukasz Januszek (Guest)
+you are 100% correct
+
+[17:13] Łukasz Januszek (Guest)
+profit = 6. And this 6 and ONLY this 6 is taxed.
+

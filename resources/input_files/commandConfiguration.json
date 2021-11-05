@@ -3,5 +3,13 @@
   "buy": "yes",
   "audit": "yes",
   "table": "yes",
-  "budget": "yes"
+  "budget": "yes",
+  "profit margin": 30,
+  "transaction tax": 10,
+  "daily tax": 10,
+  "every third discount": 10,
+  "total maximum": 500,
+  "max ingredient type": 10,
+  "max dish type": 3,
+  "dishes with allergies": "waste"
 }

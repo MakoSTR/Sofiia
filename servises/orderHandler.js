@@ -3,9 +3,11 @@ const priceData = require('../resources/input_files/price.json');
 const budgetData = require('../resources/input_files/budget.json');
 const messageCodes = require('../resources/messageCodes.json');
 const warehouses = require("../resources/input_files/warehouses.json");
+const commandConfiguration = require('../resources/input_files/commandConfiguration.json');
 const FileReader = require('./fileReader');
 const restaurantBudgetService = require('./restaurantBudget');
 const warehousesService = require('./warehousesHandler');
+const taxService = require('./taxService');
 
 const fileReader = new FileReader();
 const filePathForOutput = './resources/output_files/output.txt';
@@ -44,10 +46,20 @@ class OrderHandler {
         return foundAllergy ? [foundAllergy] : [];
     };
 
-    getSum = (ingredients) => {
+    profitMargin = margin => {
+        const getMargin = this.getMargin(margin)
+        return 1 + getMargin/100
+    }
+
+    getMargin = margin => {
+        return margin ? margin : 30
+    }
+
+    getSum = (ingredients, margin) => {
         const sumArray = [];
+        const profitMargin = this.profitMargin(margin)
         ingredients.forEach(i => sumArray.push(price[i]));
-        return Math.round(sumArray.reduce((total, amount) => total + amount) * 1.3);
+        return Math.ceil(sumArray.reduce((total, amount) => total + amount) * profitMargin);
     };
 
     getTotalBudget = (sum, totalBudget) => {
@@ -64,19 +76,21 @@ class OrderHandler {
         }
         else {
             this.clientBudget[name] = this.getTotalBudget(sum, this.clientBudget[name]);
-            restaurantBudgetService.increaseRestaurantBudget(sum);
+            restaurantBudgetService.increaseRestaurantBudget(sum, commandConfiguration["transaction tax"]);
+            taxService.addAlreadyCollectedTax(sum, commandConfiguration["transaction tax"]);
             warehousesService.reduceQuantities(order, warehouses);
-            return `${name} - ${order} costs ${sum}: success`;
+            const tax = taxService.transactionTaxSum(sum, commandConfiguration["transaction tax"]);
+            return `${name} - ${order} costs ${sum}: success, tax = ${tax}`;
         }
     };
 
-    buy = (person, order) => {
+    buy = (person, order, margin) => {
         const userIngredients = [];
         this.checkAllIngredients(order, userIngredients);
 
         const foundAllergy =  this.getAllergies(person, userIngredients)[0] || '';
 
-        let sum = this.getSum(userIngredients);
+        let sum = this.getSum(userIngredients, margin);
         if (!this.clientBudget[person] && this.clientBudget[person] !== 0) {
             this.clientBudget[person] = budget[person];
         }
@@ -85,13 +99,13 @@ class OrderHandler {
         return { sendRes, sum };
     }
 
-    buyForTable = (person, order) => {
+    buyForTable = (person, order, margin) => {
         const userIngredients = [];
         this.checkAllIngredients(order, userIngredients);
 
         const foundAllergy =  this.getAllergies(person, userIngredients)[0] || '';
 
-        let sum = this.getSum(userIngredients);
+        let sum = this.getSum(userIngredients, margin);
         if (!this.clientBudget[person] && this.clientBudget[person] !== 0) {
             this.clientBudget[person] = budget[person];
         }
@@ -100,14 +114,15 @@ class OrderHandler {
         } else if (this.clientBudget[person] < sum) {
             return { code: messageCodes.budget, message: `FAILURE. ${person} – can’t order, budget ${this.clientBudget[person]} and ${order} costs ${sum}. So, whole table fails.` };
         } else {
-            return { code: messageCodes.success, sum, message: `${person} - ${order} costs ${sum}: success`};
+            const tax = taxService.transactionTaxSum(sum, commandConfiguration["transaction tax"]);
+            return { code: messageCodes.success, sum, tax, message: `${person} - ${order} costs ${sum}: success, tax = ${tax}`};
         }
     }
 
-    table = (customers, dishes) => {
+    table = (customers, dishes, margin) => {
         const resArr = [];
         customers.forEach((customer, index) => {
-            const res = this.buyForTable(customer, dishes[index]);
+            const res = this.buyForTable(customer, dishes[index], margin);
             resArr.push(res);
         });
 
@@ -117,22 +132,26 @@ class OrderHandler {
             const totalSum = resArr.reduce((previousValue, currentValue) => {
                 return previousValue + currentValue.sum;
             }, 0);
-            fileReader.appendFile(filePathForOutput, `Success: money amount ${totalSum}\n{`);
+            const totalTax = resArr.reduce((previousValue, currentValue) => {
+                return previousValue + currentValue.tax;
+            }, 0)
+            fileReader.appendFile(filePathForOutput, `Success: money amount ${totalSum}; tax amount ${totalTax}\n{`);
             customers.forEach((customer, index) => {
                 this.clientBudget[customer] = this.getTotalBudget(resArr[index].sum, this.clientBudget[customer]);
-                restaurantBudgetService.increaseRestaurantBudget(resArr[index].sum);
+                restaurantBudgetService.increaseRestaurantBudget(resArr[index].sum, commandConfiguration["transaction tax"]);
+                taxService.addAlreadyCollectedTax(resArr[index].sum, commandConfiguration["transaction tax"]);
                 warehousesService.reduceQuantities(dishes[index], warehouses);
                 fileReader.appendFile(filePathForOutput, `    ${resArr[index].message}`);
             });
             fileReader.appendFile(filePathForOutput, `}`);
-            return messageCodes.success
+            return { message: messageCodes.success, totalTax, totalSum }
         } else {
             const errorMessage = resArr.find(res => {
                 return res.code !== messageCodes.success;
             }).message;
             fileReader.appendFile(filePathForOutput, errorMessage);
 
-            return errorMessage;
+            return { message: errorMessage };
         }
     }
 

@@ -5,8 +5,10 @@ const restaurantBudgetService = require("../servises/restaurantBudget");
 const warehousesService = require('../servises/warehousesHandler');
 const jsonData = require("../resources/input_files/data.json");
 const audit = require('../servises/audit');
+const taxService = require('../servises/taxService');
 const { createAuditMessage, disabler } = require("../helpers/helpers");
 const command = require('../resources/input_files/commandConfiguration.json');
+const messageCodes = require('../resources/messageCodes.json');
 
 const KitchenFacade = require("../facades/kitchenFacade");
 const kitchenFacade = new KitchenFacade();
@@ -26,13 +28,14 @@ rl.setPrompt("Write file name");
 rl.prompt();
 
 rl.on('line',  function(answer) {
-    kitchenFacade.sendRestaurantBudget();
+    kitchenFacade.sendRestaurantBudget(command["daily tax"]);
     const input = fileReader.readFile(filePathFotInput, answer);
     const dataArray = input.split('\r\n');
 
     const initialBudget = restaurantBudgetService.getRestaurantBudget();
     const initialWarehouses = { ...warehousesService.getWarehouses() };
-    audit.addToAudit({ initialBudget, initialWarehouses });
+    const initialDailyTax = taxService.getAlreadyCollectedTax();
+    audit.addToAudit({ initialBudget, initialWarehouses, initialDailyTax });
 
     const newArr = dataArray.map(e => e.split(', '));
 
@@ -51,7 +54,7 @@ rl.on('line',  function(answer) {
                             const warehousesCopy = { ...warehouses };
                             const warehouseCheckResult = warehousesService.checkDishIngredientsInWarehouse(order, warehousesCopy);
                             if (warehouses[order] > 0 || !warehouseCheckResult) {
-                                const res = orderHandler.buy(person, order);
+                                const res = orderHandler.buy(person, order, command["profit margin"]);
                                 const message = createAuditMessage(i, res.sendRes);
                                 kitchenFacade.auditAction(message);
                             }
@@ -76,8 +79,8 @@ rl.on('line',  function(answer) {
                             let number = i[2];
                             const isDish = warehousesService.checkIsDish(ingredient);
                             if (isDish.length === 0) {
-                                kitchenFacade.order(ingredient, number)
-                                const message = createAuditMessage(i, 'success');
+                                const transactionTax = kitchenFacade.order(ingredient, number, command["transaction tax"])
+                                const message = createAuditMessage(i, `success; tax = ${transactionTax}`);
                                 kitchenFacade.auditAction(message);
                             } else {
                                 const error = 'You cannot order something which is NOT a basic ingredient';
@@ -98,7 +101,7 @@ rl.on('line',  function(answer) {
                         let sign = i[1];
                         let amount = parseInt(i[2]);
                         restaurantBudgetService.modifyRestaurantBudget(sign, amount)
-                        const budget = kitchenFacade.sendRestaurantBudget();
+                        const budget = kitchenFacade.sendRestaurantBudget(command["daily tax"]);
                         const resMessage = `Restaurant budget: ${budget}`;
                         const message = createAuditMessage(i, resMessage);
                         kitchenFacade.auditAction(message);
@@ -147,14 +150,18 @@ rl.on('line',  function(answer) {
                                 kitchenFacade.auditAction(message);
                             } else
                             if (checkIngredientsForAllDishes) {
-                                const resMessage = orderHandler.table(findCustomers, findDishes);
+                                const tableResult = orderHandler.table(findCustomers, findDishes, command["profit margin"]);
+                                let resMessage = tableResult.message;
+                                if (tableResult.message === messageCodes.success) {
+                                    resMessage = `${tableResult.message}, sum: ${tableResult.totalSum}, tax: ${tableResult.totalTax}`
+                                }
                                 const message = createAuditMessage(i, resMessage);
                                 kitchenFacade.auditAction(message);
-
                             } else {
                                 const error = `ERROR. Lack of ingredients`;
                                 const message = createAuditMessage(i, error);
                                 fileReader.appendFile(filePathForOutput, message);
+                                kitchenFacade.auditAction(message)
                             }
                         } else {
                             kitchenFacade.sendRestaurantBudget();
@@ -165,7 +172,7 @@ rl.on('line',  function(answer) {
                     break;
                 case 'Audit' :
                     if (command[i[0].toLowerCase()] === 'yes') {
-                        audit.writeAudit();
+                        audit.writeAudit(command["daily tax"]);
                     } else {
                         disabler(i)
                     }
@@ -184,7 +191,10 @@ rl.on('line',  function(answer) {
     //     }
     }
     // )
+    const validBudget = kitchenFacade.checkRestaurantBudget();
     kitchenFacade.sendRestaurantBudget();
+    fileReader.appendFile(filePathForOutput, `Daily tax: ${taxService.dailyTaxSum(command["daily tax"], validBudget, 500)}`);
+
 
     // const clientBudget = orderHandler.result(person, order); //person, order
 

@@ -1,13 +1,18 @@
 const orderHandler = require('../servises/orderHandler');
 const restaurantBudget = require("../servises/restaurantBudget");
-const fs = require("fs");
 const messageCodes = require("../resources/messageCodes.json");
 
 describe('getSum function', () => {
-    test('should add all the ingredients in the array', () => {
+    test('should return sum + 30% (default)', () => {
         const userIngredients = ["Tomatoes", "Vinegar", "Chocolate"];
         const res = orderHandler.getSum(userIngredients);
         expect(res).toBe(13);
+    });
+    test('should return sum + 40%', () => {
+        const userIngredients = ["Tomatoes", "Vinegar", "Chocolate"];
+        const margin = 40;
+        const res = orderHandler.getSum(userIngredients, margin);
+        expect(res).toBe(14);
     });
     test('should be defined', () => {
         const userIngredients = ["Tomatoes", "Vinegar", "Chocolate"];
@@ -16,6 +21,34 @@ describe('getSum function', () => {
         expect(orderHandler.getSum(userIngredients, sumArr)).not.toBeUndefined();
     });
 });
+
+describe('Margin', () => {
+    test('profitMargin fn :  profit margin exists', () => {
+        const margin = 40;
+        const res = orderHandler.profitMargin(margin);
+        expect(res).toBe(1.4);
+    });
+    test('profitMargin fn :  profit margin not exists', () => {
+        const margin = undefined;
+        const res = orderHandler.profitMargin(margin);
+        expect(res).toBe(1.3);
+    });
+    test('profitMargin fn :  profit margin = 0 ', () => {
+        const margin = 0;
+        const res = orderHandler.profitMargin(margin);
+        expect(res).toBe(1.3);
+    });
+    test('getMargin fn: should return 30', () => {
+        const margin = 0
+        const res = orderHandler.getMargin(margin)
+        expect(res).toBe(30);
+    });
+    test('getMargin fn: should return 40', () => {
+        const margin = 40
+        const res = orderHandler.getMargin(margin)
+        expect(res).toBe(40);
+    })
+})
 
 describe('checkAllIngredients function', () => {
     test('should contain all ingredients', () => {
@@ -64,7 +97,7 @@ describe('sendResult function', () => {
         const order = 'Ruby Salad';
         const sum = 34;
         const res = orderHandler.sendResult(foundAllergies, name, order, sum);
-        expect(res).toBe(`${name} - ${order} costs ${sum}: success`);
+        expect(res).toBe(`${name} - ${order} costs ${sum}: success, tax = 4`);
     });
     test('should block the order due to allergies', () => {
         const foundAllergies = 'Vinegar';
@@ -75,7 +108,7 @@ describe('sendResult function', () => {
         expect(res).toBe(`${name} can’t order ${order}, allergic to: ${foundAllergies}`);
     });
     // test('should block the order due to budget', () => {
-    //     const foundAllergies = '';
+    //     const foundAllergies = null;
     //     const name = 'Elon Carousel';
     //     const order = 'Emperor Chicken';
     //     const sum = 284;
@@ -97,19 +130,24 @@ describe('table action', () => {
     test('should return success message', () => {
         const persons = ['Barbara Smith', 'Adam Smith'];
         const orders = ['Smashed Potatoes', 'Fries'];
-        const res = orderHandler.table(persons, orders);
-        expect(res).toBe(messageCodes.success);
+        const margin = 40;
+        const res = orderHandler.table(persons, orders, margin);
+        expect(res.message).toBe(messageCodes.success);
+        expect(res.totalSum).toBe(10);
+        expect(res.totalTax).toBe(2);
     });
     test('should return FAILURE(foundAllergy)', () => {
         const persons = ['Barbara Smith', 'Adam Smith'];
         const orders = ['Tuna Cake', 'Fries'];
-        const res = orderHandler.table(persons, orders);
-        expect(res).toBe(`FAILURE. Barbara Smith can’t order Tuna Cake, allergic to: Chocolate. So, whole table fails.`);
+        const margin = 40;
+        const res = orderHandler.table(persons, orders, margin);
+        expect(res.message).toBe(`FAILURE. Barbara Smith can’t order Tuna Cake, allergic to: Chocolate. So, whole table fails.`);
     });
     test('should return FAILURE(lack of budget)', () => {
         const persons = ['Julie Mirage', 'Adam Smith'];
         const orders = ['Princess Chicken', 'Fries'];
-        const res = orderHandler.table(persons, orders);
-        expect(res).toBe(`FAILURE. Julie Mirage – can’t order, budget 100 and Princess Chicken costs 117. So, whole table fails.`);
+        const margin = 40;
+        const res = orderHandler.table(persons, orders, margin);
+        expect(res.message).toBe(`FAILURE. Julie Mirage – can’t order, budget 100 and Princess Chicken costs 126. So, whole table fails.`);
     });
 });

@@ -1,11 +1,9 @@
 Buy, Alexandra Smith, Fries
-Table, Barbara Smith, Tuna Cake
+Budget, +, 100
 Table, Alexandra Smith, Adam Smith, Irish Fish, Fries
-Morningstar, Alexandra Smith, Adam Smith, Irish Fish, Fries
-Budget, =, 300
-Order, Potatoes, 10
+Table, Alexandra Smith, Adam Smith, Christian Donnovan, Irish Fish, Fries, Princess Chicken
+Table, Alexandra Smith, Bernard Unfortunate, Irish Fish, Fries
+Table, Alexandra Smith, Adam Smith, Fries
+Table, Alexandra Smith, Fries, Irish Fish
+Table, Adam Smith, Adam Smith, Fries, Fries
 Audit, Resources
-Table, Alexandra Smith, Adam Smith, Irish Fish, Fries
-Morningstar, Alexandra Smith, Adam Smith, Irish Fish, Fries
-Budget, =, 300
-Order, Potatoes, 10

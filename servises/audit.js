@@ -1,4 +1,5 @@
 const FileReader = require('./fileReader');
+const taxService = require("../servises/taxService");
 
 const fileReader = new FileReader();
 const filePathForAudit = './resources/output_files/audit.txt';
@@ -12,18 +13,22 @@ class Audit {
         const message =
             `INIT
             Warehouses: ${JSON.stringify(this.auditData[0].initialWarehouses)}
-            Restaurant Budget: ${this.auditData[0].initialBudget}\r\n
+            Restaurant Budget: ${this.auditData[0].initialBudget}
+            Daily Tax: ${this.auditData[0].initialDailyTax}\r\n
             START
             `
         ;
         fileReader.appendFile(filePathForAudit, message)
     }
 
-    end = () => {
-        fileReader.appendFile(filePathForAudit, `AUDIT END`)
+    end = (tax, endRestaurantBudget, startRestaurantBudget) => {
+        const dailyTaxSum = taxService.dailyTaxSum(tax, endRestaurantBudget, startRestaurantBudget);
+        const message = `DAILY TAX: ${dailyTaxSum}\n
+        AUDIT END`
+        fileReader.appendFile(filePathForAudit, message)
     };
 
-    writeAudit = () => {
+    writeAudit = (tax) => {
         this.init();
         this.auditData.splice(0, 1);
 
@@ -33,11 +38,12 @@ class Audit {
             const message =
                 `command: => ${audit.res}
             Warehouse: ${JSON.stringify(audit.warehouses)}
-            Restaurant Budget: ${budgetRes}`;
+            Restaurant Budget: ${budgetRes}
+            All Transaction Tax: ${audit.transactionTax}`;
             fileReader.appendFile(filePathForAudit, message)
         })
-
-        this.end();
+        const endRestaurantBudget = this.auditData[this.auditData.length-1].budget;
+        this.end(tax, endRestaurantBudget, 500);
     }
 
     addToAudit = (audit) => {
