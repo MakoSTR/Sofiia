@@ -23,27 +23,27 @@ describe('getSum function', () => {
 });
 
 describe('Margin', () => {
-    test('profitMargin fn :  profit margin exists', () => {
+    test('profitMargin fn:  profit margin exists and equal 40 - should return 1,4', () => {
         const margin = 40;
         const res = orderHandler.profitMargin(margin);
         expect(res).toBe(1.4);
     });
-    test('profitMargin fn :  profit margin not exists', () => {
+    test('profitMargin fn: margin not exists (margin = undefined) should return 1,3 (default)', () => {
         const margin = undefined;
         const res = orderHandler.profitMargin(margin);
         expect(res).toBe(1.3);
     });
-    test('profitMargin fn :  profit margin = 0 ', () => {
+    test('profitMargin fn: margin = 0 - should return 1,3 (default) ', () => {
         const margin = 0;
         const res = orderHandler.profitMargin(margin);
         expect(res).toBe(1.3);
     });
-    test('getMargin fn: should return 30', () => {
+    test('getMargin fn: margin = 0 => should return 30', () => {
         const margin = 0
         const res = orderHandler.getMargin(margin)
         expect(res).toBe(30);
     });
-    test('getMargin fn: should return 40', () => {
+    test('getMargin fn:  margin = 40 => should return 40', () => {
         const margin = 40
         const res = orderHandler.getMargin(margin)
         expect(res).toBe(40);
@@ -51,7 +51,7 @@ describe('Margin', () => {
 })
 
 describe('checkAllIngredients function', () => {
-    test('should contain all ingredients', () => {
+    test('userIngredients should contain all ingredients', () => {
         const userIngredients = [];
         orderHandler.checkAllIngredients('Ruby Salad', userIngredients);
         expect(userIngredients[0]).toEqual("Tomatoes");
@@ -76,22 +76,26 @@ describe('getAllergies function', () => {
 });
 
 describe('getTotalBudget function', () => {
-    test('should reduce the budget', () => {
+    test('should reduce the budget (20-3)', () => {
+        const name = 'Elon Carousel';
+        const discountValue = 10;
         const sum = 3;
         const totalBudget = 20;
-        const res = orderHandler.getTotalBudget(sum, totalBudget);
+        const res = orderHandler.getTotalBudget(name, sum, totalBudget, discountValue);
         expect(res).toBe(17);
     });
     test('should be a number', () => {
+        const name = 'Elon Carousel';
+        const discountValue = 10;
         const sum = 3;
         const totalBudget = 20;
-        const res = orderHandler.getTotalBudget(sum, totalBudget);
+        const res = orderHandler.getTotalBudget(name, sum, totalBudget, discountValue);
         expect(res).not.toBe(NaN);
     });
 });
 
 describe('sendResult function', () => {
-    test('should return success', () => {
+    test('should return success message', () => {
         const foundAllergies = '';
         const name = 'Julie Mirage';
         const order = 'Ruby Salad';
@@ -99,7 +103,7 @@ describe('sendResult function', () => {
         const res = orderHandler.sendResult(foundAllergies, name, order, sum);
         expect(res).toBe(`${name} - ${order} costs ${sum}: success, tax = 4`);
     });
-    test('should block the order due to allergies', () => {
+    test('should block the order due to allergies => can’t order message', () => {
         const foundAllergies = 'Vinegar';
         const name = 'Elon Carousel';
         const order = 'Ruby Salad';
@@ -118,7 +122,7 @@ describe('sendResult function', () => {
 });
 
 describe('order action', () => {
-    test('should multiply the price of the ingredient by the quantity', () => {
+    test('should multiply the price of the ingredient by the quantity => 25*10', () => {
         const ingredient = 'Tuna';
         const number = 10;
         const res = restaurantBudget.order(ingredient, number);
@@ -127,7 +131,7 @@ describe('order action', () => {
 });
 
 describe('table action', () => {
-    test('should return success message', () => {
+    test('should return success message, total sum, total tax', () => {
         const persons = ['Barbara Smith', 'Adam Smith'];
         const orders = ['Smashed Potatoes', 'Fries'];
         const margin = 40;

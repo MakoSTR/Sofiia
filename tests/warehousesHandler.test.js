@@ -55,7 +55,7 @@ describe('checkQuantitiesOfIngredients func', () => {
     beforeEach(() => {
         warehousesHandler.setWarehouses(warehouses);
     })
-    test('should return code: Success', () => {
+    test('should return flag: true', () => {
         const order = 'Emperor Chicken';
         const res = warehousesHandler.checkQuantitiesOfIngredients(order);
         expect(res.flag).toBe(true);
@@ -71,13 +71,13 @@ describe('reducer func', () => {
     beforeEach(() => {
         warehousesHandler.setWarehouses(warehouses);
     })
-    test('should return 0', () => {
+    test('should reduce quantity of dish and return 0', () => {
         const warehouses = {'Emperor Chicken': 1, 'Lemon': 15, 'tuna': 1};
         const ingredient = 'Emperor Chicken'
         const res = warehousesHandler.reducer(ingredient, warehouses);
         expect(res).toBe(0);
     });
-    test('should return 14', () => {
+    test('should reduce quantity of base ingredient and return 14', () => {
         const warehouses = {'Lemon': 15, 'tuna': 1};
         const ingredient = 'Lemon'
         const res = warehousesHandler.reducer(ingredient, warehouses);
@@ -89,13 +89,13 @@ describe('reduceQuantities func', () => {
     beforeEach(() => {
         warehousesHandler.setWarehouses(warehouses);
     })
-    test('should return code: Success', () => {
+    test('should return code: Success (for dish)', () => {
         const order = 'Ruby Salad';
         const testWarehouses = {...warehouses};
         const res = warehousesHandler.reduceQuantities(order, testWarehouses);
             expect(res.code).toBe('Success');
     });
-    test ('should return code: Success', () => {
+    test ('should return code: Success (for base ingredient)', () => {
         const order = 'Tuna';
         const testWarehouses = {...warehouses};
         const res = warehousesHandler.reduceQuantities(order, testWarehouses);
@@ -114,7 +114,7 @@ describe('checkAllIngredients func', () => {
     beforeEach(() => {
         warehousesHandler.setWarehouses(warehouses);
     })
-    test('Fish In Water', () => {
+    test('should return array with All Ingredients for Fish In Water includes dish and base ingredients', () => {
         const order = 'Fish In Water';
         const userIngredients = [];
         warehousesHandler.checkAllIngredients(order, userIngredients, warehouses);
@@ -123,12 +123,12 @@ describe('checkAllIngredients func', () => {
         expect(userIngredients[2]).toBe('Ruby Salad');
 
     });
-    test('Ruby Salad - Tomatoes', () => {
-    const order = 'Ruby Salad';
-    const userIngredients = [];
-    warehousesHandler.checkAllIngredients(order, userIngredients, warehouses);
-    expect(userIngredients[0]).toBe('Tomatoes');
-    expect(userIngredients[1]).toBe('Vinegar');
-    expect(userIngredients[2]).toBe('Chocolate');
-    });
+    test('should return array with All Ingredients for Ruby Salad includes only base ingredients', () => {
+        const order = 'Ruby Salad';
+        const userIngredients = [];
+        warehousesHandler.checkAllIngredients(order, userIngredients, warehouses);
+        expect(userIngredients[0]).toBe('Tomatoes');
+        expect(userIngredients[1]).toBe('Vinegar');
+        expect(userIngredients[2]).toBe('Chocolate');
+        });
 });

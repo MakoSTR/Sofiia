@@ -1,5 +1,6 @@
 const priceData = require("../resources/input_files/price.json");
 const taxService = require('./taxService');
+const discountService = require("./discountService");
 const price = priceData['Base ingredients'];
 
 class RestaurantBudgetService {
@@ -11,9 +12,15 @@ class RestaurantBudgetService {
         return this.restaurantBudget;
     }
 
-    increaseRestaurantBudget = (sum, tax) => {
+    discount = (name, sum, discount) => {
+        const sumOfDiscount = discountService.makeDiscount(name, sum, discount)
+        return sumOfDiscount > 0 ? sumOfDiscount : 0
+    }
+
+    increaseRestaurantBudget = (name, sum, tax, discountValue) => {
+        const discount = this.discount(name, sum, discountValue)
         const transactionTaxSum = taxService.transactionTaxSum(sum, tax);
-        return this.restaurantBudget = this.restaurantBudget + (sum - transactionTaxSum);
+        return this.restaurantBudget = this.restaurantBudget + (sum - transactionTaxSum - discount);
     }
 
     addIngredients = (warehouses, ingredient, quantity) => {
@@ -24,8 +31,8 @@ class RestaurantBudgetService {
         const orderAmount = this.order(ingredient, number);
         const transactionTaxSum = taxService.transactionTaxSum(orderAmount, tax);
         taxService.addAlreadyCollectedTax(orderAmount, tax);
-        this.restaurantBudget -= orderAmount - transactionTaxSum;
-        return transactionTaxSum;
+        this.restaurantBudget -= orderAmount + transactionTaxSum;
+        return { transactionTaxSum, orderAmount };
     }
 
     modifyRestaurantBudget = (sign, amount) => {

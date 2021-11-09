@@ -20,6 +20,8 @@
     "jest": "^27.2.4"
   },
   "dependencies": {
+    "chai": "^4.3.4",
+    "chai-spies": "^1.0.0",
     "csv-parser": "^3.0.0",
     "csv-writer": "^1.6.0"
   }

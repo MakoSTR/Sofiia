@@ -11,7 +11,7 @@ describe('RestaurantBudget at all', () => {
             const res = restaurantBudget.modifyRestaurantBudget(sign, amount);
             expect(res).toBe(800);
         });
-        test('should subtract 300 to budget', () => {
+        test('should subtract 300 from budget', () => {
             const sign = '-';
             const amount = 300;
             const res = restaurantBudget.modifyRestaurantBudget(sign, amount);
@@ -26,39 +26,58 @@ describe('RestaurantBudget at all', () => {
     });
 
     describe('increaseRestaurantBudget function', () => {
-        test('should add (100 - tax 10%) to budget / default tax', () => {
+        test('should add (100 - tax 0%) to budget when tax = 0', () => {
+            const name = 'Alexandra Smith';
+            const discountValue = 10;
             const sum = 100;
             const tax = 0;
-            const res = restaurantBudget.increaseRestaurantBudget(sum, tax);
+            const res = restaurantBudget.increaseRestaurantBudget(name, sum, tax, discountValue);
+            expect(res).toBe(600);
+        });
+        test('should add (100 - tax 10%(default)) to budget (when tax is undefined), ', () => {
+            const name = 'Alexandra Smith';
+            const discountValue = 10;
+            const sum = 100;
+            const tax = undefined;
+            const res = restaurantBudget.increaseRestaurantBudget(name, sum, tax, discountValue);
             expect(res).toBe(590);
         });
         test('should add (100 - tax 20%) to budget', () => {
+            const name = 'Alexandra Smith';
+            const discountValue = 10;
             const sum = 100;
             const tax = 20;
-            const res = restaurantBudget.increaseRestaurantBudget(sum, tax);
+            const res = restaurantBudget.increaseRestaurantBudget(name, sum, tax, discountValue);
             expect(res).toBe(580);
         });
     });
 
     describe('decreaseRestaurantBudget function', () => {
-        test('decreaseRestaurantBudget + default tax 10%', () => {
+        test('decreaseRestaurantBudget: price of Tuna(25) subtract on number(10) + default tax 0%', () => {
             const ingredient = 'Tuna';
             const number = 10;
             const tax = 0;
             restaurantBudget.decreaseRestaurantBudget(ingredient, number, tax);
-            expect(restaurantBudget.restaurantBudget).toBe(275);
+            expect(restaurantBudget.restaurantBudget).toBe(250);
         });
-        test('decreaseRestaurantBudget + 30% tax', () => {
+        test('decreaseRestaurantBudget: price of Tuna(25) subtract on number(10) + 30% tax', () => {
             const ingredient = 'Tuna';
             const number = 10;
             const tax = 30;
             restaurantBudget.decreaseRestaurantBudget(ingredient, number, tax);
-            expect(restaurantBudget.restaurantBudget).toBe(325);
+            expect(restaurantBudget.restaurantBudget).toBe(175);
+        });
+        test('decreaseRestaurantBudget: price of Tuna(25) subtract on number(10) + 10% tax(default) when tax is undefined', () => {
+            const ingredient = 'Tuna';
+            const number = 10;
+            const tax = undefined;
+            restaurantBudget.decreaseRestaurantBudget(ingredient, number, tax);
+            expect(restaurantBudget.restaurantBudget).toBe(225);
         });
     });
 
     describe('order function', () => {
-        test('should multiply ', () => {
+        test('should multiply price of Tuna on quantity => 25*10', () => {
             const ingredient = 'Tuna';
             const number = 10;
             const res = restaurantBudget.order(ingredient, number);
@@ -66,14 +85,14 @@ describe('RestaurantBudget at all', () => {
         });
     });
     describe('addIngredients function', () => {
-        test('should add quantities in the warehouses', () => {
+        test('should add quantities in the warehouses: 10 + 10', () => {
             const warehouses = {'Tuna': 10}
             const ingredient = 'Tuna';
             const number = 10;
             restaurantBudget.addIngredients(warehouses, ingredient, number);
             expect(warehouses[ingredient]).toBe(20);
         });
-        test('should return number', () => {
+        test('should addIngredients on warehouses (10+23)', () => {
             const warehouses = {'Asparagus': 10}
             const ingredient = 'Asparagus';
             const number = 23;

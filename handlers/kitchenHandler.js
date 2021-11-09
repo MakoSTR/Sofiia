@@ -7,7 +7,7 @@ const FileReader = require("../servises/fileReader");
 const fileReader = new FileReader();
 const filePathForOutput = './resources/output_files/output.txt';
 
-class KitchenFacade {
+class KitchenHandler {
     sendRestaurantBudget = () => {
         const validBudget = this.checkRestaurantBudget();
         if (validBudget) {
@@ -32,7 +32,6 @@ class KitchenFacade {
         const warehouses = warehousesService.getWarehouses();
         restaurantBudgetService.addIngredients(warehouses, ingredient, number);
         return restaurantBudgetService.decreaseRestaurantBudget(ingredient, number, tax);
-
     };
 
     auditAction = (message) => {
@@ -44,4 +43,4 @@ class KitchenFacade {
     };
 }
 
-module.exports = KitchenFacade;
+module.exports = KitchenHandler;

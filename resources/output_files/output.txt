@@ -1,43 +1,43 @@
 Restaurant budget: 500
-Alexandra Smith - Fries costs 4: success, tax = 1
-Restaurant budget: 603
-Success: money amount 45; tax amount 6
+Alexandra Smith - Fries costs 5: success, tax = 1
+Alexandra Smith - Fries costs 5: success, tax = 1
+Alexandra Smith - Fries costs 5: success, tax = 1, discount = 1
+Success: money amount 10; tax amount 2
 {
-    Alexandra Smith - Irish Fish costs 41: success, tax = 5
-    Adam Smith - Fries costs 4: success, tax = 1
+    Alexandra Smith - Fries costs 5: success, tax = 1
+    Julie Mirage - Fries costs 5: success, tax = 1
 }
-Success: money amount 162; tax amount 18
+FAILURE. Julie Mirage – can’t order, budget 95 and Princess Chicken costs 126. So, whole table fails.
+Success: money amount 10; tax amount 2
 {
-    Alexandra Smith - Irish Fish costs 41: success, tax = 5
-    Adam Smith - Fries costs 4: success, tax = 1
-    Christian Donnovan - Princess Chicken costs 117: success, tax = 12
+    Alexandra Smith - Fries costs 5: success, tax = 1
+    Elon Carousel - Fries costs 5: success, tax = 1
 }
-FAILURE. Bernard Unfortunate can’t order Fries, allergic to: Potatoes. So, whole table fails.
-Table,Alexandra Smith,Adam Smith,Fries => ERROR. Every person needs something to eat. So, whole table fails.
-Table,Alexandra Smith,Fries,Irish Fish => ERROR. One person can have one type of food only. So, whole table fails.
-Table,Adam Smith,Adam Smith,Fries,Fries => ERROR. One person can appear only once at the table. So, whole table fails.
-Restaurant budget: 786
-Daily tax: 26.1
+Success: money amount 10; tax amount 2
+{
+    Alexandra Smith - Fries costs 5: success, tax = 1, discount = 1
+    Julie Mirage - Fries costs 5: success, tax = 1
+}
+Success: money amount 10; tax amount 2
+{
+    Alexandra Smith - Fries costs 5: success, tax = 1
+    Julie Mirage - Fries costs 5: success, tax = 1, discount = 1
+}
+Table,Alexandra Smith,Julie Mirage,Fries,Fries => ERROR. Lack of ingredients
+Restaurant budget: 541
+Daily tax: 3
+Buy command disabled
+Audit command disabled
 Restaurant budget: 500
-Alexandra Smith - Fries costs 4: success, tax = 1
-Budget command disabled
-Success: money amount 45; tax amount 6
+s command disabled
+t command disabled
+Success: money amount 10; tax amount 2
 {
-    Alexandra Smith - Irish Fish costs 41: success, tax = 5
-    Adam Smith - Fries costs 4: success, tax = 1
+    Barbara Smith - Smashed Potatoes costs 5: success, tax = 1
+    Adam Smith - Fries costs 5: success, tax = 1
 }
-Success: money amount 162; tax amount 18
-{
-    Alexandra Smith - Irish Fish costs 41: success, tax = 5
-    Adam Smith - Fries costs 4: success, tax = 1
-    Christian Donnovan - Princess Chicken costs 117: success, tax = 12
-}
-FAILURE. Bernard Unfortunate can’t order Fries, allergic to: Potatoes. So, whole table fails.
-Table,Alexandra Smith,Adam Smith,Fries => ERROR. Every person needs something to eat. So, whole table fails.
-Table,Alexandra Smith,Fries,Irish Fish => ERROR. One person can have one type of food only. So, whole table fails.
-Table,Adam Smith,Adam Smith,Fries,Fries => ERROR. One person can appear only once at the table. So, whole table fails.
-Restaurant budget: 686
-Daily tax: 16.1
+FAILURE. Barbara Smith can’t order Tuna Cake, allergic to: Chocolate. So, whole table fails.
+FAILURE. Julie Mirage – can’t order, budget 100 and Princess Chicken costs 126. So, whole table fails.
 Success: money amount 10; tax amount 2
 {
     Barbara Smith - Smashed Potatoes costs 5: success, tax = 1
@@ -46,5 +46,19 @@ Success: money amount 10; tax amount 2
 FAILURE. Barbara Smith can’t order Tuna Cake, allergic to: Chocolate. So, whole table fails.
 FAILURE. Julie Mirage – can’t order, budget 100 and Princess Chicken costs 126. So, whole table fails.
 Restaurant budget: 500
+Buy command disabled
+Audit command disabled
+s command disabled
+t command disabled
+Restaurant budget: 500
+s command disabled
+t command disabled
+Success: money amount 10; tax amount 2
+{
+    Barbara Smith - Smashed Potatoes costs 5: success, tax = 1
+    Adam Smith - Fries costs 5: success, tax = 1
+}
+FAILURE. Barbara Smith can’t order Tuna Cake, allergic to: Chocolate. So, whole table fails.
+FAILURE. Julie Mirage – can’t order, budget 100 and Princess Chicken costs 126. So, whole table fails.
 Buy command disabled
 Audit command disabled

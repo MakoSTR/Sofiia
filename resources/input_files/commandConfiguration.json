@@ -4,7 +4,7 @@
   "audit": "yes",
   "table": "yes",
   "budget": "yes",
-  "profit margin": 30,
+  "profit margin": 40,
   "transaction tax": 10,
   "daily tax": 10,
   "every third discount": 10,

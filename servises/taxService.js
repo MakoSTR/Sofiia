@@ -12,11 +12,11 @@ class TaxService {
     }
 
     getProfit = (endRestaurantBudget, startRestaurantBudget) => {
-        return   endRestaurantBudget - startRestaurantBudget - this.alreadyCollectedTax
+        return endRestaurantBudget - startRestaurantBudget - this.alreadyCollectedTax
     }
 
     getDailyTax = tax => {
-        return tax ? tax : 20
+        return tax >= 0 ? tax : 20
     }
 
     dailyTax = tax => {
@@ -32,7 +32,7 @@ class TaxService {
     }
 
     getTransactionTax = tax => {
-        return tax ? tax : 10
+        return tax >= 0 ? tax : 10
     }
 
     transactionTax = tax => {

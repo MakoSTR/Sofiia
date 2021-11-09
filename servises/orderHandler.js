@@ -8,6 +8,7 @@ const FileReader = require('./fileReader');
 const restaurantBudgetService = require('./restaurantBudget');
 const warehousesService = require('./warehousesHandler');
 const taxService = require('./taxService');
+const discountService = require('./discountService');
 
 const fileReader = new FileReader();
 const filePathForOutput = './resources/output_files/output.txt';
@@ -62,8 +63,17 @@ class OrderHandler {
         return Math.ceil(sumArray.reduce((total, amount) => total + amount) * profitMargin);
     };
 
-    getTotalBudget = (sum, totalBudget) => {
-        return totalBudget - sum
+    discount = (name, sum, discount) => {
+        const sumOfDiscount = discountService.makeDiscount(name, sum, discount)
+        return sumOfDiscount > 0 ? sumOfDiscount : 0
+    }
+
+    getTotalBudget = (name, sum, totalBudget, discountValue) => {
+        const discount = this.discount(name, sum, discountValue)
+        console.log('totalBudget', name, totalBudget - sum + discount);
+        console.log('discount', name, discount);
+
+        return totalBudget - sum + discount;
     };
 
     sendResult = (foundAllergies, name, order, sum) => {
@@ -75,12 +85,15 @@ class OrderHandler {
             return `${name} – can’t order, budget ${this.clientBudget[name]} and ${order} costs ${sum}`
         }
         else {
-            this.clientBudget[name] = this.getTotalBudget(sum, this.clientBudget[name]);
-            restaurantBudgetService.increaseRestaurantBudget(sum, commandConfiguration["transaction tax"]);
+            discountService.addPerson(name);
+            this.clientBudget[name] = this.getTotalBudget(name, sum, this.clientBudget[name],  commandConfiguration["every third discount"]);
+            restaurantBudgetService.increaseRestaurantBudget(name, sum, commandConfiguration["transaction tax"], commandConfiguration["every third discount"]);
             taxService.addAlreadyCollectedTax(sum, commandConfiguration["transaction tax"]);
             warehousesService.reduceQuantities(order, warehouses);
+            const sumOfDiscount = discountService.makeDiscount(name, sum, commandConfiguration["every third discount"]);
             const tax = taxService.transactionTaxSum(sum, commandConfiguration["transaction tax"]);
-            return `${name} - ${order} costs ${sum}: success, tax = ${tax}`;
+            const discount = sumOfDiscount > 0 ? `, discount = ${sumOfDiscount}` : '';
+            return `${name} - ${order} costs ${sum}: success, tax = ${tax}${discount}`;
         }
     };
 
@@ -137,11 +150,14 @@ class OrderHandler {
             }, 0)
             fileReader.appendFile(filePathForOutput, `Success: money amount ${totalSum}; tax amount ${totalTax}\n{`);
             customers.forEach((customer, index) => {
-                this.clientBudget[customer] = this.getTotalBudget(resArr[index].sum, this.clientBudget[customer]);
-                restaurantBudgetService.increaseRestaurantBudget(resArr[index].sum, commandConfiguration["transaction tax"]);
+                discountService.addPerson(customer);
+                const sumOfDiscount = discountService.makeDiscount(customer, resArr[index].sum, commandConfiguration["every third discount"]);
+                const discount = sumOfDiscount > 0 ? `, discount = ${sumOfDiscount}` : '';
+                this.clientBudget[customer] = this.getTotalBudget(customer, resArr[index].sum, this.clientBudget[customer], commandConfiguration["every third discount"]);
+                restaurantBudgetService.increaseRestaurantBudget(customer, resArr[index].sum, commandConfiguration["transaction tax"], commandConfiguration["every third discount"]);
                 taxService.addAlreadyCollectedTax(resArr[index].sum, commandConfiguration["transaction tax"]);
                 warehousesService.reduceQuantities(dishes[index], warehouses);
-                fileReader.appendFile(filePathForOutput, `    ${resArr[index].message}`);
+                fileReader.appendFile(filePathForOutput, `    ${resArr[index].message}${discount}`);
             });
             fileReader.appendFile(filePathForOutput, `}`);
             return { message: messageCodes.success, totalTax, totalSum }
