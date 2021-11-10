@@ -44,3 +44,49 @@ command: => Table,Alexandra Smith,Julie Mirage,Fries,Fries => ERROR. Lack of ing
 DAILY TAX: 3
 
         AUDIT END
+INIT
+            Warehouses: {"Chicken":10,"Tuna":1,"Potatoes":10,"Asparagus":10,"Milk":10,"Honey":10,"Paprika":10,"Garlic":10,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":10,"Feta":10,"Vinegar":1,"Rice":10,"Chocolate":10,"Emperor Chicken":1,"Fat Cat Chicken":10,"Princess Chicken":10,"Youth Sauce":10,"Spicy Sauce":10,"Omega Sauce":10,"Diamond Salad":10,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":10,"Tuna Cake":10,"Fish In Water":10,"Irish Fish":10}
+            Restaurant Budget: 500
+            Daily Tax: 0
+
+            START
+            
+command: => Buy,Alexandra Smith,Fries => Alexandra Smith - Fries costs 5: success, tax = 1
+            Warehouse: {"Chicken":10,"Tuna":1,"Potatoes":10,"Asparagus":10,"Milk":10,"Honey":10,"Paprika":10,"Garlic":10,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":10,"Feta":10,"Vinegar":1,"Rice":10,"Chocolate":10,"Emperor Chicken":1,"Fat Cat Chicken":10,"Princess Chicken":10,"Youth Sauce":10,"Spicy Sauce":10,"Omega Sauce":10,"Diamond Salad":10,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":10,"Tuna Cake":10,"Fish In Water":10,"Irish Fish":10}
+            Restaurant Budget: 504
+            All Transaction Tax: 1
+command: => Buy,Alexandra Smith,Fries => Alexandra Smith - Fries costs 5: success, tax = 1
+            Warehouse: {"Chicken":10,"Tuna":1,"Potatoes":9,"Asparagus":10,"Milk":10,"Honey":10,"Paprika":10,"Garlic":10,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":10,"Feta":10,"Vinegar":1,"Rice":10,"Chocolate":10,"Emperor Chicken":1,"Fat Cat Chicken":10,"Princess Chicken":10,"Youth Sauce":10,"Spicy Sauce":10,"Omega Sauce":10,"Diamond Salad":10,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":10,"Tuna Cake":10,"Fish In Water":10,"Irish Fish":10}
+            Restaurant Budget: 508
+            All Transaction Tax: 2
+command: => Buy,Alexandra Smith,Fries => Alexandra Smith - Fries costs 5: success, tax = 1, discount = 1
+            Warehouse: {"Chicken":10,"Tuna":1,"Potatoes":8,"Asparagus":10,"Milk":10,"Honey":10,"Paprika":10,"Garlic":10,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":10,"Feta":10,"Vinegar":1,"Rice":10,"Chocolate":10,"Emperor Chicken":1,"Fat Cat Chicken":10,"Princess Chicken":10,"Youth Sauce":10,"Spicy Sauce":10,"Omega Sauce":10,"Diamond Salad":10,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":10,"Tuna Cake":10,"Fish In Water":10,"Irish Fish":10}
+            Restaurant Budget: 511
+            All Transaction Tax: 3
+command: => Table,Alexandra Smith,Julie Mirage,Fries,Fries => Success, sum: 10, tax: 2
+            Warehouse: {"Chicken":10,"Tuna":1,"Potatoes":6,"Asparagus":10,"Milk":10,"Honey":10,"Paprika":10,"Garlic":10,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":10,"Feta":10,"Vinegar":1,"Rice":10,"Chocolate":10,"Emperor Chicken":1,"Fat Cat Chicken":10,"Princess Chicken":10,"Youth Sauce":10,"Spicy Sauce":10,"Omega Sauce":10,"Diamond Salad":10,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":10,"Tuna Cake":10,"Fish In Water":10,"Irish Fish":10}
+            Restaurant Budget: 519
+            All Transaction Tax: 5
+command: => Table,Alexandra Smith,Julie Mirage,Fries,Princess Chicken => FAILURE. Julie Mirage – can’t order, budget 95 and Princess Chicken costs 126. So, whole table fails.
+            Warehouse: {"Chicken":10,"Tuna":1,"Potatoes":6,"Asparagus":10,"Milk":10,"Honey":10,"Paprika":10,"Garlic":10,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":10,"Feta":10,"Vinegar":1,"Rice":10,"Chocolate":10,"Emperor Chicken":1,"Fat Cat Chicken":10,"Princess Chicken":10,"Youth Sauce":10,"Spicy Sauce":10,"Omega Sauce":10,"Diamond Salad":10,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":10,"Tuna Cake":10,"Fish In Water":10,"Irish Fish":10}
+            Restaurant Budget: 519
+            All Transaction Tax: 5
+command: => Table,Alexandra Smith,Elon Carousel,Fries,Fries => Success, sum: 10, tax: 2
+            Warehouse: {"Chicken":10,"Tuna":1,"Potatoes":4,"Asparagus":10,"Milk":10,"Honey":10,"Paprika":10,"Garlic":10,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":10,"Feta":10,"Vinegar":1,"Rice":10,"Chocolate":10,"Emperor Chicken":1,"Fat Cat Chicken":10,"Princess Chicken":10,"Youth Sauce":10,"Spicy Sauce":10,"Omega Sauce":10,"Diamond Salad":10,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":10,"Tuna Cake":10,"Fish In Water":10,"Irish Fish":10}
+            Restaurant Budget: 527
+            All Transaction Tax: 7
+command: => Table,Alexandra Smith,Julie Mirage,Fries,Fries => Success, sum: 10, tax: 2
+            Warehouse: {"Chicken":10,"Tuna":1,"Potatoes":2,"Asparagus":10,"Milk":10,"Honey":10,"Paprika":10,"Garlic":10,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":10,"Feta":10,"Vinegar":1,"Rice":10,"Chocolate":10,"Emperor Chicken":1,"Fat Cat Chicken":10,"Princess Chicken":10,"Youth Sauce":10,"Spicy Sauce":10,"Omega Sauce":10,"Diamond Salad":10,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":10,"Tuna Cake":10,"Fish In Water":10,"Irish Fish":10}
+            Restaurant Budget: 534
+            All Transaction Tax: 9
+command: => Table,Alexandra Smith,Julie Mirage,Fries,Fries => Success, sum: 10, tax: 2
+            Warehouse: {"Chicken":10,"Tuna":1,"Potatoes":0,"Asparagus":10,"Milk":10,"Honey":10,"Paprika":10,"Garlic":10,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":10,"Feta":10,"Vinegar":1,"Rice":10,"Chocolate":10,"Emperor Chicken":1,"Fat Cat Chicken":10,"Princess Chicken":10,"Youth Sauce":10,"Spicy Sauce":10,"Omega Sauce":10,"Diamond Salad":10,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":10,"Tuna Cake":10,"Fish In Water":10,"Irish Fish":10}
+            Restaurant Budget: 541
+            All Transaction Tax: 11
+command: => Table,Alexandra Smith,Julie Mirage,Fries,Fries => ERROR. Lack of ingredients
+            Warehouse: {"Chicken":10,"Tuna":1,"Potatoes":0,"Asparagus":10,"Milk":10,"Honey":10,"Paprika":10,"Garlic":10,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":10,"Feta":10,"Vinegar":1,"Rice":10,"Chocolate":10,"Emperor Chicken":1,"Fat Cat Chicken":10,"Princess Chicken":10,"Youth Sauce":10,"Spicy Sauce":10,"Omega Sauce":10,"Diamond Salad":10,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":10,"Tuna Cake":10,"Fish In Water":10,"Irish Fish":10}
+            Restaurant Budget: 541
+            All Transaction Tax: 11
+DAILY TAX: 3
+
+        AUDIT END

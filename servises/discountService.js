@@ -40,6 +40,7 @@ class DiscountService {
             const discountSum = this.discountSum(sum, discount)
             return discountSum;
         }
+        else return false;
     }
 }
 
