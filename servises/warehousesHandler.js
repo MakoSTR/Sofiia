@@ -22,10 +22,12 @@ class WarehousesHandler {
                 this.checkAllIngredients(ingredients[i], userIngredients, warehouses)
             }
         }
-    };
+    }
+
     checkIsBaseIngredient = (order) => {
         return baseIngredients.filter(ingredient => ingredient === order)
     }
+
     checkIsDish = (order) => {
         return dishes.filter(dish => dish === order)
     }
@@ -75,6 +77,62 @@ class WarehousesHandler {
 
     setWarehouses = (customWarehouses) => {
         this.warehouses = customWarehouses;
+    }
+
+    getValues = (warehouses) => {
+        return Object.values(warehouses);
+    }
+
+    getTotalSumFromWarehouse = (warehouses) => {
+        const quantities = this.getValues(warehouses);
+        return quantities.reduce((previousValue, currentValue) => {
+            return previousValue +  currentValue
+        }, 0);
+    }
+
+    getAmountFromWarehouse = (warehouses, ingredient) => {
+        return warehouses[ingredient];
+    }
+
+    checkWarehouseSpace = (warehouses, number, totalMax, ingredient, localMax) => {
+        const quantityAmount = parseInt(number);
+        const totalSumFromWarehouse = this.getTotalSumFromWarehouse(warehouses);
+        const localSumFromWarehouse = this.getAmountFromWarehouse(warehouses, ingredient)
+
+        //100 total
+        if (totalMax - totalSumFromWarehouse >= quantityAmount) {
+            //100 local
+            if(localMax - localSumFromWarehouse >= quantityAmount) {
+                return { res: true }
+            }
+            //50/50 local
+            if (localMax - localSumFromWarehouse > 0) {
+                const freeSpace = localMax - localSumFromWarehouse;
+                const wastedQuantity = quantityAmount - freeSpace;
+                return { res: false, freeSpace, wastedQuantity };
+            }
+            //0 local => return false
+            return { res: false, wastedQuantity: quantityAmount };
+        }
+        // 50/50 total
+        if (totalMax - totalSumFromWarehouse > 0 ) {
+            const freeSpaceTotal = totalMax - totalSumFromWarehouse;
+            //50/50 local
+            if (localMax - localSumFromWarehouse > 0) {
+                const freeSpaceLocal = localMax - localSumFromWarehouse;
+                const freeSpace =  freeSpaceLocal < freeSpaceTotal ? freeSpaceLocal : freeSpaceTotal;
+                const wastedQuantity = quantityAmount - freeSpace;
+                return { res: false, freeSpace, wastedQuantity };
+            }
+            //0 local => return false
+            return { res: false, wastedQuantity: quantityAmount };
+        }
+        //0 total  => return false
+        return { res: false, wastedQuantity: quantityAmount };
+    }
+
+    addIngredients = (warehouses, ingredient, quantity) => {
+        return warehouses[ingredient] = parseInt(quantity) + warehouses[ingredient];
     }
 }
 

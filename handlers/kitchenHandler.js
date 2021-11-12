@@ -28,10 +28,16 @@ class KitchenHandler {
         return false;
     };
 
-    order = (ingredient, number, tax) => {
+    order = (ingredient, number, tax, totalMax, maxLimit) => {
         const warehouses = warehousesService.getWarehouses();
-        restaurantBudgetService.addIngredients(warehouses, ingredient, number);
-        return restaurantBudgetService.decreaseRestaurantBudget(ingredient, number, tax);
+        const transactionResult = restaurantBudgetService.decreaseRestaurantBudget(ingredient, number, tax);
+        const warehouseResult = warehousesService.checkWarehouseSpace(warehouses, number, totalMax, ingredient, maxLimit);
+        if (warehouseResult.res) {
+            warehousesService.addIngredients(warehouses, ingredient, number);
+        } else if (warehouseResult.freeSpace) {
+            warehousesService.addIngredients(warehouses, ingredient, warehouseResult.freeSpace);
+        }
+        return {...transactionResult, ...warehouseResult};
     };
 
     auditAction = (message) => {

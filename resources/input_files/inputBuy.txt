@@ -1,10 +1,4 @@
-Buy, Alexandra Smith, Fries
-Buy, Alexandra Smith, Fries
-Buy, Alexandra Smith, Fries
-Table, Alexandra Smith, Julie Mirage, Fries, Fries
-Table, Alexandra Smith, Julie Mirage, Fries, Princess Chicken
-Table, Alexandra Smith, Elon Carousel, Fries, Fries
-Table, Alexandra Smith, Julie Mirage, Fries, Fries
-Table, Alexandra Smith, Julie Mirage, Fries, Fries
-Table, Alexandra Smith, Julie Mirage, Fries, Fries
+Order, Potatoes, 10
+Order, Tuna, 1
+Order, Potatoes, 10
 Audit, Resources

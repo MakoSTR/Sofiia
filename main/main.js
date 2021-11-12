@@ -55,10 +55,15 @@ const main = (newArr) => {
                             let ingredient = i[1];
                             let number = i[2];
                             const isDish = warehousesService.checkIsDish(ingredient);
+                            let resMessage;
                             if (isDish.length === 0) {
-                                const orderData = kitchenHandler.order(ingredient, number, command["transaction tax"])
-                                const message = createAuditMessage(i, `success; sum = ${orderData.orderAmount}; tax = ${orderData.transactionTaxSum}`);
-                                kitchenHandler.auditAction(message);
+                                const orderData = kitchenHandler.order(ingredient, number, command["transaction tax"], command["total maximum"], command["max ingredient type"] );
+                                resMessage = !orderData.res ?
+                                `Wasted: ${orderData.wastedQuantity} ${ingredient} (limit: ${command["max ingredient type"]})` :
+                                    `success; sum = ${orderData.orderAmount}; tax = ${orderData.transactionTaxSum}`;
+                                const auditMessage = createAuditMessage(i, resMessage);
+                                kitchenHandler.auditAction(auditMessage);
+                                fileReader.appendFile(filePathForOutput, auditMessage);
                             } else {
                                 const error = 'You cannot order something which is NOT a basic ingredient';
                                 const message = createAuditMessage(i, error)

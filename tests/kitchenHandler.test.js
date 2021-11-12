@@ -30,6 +30,5 @@ describe('KitchenFacade', () => {
         const res = kitchenFacade.order("Tuna", 1, 10);
         expect(restaurantBudget.decreaseRestaurantBudget).to.have.been.called();
         expect(restaurantBudget.decreaseRestaurantBudget).to.have.been.called.with('Tuna', 1, 10);
-        expect(res).to.equal('Test');
     });
 });

@@ -132,3 +132,132 @@ describe('checkAllIngredients func', () => {
         expect(userIngredients[2]).toBe('Chocolate');
         });
 });
+describe('addIngredients function', () => {
+    test('should add quantities in the warehouses: 10 + 10', () => {
+        const warehouses = {'Tuna': 10}
+        const ingredient = 'Tuna';
+        const number = 10;
+        warehousesHandler.addIngredients(warehouses, ingredient, number);
+        expect(warehouses[ingredient]).toBe(20);
+    });
+    test('should addIngredients on warehouses (10+23)', () => {
+        const warehouses = {'Asparagus': 10}
+        const ingredient = 'Asparagus';
+        const number = 23;
+        const res = warehousesHandler.addIngredients(warehouses, ingredient, number);
+        expect(res).toBe(33);
+    });
+});
+
+describe('maximum size and warehouses', () => {
+    test('checkWarehouseSpace: warehouses are full and ingredients are full => return false, wastedQuantity = number (15); freeSpace = undefined', () => {
+        const warehouses = {'Lemon': 10, 'Tuna': 5, 'Milk': 10, 'Tuna Cake': 3};
+        const ingredient = 'Lemon';
+        const number = 15;
+        const maxLimit = 10;
+        const totalMax = 20;
+        const res = warehousesHandler.checkWarehouseSpace(warehouses, number, totalMax, ingredient, maxLimit);
+        expect(res.res).toBe(false)
+        expect(res.wastedQuantity).toBe(15);
+        expect(res.freeSpace).toBe(undefined);
+    });
+    test('checkWarehouseSpace: warehouses are full but ingredients have all free space => return false, wastedQuantity = num(1), freeSpace = undefined', () => {
+        const warehouses = {'Lemon': 1, 'Tuna': 10, 'Milk': 10, 'Tuna Cake': 3};
+        const ingredient = 'Lemon';
+        const number = 1;
+        const maxLimit = 10;
+        const totalMax = 20;
+        const res = warehousesHandler.checkWarehouseSpace(warehouses, number, totalMax, ingredient, maxLimit);
+        expect(res.res).toBe(false)
+        expect(res.wastedQuantity).toBe(1);
+        expect(res.freeSpace).toBe(undefined);
+    });
+    test('checkWarehouseSpace: warehouses are full but ingredients have some free space => return false, wastedQuantity = 11, freeSpace = undefined', () => {
+        const warehouses = {'Lemon': 1, 'Tuna': 10, 'Milk': 10, 'Tuna Cake': 3};
+        const ingredient = 'Lemon';
+        const number = 11;
+        const maxLimit = 10;
+        const totalMax = 20;
+        const res = warehousesHandler.checkWarehouseSpace(warehouses, number, totalMax, ingredient, maxLimit);
+        expect(res.res).toBe(false)
+        expect(res.wastedQuantity).toBe(11);
+        expect(res.freeSpace).toBe(undefined);
+    });
+    test('checkWarehouseSpace: warehouses have all free space and ingredients are full => return false; wastedQuantity = num(1), freeSpace = undefined', () => {
+        const warehouses = {'Lemon': 10, 'Tuna': 1, 'Milk': 1, 'Tuna Cake': 3};
+        const ingredient = 'Lemon';
+        const number = 1;
+        const maxLimit = 10;
+        const totalMax = 20;
+        const res = warehousesHandler.checkWarehouseSpace(warehouses, number, totalMax, ingredient, maxLimit);
+        expect(res.res).toBe(false)
+        expect(res.wastedQuantity).toBe(1);
+        expect(res.freeSpace).toBe(undefined);
+    });
+    test('checkWarehouseSpace: warehouses have all free space, ingredients have all free space => return true; wastedQuantity and freeSpace = undefined', () => {
+        const warehouses = {'Lemon': 0, 'Tuna': 1, 'Milk': 1, 'Tuna Cake': 3};
+        const ingredient = 'Lemon';
+        const number = 10;
+        const maxLimit = 10;
+        const totalMax = 20;
+        const res = warehousesHandler.checkWarehouseSpace(warehouses, number, totalMax, ingredient, maxLimit);
+        expect(res.res).toBe(true)
+        expect(res.wastedQuantity).toBe(undefined);
+        expect(res.freeSpace).toBe(undefined);
+    });
+    test('checkWarehouseSpace: warehouses have all free space, ingredients have some free space => return false; wastedQuantity = 3; freeSpace = 7', () => {
+        const warehouses = {'Lemon': 3, 'Tuna': 1, 'Milk': 1, 'Tuna Cake': 3};
+        const ingredient = 'Lemon';
+        const number = 10;
+        const maxLimit = 10;
+        const totalMax = 20;
+        const res = warehousesHandler.checkWarehouseSpace(warehouses, number, totalMax, ingredient, maxLimit);
+        expect(res.res).toBe(false)
+        expect(res.wastedQuantity).toBe(3);
+        expect(res.freeSpace).toBe(7);
+    });
+    test('checkWarehouseSpace: warehouses have some free space, ingredients are full => return false; wastedQuantity = 10; freeSpace = undefined', () => {
+        const warehouses = {'Lemon': 10, 'Tuna': 1, 'Milk': 1, 'Tuna Cake': 3}; //15
+        const ingredient = 'Lemon';
+        const number = 10;
+        const maxLimit = 10;
+        const totalMax = 20;
+        const res = warehousesHandler.checkWarehouseSpace(warehouses, number, totalMax, ingredient, maxLimit);
+        expect(res.res).toBe(false)
+        expect(res.wastedQuantity).toBe(10);
+        expect(res.freeSpace).toBe(undefined);
+    });
+    test('checkWarehouseSpace: warehouses have some free space(5) >, ingredients have some free space(3) => return false; wastedQuantity = 7; freeSpace = 3', () => {
+        const warehouses = {'Lemon': 7, 'Tuna': 3, 'Milk': 2, 'Tuna Cake': 3}; //15
+        const ingredient = 'Lemon';
+        const number = 10;
+        const maxLimit = 10;
+        const totalMax = 20;
+        const res = warehousesHandler.checkWarehouseSpace(warehouses, number, totalMax, ingredient, maxLimit);
+        expect(res.res).toBe(false)
+        expect(res.wastedQuantity).toBe(7);
+        expect(res.freeSpace).toBe(3);
+    });
+    test('checkWarehouseSpace: warehouses have some free space(3) <, ingredients have some free space(5) => return false; wastedQuantity = 7; freeSpace = 3', () => {
+        const warehouses = {'Lemon': 5, 'Tuna': 3, 'Milk': 6, 'Tuna Cake': 3}; //17
+        const ingredient = 'Lemon';
+        const number = 10;
+        const maxLimit = 10;
+        const totalMax = 20;
+        const res = warehousesHandler.checkWarehouseSpace(warehouses, number, totalMax, ingredient, maxLimit);
+        expect(res.res).toBe(false)
+        expect(res.wastedQuantity).toBe(7);
+        expect(res.freeSpace).toBe(3);
+    });
+    test('checkWarehouseSpace: warehouses have some free space(5), ingredients have all free space(10) => return false; wastedQuantity = 5; freeSpace = 5', () => {
+        const warehouses = {'Lemon': 0, 'Tuna': 10, 'Milk': 2, 'Tuna Cake': 3}; //15
+        const ingredient = 'Lemon';
+        const number = 10;
+        const maxLimit = 10;
+        const totalMax = 20;
+        const res = warehousesHandler.checkWarehouseSpace(warehouses, number, totalMax, ingredient, maxLimit);
+        expect(res.res).toBe(false)
+        expect(res.wastedQuantity).toBe(5);
+        expect(res.freeSpace).toBe(5);
+    });
+});

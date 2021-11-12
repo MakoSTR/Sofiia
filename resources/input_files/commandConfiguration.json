@@ -8,7 +8,7 @@
   "transaction tax": 10,
   "daily tax": 10,
   "every third discount": 10,
-  "total maximum": 500,
+  "total maximum": 85,
   "max ingredient type": 10,
   "max dish type": 3,
   "dishes with allergies": "waste"
