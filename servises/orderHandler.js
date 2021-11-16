@@ -2,7 +2,6 @@ const jsonData = require('../resources/input_files/data.json');
 const priceData = require('../resources/input_files/price.json');
 const budgetData = require('../resources/input_files/budget.json');
 const messageCodes = require('../resources/messageCodes.json');
-const warehouses = require("../resources/input_files/warehouses.json");
 const commandConfiguration = require('../resources/input_files/commandConfiguration.json');
 const FileReader = require('./fileReader');
 const restaurantBudgetService = require('./restaurantBudget');
@@ -12,6 +11,7 @@ const discountService = require('./discountService');
 
 const fileReader = new FileReader();
 const filePathForOutput = './resources/output_files/output.txt';
+const warehouses = warehousesService.getWarehouses();
 
 const regularCustomer = jsonData['Regular customer'];
 const food = jsonData.Food;
@@ -76,9 +76,10 @@ class OrderHandler {
         return totalBudget - sum + discount;
     };
 
-    sendResult = (foundAllergies, name, order, sum) => {
+    sendResult = (foundAllergies, name, order, sum, configuration, totalMax, localMax, ingredients) => {
+        const warehouses = warehousesService.getWarehouses();
         if (foundAllergies) {
-            warehousesService.reduceQuantities(order, warehouses);
+            this.dishesWithAllergies(configuration, order, warehouses, totalMax, localMax, ingredients, commandConfiguration["transaction tax"])
             return `${name} can’t order ${order}, allergic to: ${foundAllergies}`
         } else
         if (this.clientBudget[name] < sum) {
@@ -97,7 +98,7 @@ class OrderHandler {
         }
     };
 
-    buy = (person, order, margin) => {
+    buy = (person, order, margin, configuration, totalMax, localMax) => {
         const userIngredients = [];
         this.checkAllIngredients(order, userIngredients);
 
@@ -107,7 +108,7 @@ class OrderHandler {
         if (!this.clientBudget[person] && this.clientBudget[person] !== 0) {
             this.clientBudget[person] = budget[person];
         }
-        const sendRes = this.sendResult(foundAllergy, person, order, sum);
+        const sendRes = this.sendResult(foundAllergy, person, order, sum, configuration, totalMax, localMax, userIngredients);
         fileReader.appendFile(filePathForOutput, sendRes);
         return { sendRes, sum };
     }
@@ -171,9 +172,45 @@ class OrderHandler {
         }
     }
 
-    getClientBudget = (name) => {
-        return this.clientBudget[name];
-    };
+
+    dishesWithAllergies = (configuration, order, warehouses, totalMax, localMax, ingredients, transactionTax) => {
+        switch (configuration) {
+            case 'waste':
+                warehousesService.reduceQuantities(order, warehouses);
+                break;
+            case 'keep':
+                const totalSum = warehousesService.getTotalSumFromWarehouse(warehouses);
+                const localSum = warehousesService.getAmountFromWarehouse(warehouses, order)
+                if(1 + totalSum <= totalMax && 1 + localSum <= localMax) {
+                    const sum = this.sumForKeepedOrder(ingredients, 0, transactionTax);
+                    restaurantBudgetService.restaurantBudget -= sum.orderSum + sum.extraSum;
+                    if (warehousesService.checkIsDish(order).length > 0 && warehouses[order] === 0) {
+                        warehousesService.reduceQuantities(order, warehouses);
+                        warehousesService.addIngredients(warehouses, order, 1);
+                    }
+                }
+                console.log('keep')
+                break;
+            // case 'number':
+            //     console.log('num')
+            //     break;
+            default:
+                if (typeof(configuration) == 'number') {
+                    console.log('default')
+                }
+        }
+    }
+
+    sumForKeepedOrder = (ingredients, margin, transactionTax) => {
+        const sumArray = [];
+        ingredients.forEach(i => sumArray.push(price[i]));
+        const orderAmount = Math.ceil(sumArray.reduce((total, amount) => total + amount))
+        const transactionTaxSum = taxService.transactionTaxSum(orderAmount, transactionTax);
+        const orderSum = orderAmount + transactionTaxSum;
+        taxService.addAlreadyCollectedTax(orderAmount, transactionTax);
+        const extraSum = orderSum * 0.25;
+        return { orderSum, extraSum };
+    }
 }
 
 const orderHandler = new OrderHandler();

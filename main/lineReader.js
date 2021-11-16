@@ -5,10 +5,10 @@ const warehousesService = require('../servises/warehousesHandler');
 const audit = require('../servises/audit');
 const taxService = require('../servises/taxService');
 const command = require('../resources/input_files/commandConfiguration.json');
-const KitchenFacade = require("../handlers/kitchenHandler");
+const KitchenHandler = require("../handlers/kitchenHandler");
 const { main } = require('./main');
 
-const kitchenFacade = new KitchenFacade();
+const kitchenHandler = new KitchenHandler();
 const fileReader = new FileReader();
 
 const filePathForOutput = './resources/output_files/output.txt';
@@ -24,7 +24,7 @@ const lineReader = () => {
     rl.prompt();
 
     rl.on('line',  function(answer) {
-        kitchenFacade.sendRestaurantBudget(command["daily tax"]);
+        kitchenHandler.sendRestaurantBudget(command["daily tax"]);
         const input = fileReader.readFile(filePathFotInput, answer);
         const dataArray = input.split('\r\n');
 
@@ -37,8 +37,8 @@ const lineReader = () => {
 
         main(newArr); //main switcher
 
-        const validBudget = kitchenFacade.checkRestaurantBudget();
-        kitchenFacade.sendRestaurantBudget();
+        const validBudget = kitchenHandler.checkRestaurantBudget();
+        kitchenHandler.sendRestaurantBudget();
         fileReader.appendFile(filePathForOutput, `Daily tax: ${taxService.dailyTaxSum(command["daily tax"], validBudget, 500)}`);
 
     }).on('close', function() {

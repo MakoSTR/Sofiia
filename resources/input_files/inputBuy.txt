@@ -1,4 +1,8 @@
+Budget, +, 3000
 Order, Potatoes, 10
 Order, Tuna, 1
-Order, Potatoes, 10
+Order, Princess Chicken, 10
+Buy, Bernard Unfortunate, Fries
+Buy, Bernard Unfortunate, Fries
+Order, Fries, 1
 Audit, Resources

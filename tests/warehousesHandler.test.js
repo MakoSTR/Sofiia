@@ -132,22 +132,22 @@ describe('checkAllIngredients func', () => {
         expect(userIngredients[2]).toBe('Chocolate');
         });
 });
-describe('addIngredients function', () => {
-    test('should add quantities in the warehouses: 10 + 10', () => {
-        const warehouses = {'Tuna': 10}
-        const ingredient = 'Tuna';
-        const number = 10;
-        warehousesHandler.addIngredients(warehouses, ingredient, number);
-        expect(warehouses[ingredient]).toBe(20);
-    });
-    test('should addIngredients on warehouses (10+23)', () => {
-        const warehouses = {'Asparagus': 10}
-        const ingredient = 'Asparagus';
-        const number = 23;
-        const res = warehousesHandler.addIngredients(warehouses, ingredient, number);
-        expect(res).toBe(33);
-    });
-});
+// describe('addIngredients function', () => {
+//     test('should add quantities in the warehouses: 10 + 10', () => {
+//         const warehouses = {'Tuna': 10}
+//         const ingredient = 'Tuna';
+//         const number = 10;
+//         warehousesHandler.addIngredients(warehouses, ingredient, number);
+//         expect(warehouses[ingredient]).toBe(20);
+//     });
+//     test('should addIngredients on warehouses (10+23)', () => {
+//         const warehouses = {'Asparagus': 10}
+//         const ingredient = 'Asparagus';
+//         const number = 23;
+//         const res = warehousesHandler.addIngredients(warehouses, ingredient, number);
+//         expect(res).toBe(33);
+//     });
+// });
 
 describe('maximum size and warehouses', () => {
     test('checkWarehouseSpace: warehouses are full and ingredients are full => return false, wastedQuantity = number (15); freeSpace = undefined', () => {

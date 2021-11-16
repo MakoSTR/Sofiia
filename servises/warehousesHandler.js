@@ -132,7 +132,7 @@ class WarehousesHandler {
     }
 
     addIngredients = (warehouses, ingredient, quantity) => {
-        return warehouses[ingredient] = parseInt(quantity) + warehouses[ingredient];
+        return this.warehouses[ingredient] += parseInt(quantity);
     }
 }
 

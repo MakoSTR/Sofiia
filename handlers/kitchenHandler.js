@@ -3,9 +3,14 @@ const warehousesService = require("../servises/warehousesHandler");
 const audit = require("../servises/audit");
 const taxService = require('../servises/taxService');
 const FileReader = require("../servises/fileReader");
+// const orderHandler = require('../servises/orderHandler');
+// const command = require("../resources/input_files/commandConfiguration.json");
+const priceData = require("../resources/input_files/price.json");
+// const warehouses = require("../resources/input_files/warehouses.json");
 
 const fileReader = new FileReader();
 const filePathForOutput = './resources/output_files/output.txt';
+const price = priceData['Base ingredients'];
 
 class KitchenHandler {
     sendRestaurantBudget = () => {
@@ -29,11 +34,12 @@ class KitchenHandler {
     };
 
     order = (ingredient, number, tax, totalMax, maxLimit) => {
+        const quantity = parseInt(number);
         const warehouses = warehousesService.getWarehouses();
-        const transactionResult = restaurantBudgetService.decreaseRestaurantBudget(ingredient, number, tax);
-        const warehouseResult = warehousesService.checkWarehouseSpace(warehouses, number, totalMax, ingredient, maxLimit);
+        const transactionResult = restaurantBudgetService.decreaseRestaurantBudget(ingredient, quantity, tax);
+        const warehouseResult = warehousesService.checkWarehouseSpace(warehouses, quantity, totalMax, ingredient, maxLimit);
         if (warehouseResult.res) {
-            warehousesService.addIngredients(warehouses, ingredient, number);
+            warehousesService.addIngredients(warehouses, ingredient, quantity);
         } else if (warehouseResult.freeSpace) {
             warehousesService.addIngredients(warehouses, ingredient, warehouseResult.freeSpace);
         }
@@ -47,6 +53,13 @@ class KitchenHandler {
         const transactionTax = taxService.getAlreadyCollectedTax()
         audit.addToAudit({ res: message, budget: restaurantBudget, warehouses: warehousesCopy, transactionTax });
     };
+
+    findLocalMax = (order, command) => {
+        let localMax;
+        const dishArray = warehousesService.checkIsDish(order);
+        dishArray.length === 0 ? localMax = command["max ingredient type"] : localMax = command["max dish type"];
+        return localMax;
+    }
 }
 
 module.exports = KitchenHandler;

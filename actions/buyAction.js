@@ -13,11 +13,12 @@ const buyAction = (i, validBudget, filePathForOutput) => {
         if (validBudget) {
             let person = i[1];
             let order = i[2];
+            const localMax = kitchenHandler.findLocalMax(order, command);
             const warehouses = warehousesService.getWarehouses();
             const warehousesCopy = { ...warehouses };
             const warehouseCheckResult = warehousesService.checkDishIngredientsInWarehouse(order, warehousesCopy);
             if (warehouses[order] > 0 || !warehouseCheckResult) {
-                const res = orderHandler.buy(person, order, command["profit margin"]);
+                const res = orderHandler.buy(person, order, command["profit margin"], command["dishes with allergies"], command["total maximum"], localMax);
                 const message = createAuditMessage(i, res.sendRes);
                 kitchenHandler.auditAction(message);
             }

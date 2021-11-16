@@ -1,5 +1,5 @@
 {
-  "order": "yes",
+  "order": "all",
   "buy": "yes",
   "audit": "yes",
   "table": "yes",
@@ -11,5 +11,5 @@
   "total maximum": 85,
   "max ingredient type": 10,
   "max dish type": 3,
-  "dishes with allergies": "waste"
+  "dishes with allergies": "keep"
 }

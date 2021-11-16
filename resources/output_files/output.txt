@@ -1,31 +1,237 @@
 Restaurant budget: 500
-Order,Potatoes,10 => Wasted: 3 Potatoes (limit: 10)
-Order,Tuna,1 => success; sum = 25; tax = 3
-Order,Potatoes,10 => Wasted: 10 Potatoes (limit: 10)
-Restaurant budget: 406
+Restaurant budget: 500
+Order,Fries,1 => success; sum = NaN; tax = NaN
+Order command disabled
+Order command disabled
+Order command disabled
+RESTAURANT BANKRUPT
 Daily tax: 0
 Restaurant budget: 500
-Alexandra Smith - Fries costs 5: success, tax = 1
-Restaurant budget: 604
+Order,Fries,1 => success; sum = undefined; tax = NaN
+Order command disabled
+RESTAURANT BANKRUPT
+Daily tax: 0
+Restaurant budget: 500
+Restaurant budget: 500
+Order,Fries,1 => success; sum = undefined; tax = NaN
+Order command disabled
+RESTAURANT BANKRUPT
+Daily tax: 0
+Restaurant budget: 500
+Restaurant budget: 500
+Restaurant budget: 500
+Order,Fries,1 => success; sum = 4; tax = 1
+Order command disabled
+Restaurant budget: 495
+Daily tax: 0
+Restaurant budget: 500
+Order,Fries,1 => success; sum = 4; tax = 1
+Order command disabled
+Order,Fries,4 => Wasted: 3 Fries (limit: 3)
+Order command disabled
+Restaurant budget: 490
+Daily tax: 0
+Restaurant budget: 500
+Order,Fries,1 => success; sum = 4; tax = 1
+Order command disabled
+Restaurant budget: 495
+Daily tax: 0
+Restaurant budget: 500
+Order,Fries,1 => success; sum = 4; tax = 1
+Order command disabled
+Order,Fries,4 => Wasted: 3 Fries (limit: 3)
+Order command disabled
+Restaurant budget: 477
+Daily tax: 0
+Restaurant budget: 500
+Order,Fries,1 => success; sum = 3; tax = 1
+Order command disabled
+Order,Fries,4 => Wasted: 3 Fries (limit: 3)
+Order command disabled
+Restaurant budget: 482
+Daily tax: 0
+Restaurant budget: 500
+Order,Fries,1 => success; sum = 3; tax = 1
+Order command disabled
+Order,Fries,4 => Wasted: 3 Fries (limit: 3)
+Order command disabled
+Order,Tuna,4 => You cannot order something which is NOT a dish
+Order command disabled
+Restaurant budget: 482
+Daily tax: 0
+Restaurant budget: 500
+Success: money amount 10; tax amount 2
+{
+    Barbara Smith - Smashed Potatoes costs 5: success, tax = 1
+    Adam Smith - Fries costs 5: success, tax = 1
+}
+FAILURE. Barbara Smith can’t order Tuna Cake, allergic to: Chocolate. So, whole table fails.
+FAILURE. Julie Mirage – can’t order, budget 100 and Princess Chicken costs 126. So, whole table fails.
+Buy command disabled
+Audit command disabled
+s command disabled
+t command disabled
+Success: money amount 10; tax amount 2
+{
+    Barbara Smith - Smashed Potatoes costs 5: success, tax = 1
+    Adam Smith - Fries costs 5: success, tax = 1
+}
+FAILURE. Barbara Smith can’t order Tuna Cake, allergic to: Chocolate. So, whole table fails.
+FAILURE. Julie Mirage – can’t order, budget 100 and Princess Chicken costs 126. So, whole table fails.
+Restaurant budget: 500
+s command disabled
+t command disabled
+Buy command disabled
+Audit command disabled
+Success: money amount 10; tax amount 2
+{
+    Barbara Smith - Smashed Potatoes costs 5: success, tax = 1
+    Adam Smith - Fries costs 5: success, tax = 1
+}
+FAILURE. Barbara Smith can’t order Tuna Cake, allergic to: Chocolate. So, whole table fails.
+FAILURE. Julie Mirage – can’t order, budget 100 and Princess Chicken costs 126. So, whole table fails.
+Restaurant budget: 500
+s command disabled
+t command disabled
+Buy command disabled
+Audit command disabled
+s command disabled
+t command disabled
+Success: money amount 10; tax amount 2
+{
+    Barbara Smith - Smashed Potatoes costs 5: success, tax = 1
+    Adam Smith - Fries costs 5: success, tax = 1
+}
+FAILURE. Barbara Smith can’t order Tuna Cake, allergic to: Chocolate. So, whole table fails.
+FAILURE. Julie Mirage – can’t order, budget 100 and Princess Chicken costs 126. So, whole table fails.
+Restaurant budget: 500
+Buy command disabled
+Audit command disabled
+Restaurant budget: 500
+Order,Fries,1 => success; sum = 3; tax = 1
+Order command disabled
+Order,Fries,4 => Wasted: 3 Fries (limit: 3)
+Order command disabled
+Order,Tuna,4 => You cannot order something which is NOT a dish
+Order command disabled
+Restaurant budget: 482
+Daily tax: 0
+Restaurant budget: 500
+Order,Fries,1 => success; sum = 3; tax = 1
+Order command disabled
+Order,Fries,4 => Wasted: 3 Fries (limit: 3)
+Order command disabled
+Order,Tuna,4 => You cannot order something which is NOT a dish
+Order command disabled
+Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+Restaurant budget: 482
+Daily tax: 0
+Restaurant budget: 500
+Order,Fries,1 => success; sum = 3; tax = 1
+Order command disabled
+Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+Restaurant budget: 496
+Daily tax: 0
+Restaurant budget: 500
+Restaurant budget: 500
+Restaurant budget: 500
+Order,Potatoes,10 => You cannot order something which is NOT a dish
+Order command disabled
+Order,Tuna,1 => You cannot order something which is NOT a dish
+Order command disabled
+Restaurant budget: 500
+Daily tax: 0
+Restaurant budget: 500
+Order,Potatoes,10 => You cannot order something which is NOT a dish
+Order command disabled
+Order,Tuna,1 => You cannot order something which is NOT a dish
+Order command disabled
+Order,Princess Chicken,10 => Wasted: 10 Princess Chicken (limit: 3)
+Order command disabled
+RESTAURANT BANKRUPT
+Order command disabled
+RESTAURANT BANKRUPT
+Daily tax: 0
+Restaurant budget: 500
+Order,Potatoes,10 => You cannot order something which is NOT a dish
+Order command disabled
+Order,Tuna,1 => You cannot order something which is NOT a dish
+Order command disabled
+Order,Princess Chicken,10 => Wasted: 10 Princess Chicken (limit: 3)
+Order command disabled
+RESTAURANT BANKRUPT
+Order command disabled
+RESTAURANT BANKRUPT
+Daily tax: 0
+Restaurant budget: 500
+Restaurant budget: 3500
+Order,Potatoes,10 => You cannot order something which is NOT a dish
+Order command disabled
+Order,Tuna,1 => You cannot order something which is NOT a dish
+Order command disabled
+Order,Princess Chicken,10 => Wasted: 8 Princess Chicken (limit: 3)
+Order command disabled
+Order,Fries,1 => success; sum = 3; tax = 1
+Order command disabled
+Restaurant budget: 2506
+Daily tax: 191.5
+Restaurant budget: 500
+Restaurant budget: 3500
+Order,Potatoes,10 => You cannot order something which is NOT a dish
+Order command disabled
+Order,Tuna,1 => You cannot order something which is NOT a dish
+Order command disabled
+Order,Princess Chicken,10 => Wasted: 8 Princess Chicken (limit: 3)
+Order command disabled
+Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+Order,Fries,1 => success; sum = 3; tax = 1
+Order command disabled
+Restaurant budget: 2506
+Daily tax: 191.3
+Restaurant budget: 500
+Restaurant budget: 3500
+Order,Potatoes,10 => You cannot order something which is NOT a dish
+Order command disabled
+Order,Tuna,1 => You cannot order something which is NOT a dish
+Order command disabled
+Order,Princess Chicken,10 => Wasted: 8 Princess Chicken (limit: 3)
+Order command disabled
+Restaurant budget: 500
+Restaurant budget: 3500
 Order,Potatoes,10 => Wasted: 3 Potatoes (limit: 10)
 Order,Tuna,1 => success; sum = 25; tax = 3
-Morningstar command disabled
-Success: money amount 49; tax amount 6
+Order,Princess Chicken,10 => Wasted: 8 Princess Chicken (limit: 3)
+Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+Order,Fries,1 => success; sum = 3; tax = 1
+Restaurant budget: 2445
+Daily tax: 184.6
+Success: money amount 10; tax amount 2
 {
-    Alexandra Smith - Irish Fish costs 44: success, tax = 5
+    Barbara Smith - Smashed Potatoes costs 5: success, tax = 1
     Adam Smith - Fries costs 5: success, tax = 1
 }
-Success: money amount 175; tax amount 19
+FAILURE. Barbara Smith can’t order Tuna Cake, allergic to: Chocolate. So, whole table fails.
+FAILURE. Julie Mirage – can’t order, budget 100 and Princess Chicken costs 126. So, whole table fails.
+Buy command disabled
+Audit command disabled
+Restaurant budget: 500
+s command disabled
+t command disabled
+Success: money amount 10; tax amount 2
 {
-    Alexandra Smith - Irish Fish costs 44: success, tax = 5, discount = 5
+    Barbara Smith - Smashed Potatoes costs 5: success, tax = 1
     Adam Smith - Fries costs 5: success, tax = 1
-    Christian Donnovan - Princess Chicken costs 126: success, tax = 13
 }
-FAILURE. Bernard Unfortunate can’t order Fries, allergic to: Potatoes. So, whole table fails.
-Table,Alexandra Smith,Adam Smith,Fries => ERROR. Every person needs something to eat. So, whole table fails.
-Table,Alexandra Smith,Fries,Irish Fish => ERROR. One person can have one type of food only. So, whole table fails.
-Table,Adam Smith,Adam Smith,Fries,Fries => ERROR. One person can appear only once at the table. So, whole table fails.
-Table,Alexandra Smith,Fries,Irish Fish => ERROR. One person can have one type of food only. So, whole table fails.
-Table,Adam Smith,Adam Smith,Fries,Fries => ERROR. One person can appear only once at the table. So, whole table fails.
-Restaurant budget: 737
-Daily tax: 20.5
+FAILURE. Barbara Smith can’t order Tuna Cake, allergic to: Chocolate. So, whole table fails.
+FAILURE. Julie Mirage – can’t order, budget 100 and Princess Chicken costs 126. So, whole table fails.
+s command disabled
+t command disabled
+Restaurant budget: 500
+Buy command disabled
+Audit command disabled
