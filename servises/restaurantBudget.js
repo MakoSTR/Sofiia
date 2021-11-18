@@ -3,7 +3,12 @@ const taxService = require('./taxService');
 const discountService = require("./discountService");
 const price = priceData['Base ingredients'];
 const warehouseService= require('../servises/warehousesHandler');
-const orderHandler = require('../servises/orderHandler');
+const orderService = require('./orderService');
+const jsonData = require('../resources/input_files/data.json');
+const { checkAllIngredients } = require("../helpers/helpers");
+
+const food = jsonData.Food;
+const base = jsonData['Base ingredients'];
 
 class RestaurantBudgetService {
     constructor() {
@@ -50,8 +55,8 @@ class RestaurantBudgetService {
             return price[ingredient] * number;
         } else {
             const userIngredients = [];
-            orderHandler.checkAllIngredients(ingredient, userIngredients);
-            const { orderSum } = orderHandler.sumForKeepedOrder(userIngredients, 0, 0);
+            checkAllIngredients(ingredient, userIngredients, food, base);
+            const { orderSum } = orderService.sumForKeepedOrder(userIngredients, 0, 0);
 
             return orderSum * number;
         }

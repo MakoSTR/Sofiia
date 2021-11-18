@@ -14,11 +14,11 @@ describe('auditAction function', () => {
         });
         auditAction(action);
         expect(audit.writeAudit).to.have.been.called();
-    })
+    });
     // test('audit action !== Audit => disabler to have been call', () => {
     //     const action = ['eriufhasdjn'];
     //     chai.spy.on(audit, 'writeAudit', () => {});
     //     auditAction(action);
-    //     expect(audit.writeAudit).to.have.not.been.called();
-    // })
-})
+    //     expect(audit.writeAudit).spy.should.have.not.been.called();
+    // });
+});

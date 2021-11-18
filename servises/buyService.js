@@ -8,33 +8,22 @@ const restaurantBudgetService = require('./restaurantBudget');
 const warehousesService = require('./warehousesHandler');
 const taxService = require('./taxService');
 const discountService = require('./discountService');
+const orderService = require("./orderService");
+const { checkAllIngredients } = require("../helpers/helpers");
 
 const fileReader = new FileReader();
-const filePathForOutput = './resources/output_files/output.txt';
-const warehouses = warehousesService.getWarehouses();
 
+const filePathForOutput = './resources/output_files/output.txt';
 const regularCustomer = jsonData['Regular customer'];
 const food = jsonData.Food;
 const base = jsonData['Base ingredients'];
 const price = priceData['Base ingredients'];
 const budget = budgetData['Regular customer budget'];
 
-class OrderHandler {
+class BuyService {
     constructor() {
         this.clientBudget = {};
     }
-    // checkAllIngredients (recursion)
-    checkAllIngredients = (order, userIngredients) => {
-        const ingredients = food[order];
-        for ( let i = 0; i < ingredients.length; i++ ) {
-            if (base.find(item => ingredients[i] === item )) {
-                userIngredients.push(ingredients[i])
-            } else {
-                this.checkAllIngredients(ingredients[i], userIngredients)
-            }
-        }
-    };
-
     getAllergies = (name, userIngredients) => {
         const allergies = regularCustomer[name];
         const foundAllergy = allergies.find(element => {
@@ -100,7 +89,7 @@ class OrderHandler {
 
     buy = (person, order, margin, configuration, totalMax, localMax) => {
         const userIngredients = [];
-        this.checkAllIngredients(order, userIngredients);
+        checkAllIngredients(order, userIngredients, food, base);
 
         const foundAllergy =  this.getAllergies(person, userIngredients)[0] || '';
 
@@ -115,7 +104,7 @@ class OrderHandler {
 
     buyForTable = (person, order, margin) => {
         const userIngredients = [];
-        this.checkAllIngredients(order, userIngredients);
+        checkAllIngredients(order, userIngredients, food, base);
 
         const foundAllergy =  this.getAllergies(person, userIngredients)[0] || '';
 
@@ -151,6 +140,7 @@ class OrderHandler {
             }, 0)
             fileReader.appendFile(filePathForOutput, `Success: money amount ${totalSum}; tax amount ${totalTax}\n{`);
             customers.forEach((customer, index) => {
+                const warehouses = warehousesService.getWarehouses();
                 discountService.addPerson(customer);
                 const sumOfDiscount = discountService.makeDiscount(customer, resArr[index].sum, commandConfiguration["every third discount"]);
                 const discount = sumOfDiscount > 0 ? `, discount = ${sumOfDiscount}` : '';
@@ -172,47 +162,41 @@ class OrderHandler {
         }
     }
 
+    keep = (order, warehouses, totalMax, localMax, ingredients, transactionTax, sum) => {
+        const totalSum = warehousesService.getTotalSumFromWarehouse(warehouses);
+        const localSum = warehousesService.getAmountFromWarehouse(warehouses, order)
+        if(1 + totalSum <= totalMax && 1 + localSum <= localMax) {
+            // const sum = orderService.sumForKeepedOrder(ingredients, 0, transactionTax);
+            restaurantBudgetService.restaurantBudget -= sum.orderSum + sum.extraSum;
+            if (warehousesService.checkIsDish(order).length > 0 && warehouses[order] === 0) {
+                warehousesService.reduceQuantities(order, warehouses);
+                warehousesService.addIngredients(warehouses, order, 1);
+            }
+        }
+        console.log('keep');
+    }
 
     dishesWithAllergies = (configuration, order, warehouses, totalMax, localMax, ingredients, transactionTax) => {
+        const sum = orderService.sumForKeepedOrder(ingredients, 0, transactionTax);
+
         switch (configuration) {
             case 'waste':
                 warehousesService.reduceQuantities(order, warehouses);
                 break;
             case 'keep':
-                const totalSum = warehousesService.getTotalSumFromWarehouse(warehouses);
-                const localSum = warehousesService.getAmountFromWarehouse(warehouses, order)
-                if(1 + totalSum <= totalMax && 1 + localSum <= localMax) {
-                    const sum = this.sumForKeepedOrder(ingredients, 0, transactionTax);
-                    restaurantBudgetService.restaurantBudget -= sum.orderSum + sum.extraSum;
-                    if (warehousesService.checkIsDish(order).length > 0 && warehouses[order] === 0) {
-                        warehousesService.reduceQuantities(order, warehouses);
-                        warehousesService.addIngredients(warehouses, order, 1);
-                    }
-                }
-                console.log('keep')
+                this.keep(order, warehouses, totalMax, localMax, ingredients, transactionTax, sum);
                 break;
-            // case 'number':
-            //     console.log('num')
-            //     break;
             default:
-                if (typeof(configuration) == 'number') {
-                    console.log('default')
-                }
+                if (sum.orderSum <= configuration) {
+                    warehousesService.reduceQuantities(order, warehouses);
+                } else {
+                    console.log(configuration)
+                this.keep(order, warehouses, totalMax, localMax, ingredients, transactionTax, sum);
+            }
         }
-    }
-
-    sumForKeepedOrder = (ingredients, margin, transactionTax) => {
-        const sumArray = [];
-        ingredients.forEach(i => sumArray.push(price[i]));
-        const orderAmount = Math.ceil(sumArray.reduce((total, amount) => total + amount))
-        const transactionTaxSum = taxService.transactionTaxSum(orderAmount, transactionTax);
-        const orderSum = orderAmount + transactionTaxSum;
-        taxService.addAlreadyCollectedTax(orderAmount, transactionTax);
-        const extraSum = orderSum * 0.25;
-        return { orderSum, extraSum };
     }
 }
 
-const orderHandler = new OrderHandler();
+const buyService = new BuyService();
 
-module.exports = orderHandler;
+module.exports = buyService;

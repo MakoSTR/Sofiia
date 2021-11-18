@@ -10,7 +10,7 @@ const priceData = require("../resources/input_files/price.json");
 
 const fileReader = new FileReader();
 const filePathForOutput = './resources/output_files/output.txt';
-const price = priceData['Base ingredients'];
+// const price = priceData['Base ingredients'];
 
 class KitchenHandler {
     sendRestaurantBudget = () => {

@@ -1,6 +1,6 @@
 const command = require("../resources/input_files/commandConfiguration.json");
 const warehousesService = require("../servises/warehousesHandler");
-const orderHandler = require("../servises/orderHandler");
+const buyService = require("../servises/buyService");
 const { createAuditMessage, disabler } = require("../helpers/helpers");
 const KitchenHandler = require('../handlers/kitchenHandler');
 const FileReader = require('../servises/fileReader');
@@ -18,7 +18,7 @@ const buyAction = (i, validBudget, filePathForOutput) => {
             const warehousesCopy = { ...warehouses };
             const warehouseCheckResult = warehousesService.checkDishIngredientsInWarehouse(order, warehousesCopy);
             if (warehouses[order] > 0 || !warehouseCheckResult) {
-                const res = orderHandler.buy(person, order, command["profit margin"], command["dishes with allergies"], command["total maximum"], localMax);
+                const res = buyService.buy(person, order, command["profit margin"], command["dishes with allergies"], command["total maximum"], localMax);
                 const message = createAuditMessage(i, res.sendRes);
                 kitchenHandler.auditAction(message);
             }

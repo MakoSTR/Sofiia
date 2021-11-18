@@ -1,7 +1,7 @@
 const command = require("../resources/input_files/commandConfiguration.json");
 const warehousesService = require("../servises/warehousesHandler");
 const {createAuditMessage, disabler} = require("../helpers/helpers");
-const orderHandler = require("../servises/orderHandler");
+const buyService = require("../servises/buyService");
 const messageCodes = require("../resources/messageCodes.json");
 const KitchenHandler = require('../handlers/kitchenHandler');
 const FileReader = require('../servises/fileReader');
@@ -50,7 +50,7 @@ const tableAction = (i, validBudget, customers, dishes, filePathForOutput) => {
                 kitchenHandler.auditAction(message);
             } else
             if (checkIngredientsForAllDishes) {
-                const tableResult = orderHandler.table(findCustomers, findDishes, command["profit margin"]);
+                const tableResult = buyService.table(findCustomers, findDishes, command["profit margin"]);
                 let resMessage = tableResult.message;
                 if (tableResult.message === messageCodes.success) {
                     resMessage = `${tableResult.message}, sum: ${tableResult.totalSum}, tax: ${tableResult.totalTax}`
