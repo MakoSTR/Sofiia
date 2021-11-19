@@ -1,32 +1,4 @@
 Restaurant budget: 500
-Restaurant budget: 300
-Restaurant budget: 600
-Restaurant budget: 300
-Restaurant budget: 3000
-RESTAURANT BANKRUPT
-Restaurant budget: 300
-Restaurant budget: 300
-Restaurant budget: 300
-Restaurant budget: 300
-Daily tax: 0
-
-Restaurant budget: 500
-Restaurant budget: 300
-Restaurant budget: 600
-Restaurant budget: 300
-Restaurant budget: 3000
-RESTAURANT BANKRUPT
-RESTAURANT BANKRUPT
-RESTAURANT BANKRUPT
-Restaurant budget: 300
-Restaurant budget: 300
-Daily tax: 0
-s command disabled
-t command disabled
-Restaurant budget: 500
-Buy command disabled
-Audit command disabled
-Restaurant budget: 500
 Alexandra Smith - Fries costs 5: success, tax = 1
 Restaurant budget: 604
 Order,Potatoes,10 => Wasted: 3 Potatoes (limit: 10)
@@ -49,8 +21,3 @@ Table,Alexandra Smith,Fries,Irish Fish => ERROR. One person can have one type of
 Table,Adam Smith,Adam Smith,Fries,Fries => ERROR. One person can appear only once at the table. So, whole table fails.
 Restaurant budget: 737
 Daily tax: 20.5
-s command disabled
-t command disabled
-Buy command disabled
-Audit command disabled
-Restaurant budget: 500

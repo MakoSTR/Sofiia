@@ -1,9 +1,7 @@
 const command = require("../resources/input_files/commandConfiguration.json");
 const restaurantBudgetService = require("../servises/restaurantBudget");
-const {createAuditMessage, disabler} = require("../helpers/helpers");
-const KitchenHandler = require('../handlers/kitchenHandler');
-
-const kitchenHandler = new KitchenHandler;
+const helpers = require("../helpers/helpers");
+const kitchenHandler = require('../handlers/kitchenHandler');
 
 const budgetAction = (i) => {
     if (command[i[0].toLowerCase()] === 'yes') {
@@ -12,10 +10,10 @@ const budgetAction = (i) => {
         restaurantBudgetService.modifyRestaurantBudget(sign, amount)
         const budget = kitchenHandler.sendRestaurantBudget(command["daily tax"]);
         const resMessage = `Restaurant budget: ${budget}`;
-        const message = createAuditMessage(i, resMessage);
+        const message = helpers.createAuditMessage(i, resMessage);
         kitchenHandler.auditAction(message);
     } else {
-        disabler(i)
+        helpers.disabler(i)
     }
 };
 

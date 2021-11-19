@@ -5,14 +5,27 @@ const {expect} = require("chai");
 
 const { budgetAction } = require('../../actions/budgetAction');
 const audit = require("../../servises/audit");
+const helpers = require('../../helpers/helpers');
+const kitchenHandler = require('../../handlers/kitchenHandler');
 
 describe('budgetAction', () => {
-    test('should return ... ', () => {
-    //     const action = ['Budget'];
-    //     budgetAction(action);
-    //     chai.spy.on(audit, 'writeAudit', () => {
-    //         return 'audit was written'
-    //     });
-    //     expect(audit.writeAudit).to.have.been.called();
+    afterEach(() => {
+        chai.spy.restore();
+    });
+    test('action === Budget => should called auditAction & not called disabler', () => {
+        chai.spy.on(kitchenHandler, 'auditAction', () => {});
+        chai.spy.on(helpers, 'disabler', () => {});
+        const action = ['Budget'];
+        budgetAction(action);
+        expect(kitchenHandler.auditAction).to.have.been.called();
+        expect(helpers.disabler).to.have.not.been.called();
+    });
+    test('action !== Budget => should not called auditAction & called disabler', () => {
+        chai.spy.on(kitchenHandler, 'auditAction', () => {});
+        chai.spy.on(helpers, 'disabler', () => {});
+        const action = ['Morningstar'];
+        budgetAction(action);
+        expect(kitchenHandler.auditAction).to.have.not.been.called();
+        expect(helpers.disabler).to.have.been.called();
     });
 });

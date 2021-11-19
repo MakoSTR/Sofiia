@@ -3,15 +3,13 @@ const priceData = require('../resources/input_files/price.json');
 const budgetData = require('../resources/input_files/budget.json');
 const messageCodes = require('../resources/messageCodes.json');
 const commandConfiguration = require('../resources/input_files/commandConfiguration.json');
-const FileReader = require('./fileReader');
+const fileReader = require('./fileReader');
 const restaurantBudgetService = require('./restaurantBudget');
 const warehousesService = require('./warehousesHandler');
 const taxService = require('./taxService');
 const discountService = require('./discountService');
 const orderService = require("./orderService");
 const { checkAllIngredients } = require("../helpers/helpers");
-
-const fileReader = new FileReader();
 
 const filePathForOutput = './resources/output_files/output.txt';
 const regularCustomer = jsonData['Regular customer'];
@@ -166,7 +164,6 @@ class BuyService {
         const totalSum = warehousesService.getTotalSumFromWarehouse(warehouses);
         const localSum = warehousesService.getAmountFromWarehouse(warehouses, order)
         if(1 + totalSum <= totalMax && 1 + localSum <= localMax) {
-            // const sum = orderService.sumForKeepedOrder(ingredients, 0, transactionTax);
             restaurantBudgetService.restaurantBudget -= sum.orderSum + sum.extraSum;
             if (warehousesService.checkIsDish(order).length > 0 && warehouses[order] === 0) {
                 warehousesService.reduceQuantities(order, warehouses);

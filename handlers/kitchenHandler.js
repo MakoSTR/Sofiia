@@ -2,15 +2,10 @@ const restaurantBudgetService = require("../servises/restaurantBudget");
 const warehousesService = require("../servises/warehousesHandler");
 const audit = require("../servises/audit");
 const taxService = require('../servises/taxService');
-const FileReader = require("../servises/fileReader");
-// const orderHandler = require('../servises/orderHandler');
-// const command = require("../resources/input_files/commandConfiguration.json");
+const fileReader = require("../servises/fileReader");
 const priceData = require("../resources/input_files/price.json");
-// const warehouses = require("../resources/input_files/warehouses.json");
 
-const fileReader = new FileReader();
 const filePathForOutput = './resources/output_files/output.txt';
-// const price = priceData['Base ingredients'];
 
 class KitchenHandler {
     sendRestaurantBudget = () => {
@@ -62,4 +57,6 @@ class KitchenHandler {
     }
 }
 
-module.exports = KitchenHandler;
+const kitchenHandler = new KitchenHandler();
+
+module.exports = kitchenHandler;

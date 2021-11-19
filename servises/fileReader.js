@@ -9,5 +9,7 @@ class FileReader {
     };
 }
 
-module.exports = FileReader;
+const fileReader = new FileReader;
+
+module.exports = fileReader;
 

@@ -1,7 +1,6 @@
-const FileReader = require('./fileReader');
+const fileReader = require('./fileReader');
 const taxService = require("../servises/taxService");
 
-const fileReader = new FileReader();
 const filePathForAudit = './resources/output_files/audit.txt';
 
 class Audit {
