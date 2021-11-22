@@ -28,7 +28,7 @@ const orderAction = (i, validBudget, filePathForOutput ) => {
         } else {
             kitchenHandler.sendRestaurantBudget();
         }
-    }
+    } else
     if (command[i[0].toLowerCase()] === 'dishes') {
         if (validBudget) {
             let ingredient = i[1];
@@ -53,7 +53,7 @@ const orderAction = (i, validBudget, filePathForOutput ) => {
             kitchenHandler.sendRestaurantBudget();
         }
         console.log('dishes')
-    }
+    } else
     if (command[i[0].toLowerCase()] === 'all') {
         if (validBudget) {
             let ingredient = i[1];
@@ -81,7 +81,6 @@ const orderAction = (i, validBudget, filePathForOutput ) => {
         } else {
             kitchenHandler.sendRestaurantBudget();
         }
-        console.log('all')
     }
     else {
         disabler(i)

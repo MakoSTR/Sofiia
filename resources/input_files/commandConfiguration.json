@@ -11,5 +11,5 @@
   "total maximum": 85,
   "max ingredient type": 10,
   "max dish type": 3,
-  "dishes with allergies": 20
+  "dishes with allergies": "keep"
 }

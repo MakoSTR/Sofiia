@@ -1,23 +1,14 @@
 Restaurant budget: 500
 Alexandra Smith - Fries costs 5: success, tax = 1
-Restaurant budget: 604
-Order,Potatoes,10 => Wasted: 3 Potatoes (limit: 10)
-Order,Tuna,1 => success; sum = 25; tax = 3
-Morningstar command disabled
-Success: money amount 49; tax amount 6
-{
-    Alexandra Smith - Irish Fish costs 44: success, tax = 5
-    Adam Smith - Fries costs 5: success, tax = 1
-}
-Success: money amount 175; tax amount 19
-{
-    Alexandra Smith - Irish Fish costs 44: success, tax = 5, discount = 5
-    Adam Smith - Fries costs 5: success, tax = 1
-    Christian Donnovan - Princess Chicken costs 126: success, tax = 13
-}
-FAILURE. Bernard Unfortunate can’t order Fries, allergic to: Potatoes. So, whole table fails.
-Table,Alexandra Smith,Adam Smith,Fries => ERROR. Every person needs something to eat. So, whole table fails.
-Table,Alexandra Smith,Fries,Irish Fish => ERROR. One person can have one type of food only. So, whole table fails.
-Table,Adam Smith,Adam Smith,Fries,Fries => ERROR. One person can appear only once at the table. So, whole table fails.
-Restaurant budget: 737
-Daily tax: 20.5
+Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+Restaurant budget: 504
+Daily tax: 0
+Restaurant budget: 500
+Alexandra Smith - Fries costs 5: success, tax = 1
+Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+Restaurant budget: 489
+Daily tax: 0
