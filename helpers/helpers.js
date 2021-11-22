@@ -1,6 +1,5 @@
-const FileReader = require('../servises/fileReader');
+const fileReader = require('../servises/fileReader');
 
-const fileReader = new FileReader();
 const filePathForOutput = './resources/output_files/output.txt';
 
 const createAuditMessage = (inputArr, resMessage) => {

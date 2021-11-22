@@ -1,13 +1,10 @@
 const command = require("../resources/input_files/commandConfiguration.json");
 const warehousesService = require("../servises/warehousesHandler");
-const {createAuditMessage, disabler} = require("../helpers/helpers");
+const helpers = require("../helpers/helpers");
 const buyService = require("../servises/buyService");
 const messageCodes = require("../resources/messageCodes.json");
-const KitchenHandler = require('../handlers/kitchenHandler');
-const FileReader = require('../servises/fileReader');
-
-const kitchenHandler = new KitchenHandler;
-const fileReader = new FileReader;
+const kitchenHandler = require('../handlers/kitchenHandler');
+const fileReader = require('../servises/fileReader');
 
 const tableAction = (i, validBudget, customers, dishes, filePathForOutput) => {
     if (command[i[0].toLowerCase()] === 'yes') {
@@ -31,21 +28,21 @@ const tableAction = (i, validBudget, customers, dishes, filePathForOutput) => {
                 return warehouses[dish] > 0 || warehouseResult === false;
             })
 
+            if (findSameCustomerNames) {
+                const resMessage = 'ERROR. One person can appear only once at the table. So, whole table fails.';
+                const message = helpers.createAuditMessage(i, resMessage);
+                fileReader.appendFile(filePathForOutput, message)
+                kitchenHandler.auditAction(message);
+            } else
             if (findCustomers.length < findDishes.length) {
                 const resMessage = 'ERROR. One person can have one type of food only. So, whole table fails.';
-                const message = createAuditMessage(i, resMessage);
+                const message = helpers.createAuditMessage(i, resMessage);
                 fileReader.appendFile(filePathForOutput, message);
                 kitchenHandler.auditAction(message);
             } else
             if (findCustomers.length > findDishes.length) {
                 const resMessage = 'ERROR. Every person needs something to eat. So, whole table fails.';
-                const message = createAuditMessage(i, resMessage);
-                fileReader.appendFile(filePathForOutput, message)
-                kitchenHandler.auditAction(message);
-            } else
-            if (findSameCustomerNames) {
-                const resMessage = 'ERROR. One person can appear only once at the table. So, whole table fails.';
-                const message = createAuditMessage(i, resMessage);
+                const message = helpers.createAuditMessage(i, resMessage);
                 fileReader.appendFile(filePathForOutput, message)
                 kitchenHandler.auditAction(message);
             } else
@@ -55,11 +52,11 @@ const tableAction = (i, validBudget, customers, dishes, filePathForOutput) => {
                 if (tableResult.message === messageCodes.success) {
                     resMessage = `${tableResult.message}, sum: ${tableResult.totalSum}, tax: ${tableResult.totalTax}`
                 }
-                const message = createAuditMessage(i, resMessage);
+                const message = helpers.createAuditMessage(i, resMessage);
                 kitchenHandler.auditAction(message);
             } else {
                 const error = `ERROR. Lack of ingredients`;
-                const message = createAuditMessage(i, error);
+                const message = helpers.createAuditMessage(i, error);
                 fileReader.appendFile(filePathForOutput, message);
                 kitchenHandler.auditAction(message)
             }
@@ -67,7 +64,7 @@ const tableAction = (i, validBudget, customers, dishes, filePathForOutput) => {
             kitchenHandler.sendRestaurantBudget();
         }
     } else {
-        disabler(i)
+        helpers.disabler(i)
     }
 };
 

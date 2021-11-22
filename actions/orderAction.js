@@ -1,12 +1,8 @@
 const command = require("../resources/input_files/commandConfiguration.json");
 const warehousesService = require("../servises/warehousesHandler");
 const {createAuditMessage, disabler} = require("../helpers/helpers");
-const KitchenHandler = require('../handlers/kitchenHandler');
-const FileReader = require('../servises/fileReader');
-
-const kitchenHandler = new KitchenHandler;
-const fileReader = new FileReader;
-
+const kitchenHandler = require('../handlers/kitchenHandler');
+const fileReader = require('../servises/fileReader');
 
 const orderAction = (i, validBudget, filePathForOutput ) => {
     if (command[i[0].toLowerCase()] === 'ingredients') {
@@ -32,7 +28,7 @@ const orderAction = (i, validBudget, filePathForOutput ) => {
         } else {
             kitchenHandler.sendRestaurantBudget();
         }
-    }
+    } else
     if (command[i[0].toLowerCase()] === 'dishes') {
         if (validBudget) {
             let ingredient = i[1];
@@ -57,7 +53,7 @@ const orderAction = (i, validBudget, filePathForOutput ) => {
             kitchenHandler.sendRestaurantBudget();
         }
         console.log('dishes')
-    }
+    } else
     if (command[i[0].toLowerCase()] === 'all') {
         if (validBudget) {
             let ingredient = i[1];
@@ -85,7 +81,6 @@ const orderAction = (i, validBudget, filePathForOutput ) => {
         } else {
             kitchenHandler.sendRestaurantBudget();
         }
-        console.log('all')
     }
     else {
         disabler(i)

@@ -1,15 +1,12 @@
 const readline = require('readline');
-const FileReader = require('../servises/fileReader');
+const fileReader = require('../servises/fileReader');
 const restaurantBudgetService = require("../servises/restaurantBudget");
 const warehousesService = require('../servises/warehousesHandler');
 const audit = require('../servises/audit');
 const taxService = require('../servises/taxService');
 const command = require('../resources/input_files/commandConfiguration.json');
-const KitchenHandler = require("../handlers/kitchenHandler");
+const kitchenHandler = require("../handlers/kitchenHandler");
 const { main } = require('./main');
-
-const kitchenHandler = new KitchenHandler();
-const fileReader = new FileReader();
 
 const filePathForOutput = './resources/output_files/output.txt';
 const filePathFotInput = './resources/input_files/';
