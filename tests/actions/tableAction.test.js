@@ -27,7 +27,7 @@ describe('table action', () => {
 
         expect(helpers.disabler).to.have.been.called();
     });
-    test('badget <= 0 => should call sendRestaurantBudget fn', () => {
+    test('budget <= 0 => should call sendRestaurantBudget fn', () => {
         chai.spy.on(kitchenHandler, 'sendRestaurantBudget', () => {});
 
         const i = ['Table'];

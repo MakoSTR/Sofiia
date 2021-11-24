@@ -1,5 +1,3 @@
-Buy, Alexandra Smith, Fries
-Buy, Bernard Unfortunate, Fries
-Buy, Bernard Unfortunate, Fries
-Buy, Bernard Unfortunate, Fries
+Buy, Alexandra Smith, Pizza
+Order, Milk, 1, Tuna, 1
 Audit, Resources

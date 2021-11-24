@@ -45,8 +45,8 @@ const tableAction = (i, validBudget, customers, dishes, filePathForOutput) => {
                 const message = helpers.createAuditMessage(i, resMessage);
                 fileReader.appendFile(filePathForOutput, message)
                 kitchenHandler.auditAction(message);
-            } else
-            if (checkIngredientsForAllDishes) {
+                ///// malformed food
+            } else if (checkIngredientsForAllDishes) {
                 const tableResult = buyService.table(findCustomers, findDishes, command["profit margin"]);
                 let resMessage = tableResult.message;
                 if (tableResult.message === messageCodes.success) {

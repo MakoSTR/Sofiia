@@ -50,4 +50,16 @@ describe('kitchenHandler', () => {
         const res = kitchenHandler.findLocalMax(order, command);
         expect(res).equal(3);
     });
+    test('isMalformedFood => should return true when order dish is malformed (not exist)', () => {
+        const order = 'Princess Chicken';
+        const dishes = ["Fries", "Emperor Chicken", 'Princess Chicken'];
+        const res = kitchenHandler.isMalformedFood(order, dishes);
+        expect(res).equal(false);
+    });
+    test('isMalformedFood => should return false when order dish is exists', () => {
+        const order = 'Pizza';
+        const dishes = ["Fries", "Emperor Chicken", 'Princess Chicken'];
+        const res = kitchenHandler.isMalformedFood(order, dishes);
+        expect(res).equal(true);
+    });
 });

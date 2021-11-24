@@ -1,6 +1,7 @@
 const helpers = require("../helpers/helpers");
 const kitchenHandler = require("../handlers/kitchenHandler");
 const jsonData = require("../resources/input_files/data.json");
+const command = require("../resources/input_files/commandConfiguration.json");
 const orderAction = require('../actions/orderAction');
 const budgetAction = require('../actions/budgetAction');
 const tableAction = require('../actions/tableAction');
@@ -19,10 +20,10 @@ const main = (newArr) => {
             let action = i[0];
             switch (action) {
                 case 'Buy' :
-                    buyAction.buyAction(i, validBudget, filePathForOutput)
+                    buyAction.buyAction(i, validBudget, filePathForOutput, dishes)
                     break;
                 case 'Order' :
-                    orderAction.orderAction(i, validBudget, filePathForOutput)
+                    orderAction.orderAction(i, validBudget, filePathForOutput, command)
                     break;
                 case 'Budget' :
                     budgetAction.budgetAction(i)

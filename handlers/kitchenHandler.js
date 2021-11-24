@@ -3,11 +3,14 @@ const warehousesService = require("../servises/warehousesHandler");
 const audit = require("../servises/audit");
 const taxService = require('../servises/taxService');
 const fileReader = require("../servises/fileReader");
-const priceData = require("../resources/input_files/price.json");
 
 const filePathForOutput = './resources/output_files/output.txt';
 
 class KitchenHandler {
+    isMalformedFood = (order, dishes) => {
+        return dishes.every(dish => order !== dish);
+    };
+
     sendRestaurantBudget = () => {
         const validBudget = this.checkRestaurantBudget();
         if (validBudget) {
@@ -54,7 +57,7 @@ class KitchenHandler {
         const dishArray = warehousesService.checkIsDish(order);
         dishArray.length === 0 ? localMax = command["max ingredient type"] : localMax = command["max dish type"];
         return localMax;
-    }
+    };
 }
 
 const kitchenHandler = new KitchenHandler();

@@ -1,14 +1,6 @@
 Restaurant budget: 500
-Alexandra Smith - Fries costs 5: success, tax = 1
-Bernard Unfortunate can’t order Fries, allergic to: Potatoes
-Bernard Unfortunate can’t order Fries, allergic to: Potatoes
-Bernard Unfortunate can’t order Fries, allergic to: Potatoes
-Restaurant budget: 504
-Daily tax: 0
-Restaurant budget: 500
-Alexandra Smith - Fries costs 5: success, tax = 1
-Bernard Unfortunate can’t order Fries, allergic to: Potatoes
-Bernard Unfortunate can’t order Fries, allergic to: Potatoes
-Bernard Unfortunate can’t order Fries, allergic to: Potatoes
-Restaurant budget: 489
+Buy,Alexandra Smith,Pizza => Alexandra Smith can’t buy Pizza, cook has no idea how to make it
+Order,Milk,1,Tuna,1 => success; sum = 5; tax = 1
+Order,Milk,1,Tuna,1 => success; sum = 25; tax = 3
+Restaurant budget: 466
 Daily tax: 0
