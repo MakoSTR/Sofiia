@@ -1,6 +1,32 @@
 Restaurant budget: 500
-Buy,Alexandra Smith,Pizza => Alexandra Smith can’t buy Pizza, cook has no idea how to make it
-Order,Milk,1,Tuna,1 => success; sum = 5; tax = 1
-Order,Milk,1,Tuna,1 => success; sum = 25; tax = 3
-Restaurant budget: 466
-Daily tax: 0
+Restaurant budget: 30500
+Alexandra Smith - Fries costs 5: success, tax = 1
+Success: money amount 175; tax amount 19
+{
+    Alexandra Smith - Irish Fish costs 44: success, tax = 5
+    Adam Smith - Fries costs 5: success, tax = 1
+    Christian Donnovan - Princess Chicken costs 126: success, tax = 13
+}
+Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+Order,Princess Chicken,10,Tuna,1 => success; sum = 25; tax = 3
+Order,Princess Chicken,10,Tuna,1 => Wasted: 7 Princess Chicken (limit: 3)
+Order,Princess Chicken,15,Tuna,1 => success; sum = 25; tax = 3
+Order,Princess Chicken,15,Tuna,1 => Wasted: 15 Princess Chicken (limit: 3)
+Restaurant Poisoned
+Restaurant Poisoned
+Restaurant budget: 28114
+Daily tax: 2736
+Success: money amount 10; tax amount 2
+{
+    Barbara Smith - Smashed Potatoes costs 5: success, tax = 1
+    Adam Smith - Fries costs 5: success, tax = 1
+}
+FAILURE. Barbara Smith can’t order Tuna Cake, allergic to: Chocolate. So, whole table fails.
+FAILURE. Julie Mirage – can’t order, budget 100 and Princess Chicken costs 126. So, whole table fails.
+s command disabled
+t command disabled
+Restaurant budget: 500
+Buy command disabled
+Audit command disabled

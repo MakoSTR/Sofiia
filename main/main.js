@@ -7,33 +7,40 @@ const budgetAction = require('../actions/budgetAction');
 const tableAction = require('../actions/tableAction');
 const buyAction = require('../actions/buyAction');
 const auditAction = require('../actions/auditAction');
+const throwTrashAwayAction = require('../actions/throwTrashAwayAction');
 
 const filePathForOutput = './resources/output_files/output.txt';
+const trash = require('../resources/output_files/trash.json');
 const customers = Object.keys(jsonData['Regular customer']);
 const dishes = Object.keys(jsonData.Food);
+const baseIngredient = jsonData["Base ingredients"];
 
 const main = (newArr) => {
     for (const i of newArr) {
-        if (i.length >= 3 || i[0] === 'Audit') {
+        if (i.length >= 3 || i[0] === 'Audit' || i[0] === 'Throw trash away') {
             const validBudget = kitchenHandler.checkRestaurantBudget();
 
             let action = i[0];
             switch (action) {
                 case 'Buy' :
-                    buyAction.buyAction(i, validBudget, filePathForOutput, dishes)
+                    buyAction.buyAction(i, validBudget, filePathForOutput, dishes, trash)
                     break;
                 case 'Order' :
-                    orderAction.orderAction(i, validBudget, filePathForOutput, command)
+                    orderAction.orderAction(i, validBudget, filePathForOutput, command, dishes, baseIngredient, trash)
                     break;
                 case 'Budget' :
-                    budgetAction.budgetAction(i)
+                    budgetAction.budgetAction(i, trash, filePathForOutput)
                     break;
                 case 'Table' :
-                    tableAction.tableAction(i, validBudget, customers, dishes, filePathForOutput)
+                    tableAction.tableAction(i, validBudget, customers, dishes, filePathForOutput, trash)
                     break;
                 case 'Audit' :
                     auditAction.auditAction(i)
                     break;
+                case 'Throw trash away' :
+                    throwTrashAwayAction.throwTrashAwayAction(trash)
+                    console.log('Throw trash away');
+                    break
                 default:
                     helpers.disabler(i)
             }

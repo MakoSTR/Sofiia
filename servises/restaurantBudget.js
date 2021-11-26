@@ -30,8 +30,8 @@ class RestaurantBudgetService {
         return this.restaurantBudget = this.restaurantBudget + (sum - transactionTaxSum - discount);
     }
 
-    decreaseRestaurantBudget = (ingredient, number, tax) => {
-        const orderAmount = this.order(ingredient, number);
+    decreaseRestaurantBudget = (ingredient, number, tax, userIngredients) => {
+        const orderAmount = this.order(ingredient, number, userIngredients);
         const transactionTaxSum = taxService.transactionTaxSum(orderAmount, tax);
         taxService.addAlreadyCollectedTax(orderAmount, tax);
         this.restaurantBudget -= orderAmount + transactionTaxSum;
@@ -50,11 +50,11 @@ class RestaurantBudgetService {
         }
     }
 
-    order = (ingredient, number) => {
+    order = (ingredient, number, userIngredients) => {
         if(warehouseService.checkIsDish(ingredient).length === 0) {
             return price[ingredient] * number;
         } else {
-            const userIngredients = [];
+            // const userIngredients = [];
             checkAllIngredients(ingredient, userIngredients, food, base);
             const { orderSum } = orderService.sumForKeepedOrder(userIngredients, 0, 0);
 

@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.72% </span>
+                <span class="strong">77.55% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>36/43</span>
+                <span class='fraction'>38/49</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.71% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>6/7</span>
+                <span class='fraction'>6/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
+                <span class="strong">77.08% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>35/42</span>
+                <span class='fraction'>37/48</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -121,12 +121,22 @@
 <a name='L62'></a><a href='#L62'>62</a>
 <a name='L63'></a><a href='#L63'>63</a>
 <a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">6x</span>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -174,12 +184,20 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -192,6 +210,7 @@ const taxService = require('../servises/taxService');
 const fileReader = require("../servises/fileReader");
 &nbsp;
 const filePathForOutput = './resources/output_files/output.txt';
+const trashObj = require('../resources/output_files/trash.json');
 &nbsp;
 class KitchenHandler {
     isMalformedFood = (order, dishes) =&gt; {
@@ -218,10 +237,10 @@ class KitchenHandler {
         return false;
     };
 &nbsp;
-    order = (ingredient, number, tax, totalMax, maxLimit) =&gt; {
+    order = (ingredient, number, tax, totalMax, maxLimit, userIngredients) =&gt; {
         const quantity = parseInt(number);
         const warehouses = warehousesService.getWarehouses();
-        const transactionResult = restaurantBudgetService.decreaseRestaurantBudget(ingredient, quantity, tax);
+        const transactionResult = restaurantBudgetService.decreaseRestaurantBudget(ingredient, quantity, tax, userIngredients);
         const warehouseResult = warehousesService.checkWarehouseSpace(warehouses, quantity, totalMax, ingredient, maxLimit);
         <span class="missing-if-branch" title="if path not taken" >I</span>if (warehouseResult.res) {
 <span class="cstat-no" title="statement not covered" >            warehousesService.addIngredients(warehouses, ingredient, quantity);</span>
@@ -235,8 +254,10 @@ class KitchenHandler {
         const warehouses = <span class="cstat-no" title="statement not covered" >warehousesService.getWarehouses();</span>
         const warehousesCopy = <span class="cstat-no" title="statement not covered" >{ ...warehouses };</span>
         const restaurantBudget = <span class="cstat-no" title="statement not covered" >restaurantBudgetService.getRestaurantBudget();</span>
-        const transactionTax = <span class="cstat-no" title="statement not covered" >taxService.getAlreadyCollectedTax()</span>
-<span class="cstat-no" title="statement not covered" >        audit.addToAudit({ res: message, budget: restaurantBudget, warehouses: warehousesCopy, transactionTax });</span>
+        const transactionTax = <span class="cstat-no" title="statement not covered" >taxService.getAlreadyCollectedTax();</span>
+        const trash = <span class="cstat-no" title="statement not covered" >{...trashObj}</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        audit.addToAudit({ res: message, budget: restaurantBudget, warehouses: warehousesCopy, transactionTax, trash });</span>
     };
 &nbsp;
     findLocalMax = (order, command) =&gt; {
@@ -244,6 +265,12 @@ class KitchenHandler {
         const dishArray = warehousesService.checkIsDish(order);
         dishArray.length === 0 ? localMax = command["max ingredient type"] : localMax = command["max dish type"];
         return localMax;
+    };
+&nbsp;
+    messagePoisoned = <span class="fstat-no" title="function not covered" >(f</span>ilePathForOutput) =&gt; {
+        const message = <span class="cstat-no" title="statement not covered" >'Restaurant Poisoned';</span>
+<span class="cstat-no" title="statement not covered" >        fileReader.appendFile(filePathForOutput, message);</span>
+<span class="cstat-no" title="statement not covered" >        kitchenHandler.auditAction(message);</span>
     };
 }
 &nbsp;
@@ -256,7 +283,7 @@ module.exports = kitchenHandler;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Nov 24 2021 16:59:57 GMT+0200 (за східноєвропейським стандартним часом)
+                at Fri Nov 26 2021 18:26:48 GMT+0200 (за східноєвропейським стандартним часом)
             </div>
         </div>
         <script src="../prettify.js"></script>

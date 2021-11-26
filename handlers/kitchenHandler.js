@@ -5,6 +5,7 @@ const taxService = require('../servises/taxService');
 const fileReader = require("../servises/fileReader");
 
 const filePathForOutput = './resources/output_files/output.txt';
+const trashObj = require('../resources/output_files/trash.json');
 
 class KitchenHandler {
     isMalformedFood = (order, dishes) => {
@@ -31,10 +32,10 @@ class KitchenHandler {
         return false;
     };
 
-    order = (ingredient, number, tax, totalMax, maxLimit) => {
+    order = (ingredient, number, tax, totalMax, maxLimit, userIngredients) => {
         const quantity = parseInt(number);
         const warehouses = warehousesService.getWarehouses();
-        const transactionResult = restaurantBudgetService.decreaseRestaurantBudget(ingredient, quantity, tax);
+        const transactionResult = restaurantBudgetService.decreaseRestaurantBudget(ingredient, quantity, tax, userIngredients);
         const warehouseResult = warehousesService.checkWarehouseSpace(warehouses, quantity, totalMax, ingredient, maxLimit);
         if (warehouseResult.res) {
             warehousesService.addIngredients(warehouses, ingredient, quantity);
@@ -48,8 +49,10 @@ class KitchenHandler {
         const warehouses = warehousesService.getWarehouses();
         const warehousesCopy = { ...warehouses };
         const restaurantBudget = restaurantBudgetService.getRestaurantBudget();
-        const transactionTax = taxService.getAlreadyCollectedTax()
-        audit.addToAudit({ res: message, budget: restaurantBudget, warehouses: warehousesCopy, transactionTax });
+        const transactionTax = taxService.getAlreadyCollectedTax();
+        const trash = {...trashObj}
+
+        audit.addToAudit({ res: message, budget: restaurantBudget, warehouses: warehousesCopy, transactionTax, trash });
     };
 
     findLocalMax = (order, command) => {
@@ -57,6 +60,12 @@ class KitchenHandler {
         const dishArray = warehousesService.checkIsDish(order);
         dishArray.length === 0 ? localMax = command["max ingredient type"] : localMax = command["max dish type"];
         return localMax;
+    };
+
+    messagePoisoned = (filePathForOutput) => {
+        const message = 'Restaurant Poisoned';
+        fileReader.appendFile(filePathForOutput, message);
+        kitchenHandler.auditAction(message);
     };
 }
 

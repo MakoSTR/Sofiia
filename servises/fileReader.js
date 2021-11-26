@@ -7,6 +7,9 @@ class FileReader {
     appendFile = (filePath, data) => {
         fs.appendFileSync(filePath, `${data}\r\n`);
     };
+    writeFile = (filePath, data) => {
+        fs.writeFileSync(filePath, data);
+    }
 }
 
 const fileReader = new FileReader;

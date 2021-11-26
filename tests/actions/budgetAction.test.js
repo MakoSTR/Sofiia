@@ -16,7 +16,9 @@ describe('budgetAction', () => {
         chai.spy.on(kitchenHandler, 'auditAction', () => {});
         chai.spy.on(helpers, 'disabler', () => {});
         const action = ['Budget'];
-        budgetAction(action);
+        const trash = {};
+        const filePathForOutput = '';
+        budgetAction(action, trash, filePathForOutput);
         expect(kitchenHandler.auditAction).to.have.been.called();
         expect(helpers.disabler).to.have.not.been.called();
     });

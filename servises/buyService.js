@@ -10,6 +10,7 @@ const taxService = require('./taxService');
 const discountService = require('./discountService');
 const orderService = require("./orderService");
 const { checkAllIngredients } = require("../helpers/helpers");
+const trashService = require("../servises/trashService");
 
 const filePathForOutput = './resources/output_files/output.txt';
 const regularCustomer = jsonData['Regular customer'];
@@ -63,10 +64,10 @@ class BuyService {
         return totalBudget - sum + discount;
     };
 
-    sendResult = (foundAllergies, name, order, sum, configuration, totalMax, localMax, ingredients) => {
+    sendResult = (foundAllergies, name, order, sum, configuration, totalMax, localMax, ingredients, trash) => {
         const warehouses = warehousesService.getWarehouses();
         if (foundAllergies) {
-            this.dishesWithAllergies(configuration, order, warehouses, totalMax, localMax, ingredients, commandConfiguration["transaction tax"])
+            this.dishesWithAllergies(configuration, order, warehouses, totalMax, localMax, ingredients, commandConfiguration["transaction tax"], trash);
             return `${name} can’t order ${order}, allergic to: ${foundAllergies}`
         } else
         if (this.clientBudget[name] < sum) {
@@ -85,7 +86,7 @@ class BuyService {
         }
     };
 
-    buy = (person, order, margin, configuration, totalMax, localMax) => {
+    buy = (person, order, margin, configuration, totalMax, localMax, trash) => {
         const userIngredients = [];
         checkAllIngredients(order, userIngredients, food, base);
 
@@ -95,7 +96,7 @@ class BuyService {
         if (!this.clientBudget[person] && this.clientBudget[person] !== 0) {
             this.clientBudget[person] = budget[person];
         }
-        const sendRes = this.sendResult(foundAllergy, person, order, sum, configuration, totalMax, localMax, userIngredients);
+        const sendRes = this.sendResult(foundAllergy, person, order, sum, configuration, totalMax, localMax, userIngredients, trash);
         fileReader.appendFile(filePathForOutput, sendRes);
         return { sendRes, sum };
     }
@@ -173,12 +174,15 @@ class BuyService {
         console.log('keep');
     }
 
-    dishesWithAllergies = (configuration, order, warehouses, totalMax, localMax, ingredients, transactionTax) => {
+    dishesWithAllergies = (configuration, order, warehouses, totalMax, localMax, ingredients, transactionTax, trash) => {
         const sum = orderService.sumForKeepedOrder(ingredients, 0, transactionTax);
 
         switch (configuration) {
             case 'waste':
                 warehousesService.reduceQuantities(order, warehouses);
+                ingredients.forEach(everyIngredient => {
+                    trashService.trashService(commandConfiguration["waste limit"], trash, 1, everyIngredient)
+                })
                 break;
             case 'keep':
                 this.keep(order, warehouses, totalMax, localMax, ingredients, transactionTax, sum);

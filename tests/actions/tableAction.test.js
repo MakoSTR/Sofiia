@@ -9,6 +9,7 @@ const kitchenHandler = require("../../handlers/kitchenHandler");
 const warehousesService = require("../../servises/warehousesHandler");
 const fileReader = require('../../servises/fileReader');
 const buyService = require('../../servises/buyService');
+const trashService = require("../../servises/trashService");
 
 describe('table action', () => {
     afterEach(() => {
@@ -35,8 +36,9 @@ describe('table action', () => {
         const customers = [];
         const dishes = [];
         const filePathForOutput = '';
+        const trash = {};
 
-        tableAction(i, validBudget, customers, dishes, filePathForOutput);
+        tableAction(i, validBudget, customers, dishes, filePathForOutput, trash);
 
         expect(kitchenHandler.sendRestaurantBudget).to.have.been.called();
     });
@@ -48,6 +50,8 @@ describe('table action', () => {
         chai.spy.on(fileReader, 'appendFile', () => {});
         chai.spy.on(helpers, 'createAuditMessage', () => {});
         chai.spy.on(buyService, 'table', () => {});
+        chai.spy.on(trashService, 'checkIsPoisoned', () => {});
+        chai.spy.on(trashService, 'getPoisoned', () => { return false });
 
         const resMessage = 'ERROR. One person can appear only once at the table. So, whole table fails.';
         const i = ['Table', 'Adam Smith', 'Adam Smith', 'Fries'];
@@ -55,8 +59,9 @@ describe('table action', () => {
         const customers = ['Alexandra Smith', 'Adam Smith', 'Christian Donnovan'];
         const dishes = ['Irish Fish', 'Fries'];
         const filePathForOutput = '';
+        const trash = {};
 
-        tableAction(i, validBudget, customers, dishes, filePathForOutput);
+        tableAction(i, validBudget, customers, dishes, filePathForOutput, trash);
 
         expect(warehousesService.checkDishIngredientsInWarehouse).to.have.been.called();
         expect(warehousesService.getWarehouses).to.have.been.called();
@@ -83,8 +88,9 @@ describe('table action', () => {
         const customers = ['Alexandra Smith', 'Adam Smith', 'Christian Donnovan'];
         const dishes = ['Irish Fish', 'Fries'];
         const filePathForOutput = '';
+        const trash = {};
 
-        tableAction(i, validBudget, customers, dishes, filePathForOutput);
+        tableAction(i, validBudget, customers, dishes, filePathForOutput, trash);
 
         expect(warehousesService.checkDishIngredientsInWarehouse).to.have.been.called();
         expect(warehousesService.getWarehouses).to.have.been.called();
@@ -111,8 +117,9 @@ describe('table action', () => {
         const customers = ['Alexandra Smith', 'Adam Smith', 'Christian Donnovan'];
         const dishes = ['Irish Fish', 'Fries'];
         const filePathForOutput = '';
+        const trash = {};
 
-        tableAction(i, validBudget, customers, dishes, filePathForOutput);
+        tableAction(i, validBudget, customers, dishes, filePathForOutput, trash);
 
         expect(warehousesService.checkDishIngredientsInWarehouse).to.have.been.called();
         expect(warehousesService.getWarehouses).to.have.been.called();
@@ -138,8 +145,9 @@ describe('table action', () => {
         const customers = ['Alexandra Smith', 'Adam Smith', 'Christian Donnovan'];
         const dishes = ['Irish Fish', 'Fries'];
         const filePathForOutput = '';
+        const trash = {};
 
-        tableAction(i, validBudget, customers, dishes, filePathForOutput);
+        tableAction(i, validBudget, customers, dishes, filePathForOutput, trash);
 
         expect(warehousesService.checkDishIngredientsInWarehouse).to.have.been.called();
         expect(warehousesService.getWarehouses).to.have.been.called();
@@ -165,8 +173,9 @@ describe('table action', () => {
         const customers = ['Alexandra Smith', 'Adam Smith', 'Christian Donnovan'];
         const dishes = ['Irish Fish', 'Fries'];
         const filePathForOutput = '';
+        const trash = {};
 
-        tableAction(i, validBudget, customers, dishes, filePathForOutput);
+        tableAction(i, validBudget, customers, dishes, filePathForOutput, trash);
 
         expect(warehousesService.checkDishIngredientsInWarehouse).to.have.been.called();
         expect(warehousesService.getWarehouses).to.have.been.called();

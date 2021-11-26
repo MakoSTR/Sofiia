@@ -38,7 +38,8 @@ class Audit {
                 `command: => ${audit.res}
             Warehouse: ${JSON.stringify(audit.warehouses)}
             Restaurant Budget: ${budgetRes}
-            All Transaction Tax: ${audit.transactionTax}`;
+            All Transaction Tax: ${audit.transactionTax}
+            Trash: ${JSON.stringify(audit.trash)}`;
             fileReader.appendFile(filePathForAudit, message)
         })
         const endRestaurantBudget = this.auditData[this.auditData.length-1].budget;

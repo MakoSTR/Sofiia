@@ -28,9 +28,10 @@ describe('buyAction', () => {
         const validBudget = false;
         const filePathForOutput = '';
         const dishes = ['Emperor Chicken'];
+        const trash = {};
         chai.spy.on(kitchenHandler, 'sendRestaurantBudget', () => {});
         chai.spy.on(fileReader, 'appendFile', () => {});
-        buyAction(action, validBudget, filePathForOutput, dishes);
+        buyAction(action, validBudget, filePathForOutput, dishes, trash);
         expect(kitchenHandler.sendRestaurantBudget).to.have.been.called();
     });
     test('buy action === Buy & rest budget is valid ==> should call auditAction, checkDishIngredientsInWarehouse, buy, createAuditMessage fn & not call sendRestaurantBudget', () => {
@@ -38,6 +39,8 @@ describe('buyAction', () => {
         const validBudget = true;
         const filePathForOutput = '';
         const dishes = ["Chicken", "Fries"];
+        const trash = {"Chicken": 6};
+
         chai.spy.on(kitchenHandler, 'auditAction', () => {});
         chai.spy.on(kitchenHandler, 'sendRestaurantBudget', () => {});
         chai.spy.on(warehousesService, 'checkDishIngredientsInWarehouse', () => {});
@@ -45,7 +48,7 @@ describe('buyAction', () => {
         chai.spy.on(helpers, 'createAuditMessage', () => {});
         chai.spy.on(fileReader, 'appendFile', () => {});
 
-        buyAction(action, validBudget, filePathForOutput, dishes);
+        buyAction(action, validBudget, filePathForOutput, dishes, trash);
         expect(kitchenHandler.auditAction).to.have.been.called();
         expect(warehousesService.checkDishIngredientsInWarehouse).to.have.been.called();
         expect(buyService.buy).to.have.been.called();
@@ -57,12 +60,13 @@ describe('buyAction', () => {
         const validBudget = true;
         const filePathForOutput = '';
         const dishes = ["Chicken", "Fries"];
-        const error = `${action[1]} can’t buy ${action[2]}, cook has no idea how to make it`
+        const error = `${action[1]} can’t buy ${action[2]}, cook has no idea how to make it`;
+        const trash = {};
         chai.spy.on(kitchenHandler, 'auditAction', () => {});
         chai.spy.on(helpers, 'createAuditMessage', () => {});
         chai.spy.on(fileReader, 'appendFile', () => {});
 
-        buyAction(action, validBudget, filePathForOutput, dishes);
+        buyAction(action, validBudget, filePathForOutput, dishes, trash);
         expect(kitchenHandler.auditAction).to.have.been.called();
         expect(helpers.createAuditMessage).to.have.been.called.with(action, error);
     });

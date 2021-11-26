@@ -171,7 +171,8 @@ describe('dishesWithAllergies', () => {
         const localMax = 10;
         const ingredients = ['Tuna'];
         const transactionTax = 10;
-        buyService.dishesWithAllergies(configuration, order, warehouses, totalMax, localMax, ingredients, transactionTax);
+        const trash = {};
+        buyService.dishesWithAllergies(configuration, order, warehouses, totalMax, localMax, ingredients, transactionTax, trash);
         expect(warehousesService.reduceQuantities).to.have.been.called();
     });
     test('keep case', () => {

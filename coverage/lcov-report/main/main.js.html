@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">63.88% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>20/30</span>
+                <span class='fraction'>23/36</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>5/10</span>
+                <span class='fraction'>6/12</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">63.88% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>20/30</span>
+                <span class='fraction'>23/36</span>
             </div>
         
             
@@ -100,7 +100,15 @@
 <a name='L41'></a><a href='#L41'>41</a>
 <a name='L42'></a><a href='#L42'>42</a>
 <a name='L43'></a><a href='#L43'>43</a>
-<a name='L44'></a><a href='#L44'>44</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -110,6 +118,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -137,6 +147,10 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -152,33 +166,40 @@ const budgetAction = require('../actions/budgetAction');
 const tableAction = require('../actions/tableAction');
 const buyAction = require('../actions/buyAction');
 const auditAction = require('../actions/auditAction');
+const throwTrashAwayAction = require('../actions/throwTrashAwayAction');
 &nbsp;
 const filePathForOutput = './resources/output_files/output.txt';
+const trash = require('../resources/output_files/trash.json');
 const customers = Object.keys(jsonData['Regular customer']);
 const dishes = Object.keys(jsonData.Food);
+const baseIngredient = jsonData["Base ingredients"];
 &nbsp;
 const main = (newArr) =&gt; {
     for (const i of newArr) {
-        if (i.length &gt;= 3 || i[0] === 'Audit') {
+        if (i.length &gt;= 3 || i[0] === 'Audit' || i[0] === 'Throw trash away') {
             const validBudget = kitchenHandler.checkRestaurantBudget();
 &nbsp;
             let action = i[0];
             switch (action) {
 <span class="branch-0 cbranch-no" title="branch not covered" >                case 'Buy' :</span>
-<span class="cstat-no" title="statement not covered" >                    buyAction.buyAction(i, validBudget, filePathForOutput, dishes)</span>
+<span class="cstat-no" title="statement not covered" >                    buyAction.buyAction(i, validBudget, filePathForOutput, dishes, trash)</span>
 <span class="cstat-no" title="statement not covered" >                    break;</span>
 <span class="branch-1 cbranch-no" title="branch not covered" >                case 'Order' :</span>
-<span class="cstat-no" title="statement not covered" >                    orderAction.orderAction(i, validBudget, filePathForOutput, command)</span>
+<span class="cstat-no" title="statement not covered" >                    orderAction.orderAction(i, validBudget, filePathForOutput, command, dishes, baseIngredient, trash)</span>
 <span class="cstat-no" title="statement not covered" >                    break;</span>
 <span class="branch-2 cbranch-no" title="branch not covered" >                case 'Budget' :</span>
-<span class="cstat-no" title="statement not covered" >                    budgetAction.budgetAction(i)</span>
+<span class="cstat-no" title="statement not covered" >                    budgetAction.budgetAction(i, trash, filePathForOutput)</span>
 <span class="cstat-no" title="statement not covered" >                    break;</span>
 <span class="branch-3 cbranch-no" title="branch not covered" >                case 'Table' :</span>
-<span class="cstat-no" title="statement not covered" >                    tableAction.tableAction(i, validBudget, customers, dishes, filePathForOutput)</span>
+<span class="cstat-no" title="statement not covered" >                    tableAction.tableAction(i, validBudget, customers, dishes, filePathForOutput, trash)</span>
 <span class="cstat-no" title="statement not covered" >                    break;</span>
 <span class="branch-4 cbranch-no" title="branch not covered" >                case 'Audit' :</span>
 <span class="cstat-no" title="statement not covered" >                    auditAction.auditAction(i)</span>
 <span class="cstat-no" title="statement not covered" >                    break;</span>
+<span class="branch-5 cbranch-no" title="branch not covered" >                case 'Throw trash away' :</span>
+<span class="cstat-no" title="statement not covered" >                    throwTrashAwayAction.throwTrashAwayAction(trash)</span>
+<span class="cstat-no" title="statement not covered" >                    console.log('Throw trash away');</span>
+<span class="cstat-no" title="statement not covered" >                    break</span>
                 default:
                     helpers.disabler(i)
             }
@@ -193,7 +214,7 @@ module.exports = { main }</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Nov 24 2021 16:59:57 GMT+0200 (за східноєвропейським стандартним часом)
+                at Fri Nov 26 2021 18:26:48 GMT+0200 (за східноєвропейським стандартним часом)
             </div>
         </div>
         <script src="../prettify.js"></script>
