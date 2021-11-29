@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1637944008523" clover="3.2.0">
-  <project timestamp="1637944008523" name="All files">
-    <metrics statements="748" coveredstatements="623" conditionals="227" coveredconditionals="159" methods="136" coveredmethods="118" elements="1111" coveredelements="900" complexity="0" loc="748" ncloc="748" packages="5" files="19" classes="19"/>
+<coverage generated="1638197370896" clover="3.2.0">
+  <project timestamp="1638197370896" name="All files">
+    <metrics statements="770" coveredstatements="635" conditionals="231" coveredconditionals="160" methods="142" coveredmethods="120" elements="1143" coveredelements="915" complexity="0" loc="770" ncloc="770" packages="5" files="19" classes="19"/>
     <package name="actions">
-      <metrics statements="190" coveredstatements="136" conditionals="82" coveredconditionals="44" methods="18" coveredmethods="12"/>
-      <file name="auditAction.js" path="C:\Users\User\Desktop\chicken-kitchen-extreme\actions\auditAction.js">
+      <metrics statements="198" coveredstatements="139" conditionals="82" coveredconditionals="44" methods="18" coveredmethods="12"/>
+      <file name="auditAction.js" path="C:\Users\skravets\Desktop\Chicken Kitchen Extreme\actions\auditAction.js">
         <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
@@ -15,7 +15,7 @@
         <line num="9" count="1" type="stmt"/>
         <line num="13" count="2" type="stmt"/>
       </file>
-      <file name="budgetAction.js" path="C:\Users\User\Desktop\chicken-kitchen-extreme\actions\budgetAction.js">
+      <file name="budgetAction.js" path="C:\Users\skravets\Desktop\Chicken Kitchen Extreme\actions\budgetAction.js">
         <metrics statements="20" coveredstatements="19" conditionals="6" coveredconditionals="4" methods="1" coveredmethods="1"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
@@ -38,7 +38,7 @@
         <line num="24" count="1" type="stmt"/>
         <line num="28" count="2" type="stmt"/>
       </file>
-      <file name="buyAction.js" path="C:\Users\User\Desktop\chicken-kitchen-extreme\actions\buyAction.js">
+      <file name="buyAction.js" path="C:\Users\skravets\Desktop\Chicken Kitchen Extreme\actions\buyAction.js">
         <metrics statements="36" coveredstatements="31" conditionals="14" coveredconditionals="11" methods="1" coveredmethods="1"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
@@ -77,7 +77,7 @@
         <line num="45" count="1" type="stmt"/>
         <line num="49" count="2" type="stmt"/>
       </file>
-      <file name="orderAction.js" path="C:\Users\User\Desktop\chicken-kitchen-extreme\actions\orderAction.js">
+      <file name="orderAction.js" path="C:\Users\skravets\Desktop\Chicken Kitchen Extreme\actions\orderAction.js">
         <metrics statements="65" coveredstatements="21" conditionals="40" coveredconditionals="9" methods="6" coveredmethods="1"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
@@ -145,7 +145,7 @@
         <line num="103" count="0" type="stmt"/>
         <line num="107" count="2" type="stmt"/>
       </file>
-      <file name="tableAction.js" path="C:\Users\User\Desktop\chicken-kitchen-extreme\actions\tableAction.js">
+      <file name="tableAction.js" path="C:\Users\skravets\Desktop\Chicken Kitchen Extreme\actions\tableAction.js">
         <metrics statements="56" coveredstatements="54" conditionals="20" coveredconditionals="18" methods="8" coveredmethods="8"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
@@ -204,72 +204,81 @@
         <line num="72" count="1" type="stmt"/>
         <line num="76" count="2" type="stmt"/>
       </file>
-      <file name="throwTrashAwayAction.js" path="C:\Users\User\Desktop\chicken-kitchen-extreme\actions\throwTrashAwayAction.js">
-        <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="throwTrashAwayAction.js" path="C:\Users\skravets\Desktop\Chicken Kitchen Extreme\actions\throwTrashAwayAction.js">
+        <metrics statements="13" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
       </file>
     </package>
     <package name="handlers">
-      <metrics statements="48" coveredstatements="37" conditionals="12" coveredconditionals="10" methods="8" coveredmethods="6"/>
-      <file name="kitchenHandler.js" path="C:\Users\User\Desktop\chicken-kitchen-extreme\handlers\kitchenHandler.js">
-        <metrics statements="48" coveredstatements="37" conditionals="12" coveredconditionals="10" methods="8" coveredmethods="6"/>
+      <metrics statements="49" coveredstatements="37" conditionals="12" coveredconditionals="10" methods="8" coveredmethods="6"/>
+      <file name="kitchenHandler.js" path="C:\Users\skravets\Desktop\Chicken Kitchen Extreme\handlers\kitchenHandler.js">
+        <metrics statements="49" coveredstatements="37" conditionals="12" coveredconditionals="10" methods="8" coveredmethods="6"/>
         <line num="1" count="6" type="stmt"/>
         <line num="2" count="6" type="stmt"/>
         <line num="3" count="6" type="stmt"/>
         <line num="4" count="6" type="stmt"/>
         <line num="5" count="6" type="stmt"/>
-        <line num="7" count="6" type="stmt"/>
+        <line num="6" count="6" type="stmt"/>
         <line num="8" count="6" type="stmt"/>
-        <line num="11" count="6" type="stmt"/>
-        <line num="12" count="11" type="stmt"/>
-        <line num="15" count="6" type="stmt"/>
-        <line num="16" count="3" type="stmt"/>
-        <line num="17" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="18" count="2" type="stmt"/>
+        <line num="12" count="6" type="stmt"/>
+        <line num="13" count="11" type="stmt"/>
+        <line num="16" count="6" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="18" count="3" type="cond" truecount="2" falsecount="0"/>
         <line num="19" count="2" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="24" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="27" count="6" type="stmt"/>
-        <line num="28" count="5" type="stmt"/>
-        <line num="29" count="5" type="cond" truecount="2" falsecount="0"/>
-        <line num="30" count="4" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
-        <line num="35" count="6" type="stmt"/>
-        <line num="36" count="1" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="25" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="28" count="6" type="stmt"/>
+        <line num="29" count="5" type="stmt"/>
+        <line num="30" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="31" count="4" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="36" count="6" type="stmt"/>
         <line num="37" count="1" type="stmt"/>
         <line num="38" count="1" type="stmt"/>
         <line num="39" count="1" type="stmt"/>
-        <line num="40" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="41" count="0" type="stmt"/>
-        <line num="42" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="43" count="0" type="stmt"/>
-        <line num="45" count="1" type="stmt"/>
-        <line num="48" count="6" type="stmt"/>
-        <line num="49" count="0" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="41" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="49" count="6" type="stmt"/>
         <line num="50" count="0" type="stmt"/>
         <line num="51" count="0" type="stmt"/>
         <line num="52" count="0" type="stmt"/>
         <line num="53" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
         <line num="55" count="0" type="stmt"/>
-        <line num="58" count="6" type="stmt"/>
-        <line num="60" count="3" type="stmt"/>
-        <line num="61" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="60" count="6" type="stmt"/>
         <line num="62" count="3" type="stmt"/>
-        <line num="65" count="6" type="stmt"/>
-        <line num="66" count="0" type="stmt"/>
-        <line num="67" count="0" type="stmt"/>
+        <line num="63" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="64" count="3" type="stmt"/>
+        <line num="67" count="6" type="stmt"/>
         <line num="68" count="0" type="stmt"/>
-        <line num="72" count="6" type="stmt"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="70" count="0" type="stmt"/>
         <line num="74" count="6" type="stmt"/>
+        <line num="76" count="6" type="stmt"/>
       </file>
     </package>
     <package name="helpers">
       <metrics statements="16" coveredstatements="16" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
-      <file name="helpers.js" path="C:\Users\User\Desktop\chicken-kitchen-extreme\helpers\helpers.js">
+      <file name="helpers.js" path="C:\Users\skravets\Desktop\Chicken Kitchen Extreme\helpers\helpers.js">
         <metrics statements="16" coveredstatements="16" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
         <line num="1" count="10" type="stmt"/>
         <line num="3" count="10" type="stmt"/>
@@ -290,8 +299,8 @@
       </file>
     </package>
     <package name="main">
-      <metrics statements="68" coveredstatements="41" conditionals="12" coveredconditionals="6" methods="5" coveredmethods="2"/>
-      <file name="lineReader.js" path="C:\Users\User\Desktop\chicken-kitchen-extreme\main\lineReader.js">
+      <metrics statements="70" coveredstatements="43" conditionals="12" coveredconditionals="6" methods="5" coveredmethods="2"/>
+      <file name="lineReader.js" path="C:\Users\skravets\Desktop\Chicken Kitchen Extreme\main\lineReader.js">
         <metrics statements="32" coveredstatements="18" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -326,8 +335,8 @@
         <line num="46" count="1" type="stmt"/>
         <line num="48" count="1" type="stmt"/>
       </file>
-      <file name="main.js" path="C:\Users\User\Desktop\chicken-kitchen-extreme\main\main.js">
-        <metrics statements="36" coveredstatements="23" conditionals="12" coveredconditionals="6" methods="1" coveredmethods="1"/>
+      <file name="main.js" path="C:\Users\skravets\Desktop\Chicken Kitchen Extreme\main\main.js">
+        <metrics statements="38" coveredstatements="25" conditionals="12" coveredconditionals="6" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -338,19 +347,19 @@
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
-        <line num="12" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
         <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
         <line num="19" count="1" type="stmt"/>
-        <line num="20" count="3" type="cond" truecount="5" falsecount="0"/>
-        <line num="21" count="2" type="stmt"/>
-        <line num="23" count="2" type="stmt"/>
-        <line num="24" count="2" type="cond" truecount="1" falsecount="6"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="3" type="cond" truecount="5" falsecount="0"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="27" count="2" type="cond" truecount="1" falsecount="6"/>
         <line num="29" count="0" type="stmt"/>
         <line num="30" count="0" type="stmt"/>
         <line num="32" count="0" type="stmt"/>
@@ -361,14 +370,16 @@
         <line num="39" count="0" type="stmt"/>
         <line num="41" count="0" type="stmt"/>
         <line num="42" count="0" type="stmt"/>
-        <line num="43" count="0" type="stmt"/>
-        <line num="45" count="2" type="stmt"/>
-        <line num="51" count="1" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="48" count="2" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
       </file>
     </package>
     <package name="servises">
-      <metrics statements="426" coveredstatements="393" conditionals="119" coveredconditionals="97" methods="101" coveredmethods="94"/>
-      <file name="audit.js" path="C:\Users\User\Desktop\chicken-kitchen-extreme\servises\audit.js">
+      <metrics statements="437" coveredstatements="400" conditionals="123" coveredconditionals="98" methods="107" coveredmethods="96"/>
+      <file name="audit.js" path="C:\Users\skravets\Desktop\Chicken Kitchen Extreme\servises\audit.js">
         <metrics statements="24" coveredstatements="11" conditionals="2" coveredconditionals="0" methods="6" coveredmethods="2"/>
         <line num="1" count="8" type="stmt"/>
         <line num="2" count="8" type="stmt"/>
@@ -395,8 +406,8 @@
         <line num="54" count="8" type="stmt"/>
         <line num="56" count="8" type="stmt"/>
       </file>
-      <file name="buyService.js" path="C:\Users\User\Desktop\chicken-kitchen-extreme\servises\buyService.js">
-        <metrics statements="136" coveredstatements="126" conditionals="47" coveredconditionals="35" methods="24" coveredmethods="23"/>
+      <file name="buyService.js" path="C:\Users\skravets\Desktop\Chicken Kitchen Extreme\servises\buyService.js">
+        <metrics statements="138" coveredstatements="128" conditionals="47" coveredconditionals="35" methods="25" coveredmethods="24"/>
         <line num="1" count="4" type="stmt"/>
         <line num="2" count="4" type="stmt"/>
         <line num="3" count="4" type="stmt"/>
@@ -529,12 +540,14 @@
         <line num="189" count="1" type="stmt"/>
         <line num="191" count="3" type="cond" truecount="2" falsecount="0"/>
         <line num="192" count="1" type="stmt"/>
-        <line num="194" count="2" type="stmt"/>
-        <line num="195" count="2" type="stmt"/>
-        <line num="201" count="4" type="stmt"/>
-        <line num="203" count="4" type="stmt"/>
+        <line num="193" count="1" type="stmt"/>
+        <line num="194" count="1" type="stmt"/>
+        <line num="197" count="2" type="stmt"/>
+        <line num="198" count="2" type="stmt"/>
+        <line num="204" count="4" type="stmt"/>
+        <line num="206" count="4" type="stmt"/>
       </file>
-      <file name="discountService.js" path="C:\Users\User\Desktop\chicken-kitchen-extreme\servises\discountService.js">
+      <file name="discountService.js" path="C:\Users\skravets\Desktop\Chicken Kitchen Extreme\servises\discountService.js">
         <metrics statements="27" coveredstatements="27" conditionals="6" coveredconditionals="6" methods="9" coveredmethods="9"/>
         <line num="3" count="9" type="stmt"/>
         <line num="6" count="9" type="stmt"/>
@@ -564,19 +577,19 @@
         <line num="47" count="9" type="stmt"/>
         <line num="49" count="9" type="stmt"/>
       </file>
-      <file name="fileReader.js" path="C:\Users\User\Desktop\chicken-kitchen-extreme\servises\fileReader.js">
-        <metrics statements="9" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
+      <file name="fileReader.js" path="C:\Users\skravets\Desktop\Chicken Kitchen Extreme\servises\fileReader.js">
+        <metrics statements="9" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
         <line num="1" count="11" type="stmt"/>
         <line num="4" count="11" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
         <line num="7" count="11" type="stmt"/>
         <line num="8" count="11" type="stmt"/>
         <line num="10" count="11" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
         <line num="15" count="11" type="stmt"/>
         <line num="17" count="11" type="stmt"/>
       </file>
-      <file name="orderService.js" path="C:\Users\User\Desktop\chicken-kitchen-extreme\servises\orderService.js">
+      <file name="orderService.js" path="C:\Users\skravets\Desktop\Chicken Kitchen Extreme\servises\orderService.js">
         <metrics statements="41" coveredstatements="41" conditionals="8" coveredconditionals="6" methods="11" coveredmethods="11"/>
         <line num="1" count="9" type="stmt"/>
         <line num="2" count="9" type="stmt"/>
@@ -620,7 +633,7 @@
         <line num="54" count="9" type="stmt"/>
         <line num="56" count="9" type="stmt"/>
       </file>
-      <file name="restaurantBudget.js" path="C:\Users\User\Desktop\chicken-kitchen-extreme\servises\restaurantBudget.js">
+      <file name="restaurantBudget.js" path="C:\Users\skravets\Desktop\Chicken Kitchen Extreme\servises\restaurantBudget.js">
         <metrics statements="41" coveredstatements="38" conditionals="10" coveredconditionals="8" methods="7" coveredmethods="7"/>
         <line num="1" count="8" type="stmt"/>
         <line num="2" count="8" type="stmt"/>
@@ -664,7 +677,7 @@
         <line num="66" count="8" type="stmt"/>
         <line num="68" count="8" type="stmt"/>
       </file>
-      <file name="taxService.js" path="C:\Users\User\Desktop\chicken-kitchen-extreme\servises\taxService.js">
+      <file name="taxService.js" path="C:\Users\skravets\Desktop\Chicken Kitchen Extreme\servises\taxService.js">
         <metrics statements="28" coveredstatements="27" conditionals="6" coveredconditionals="6" methods="10" coveredmethods="9"/>
         <line num="3" count="12" type="stmt"/>
         <line num="5" count="12" type="stmt"/>
@@ -695,44 +708,53 @@
         <line num="49" count="12" type="stmt"/>
         <line num="51" count="12" type="stmt"/>
       </file>
-      <file name="trashService.js" path="C:\Users\User\Desktop\chicken-kitchen-extreme\servises\trashService.js">
-        <metrics statements="34" coveredstatements="29" conditionals="8" coveredconditionals="4" methods="10" coveredmethods="10"/>
-        <line num="1" count="6" type="stmt"/>
-        <line num="5" count="6" type="stmt"/>
-        <line num="8" count="6" type="stmt"/>
-        <line num="9" count="11" type="stmt"/>
-        <line num="12" count="6" type="stmt"/>
-        <line num="13" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="16" count="6" type="stmt"/>
-        <line num="17" count="12" type="stmt"/>
-        <line num="20" count="6" type="stmt"/>
-        <line num="21" count="12" type="stmt"/>
-        <line num="22" count="12" type="stmt"/>
-        <line num="23" count="1" type="stmt"/>
-        <line num="27" count="6" type="stmt"/>
-        <line num="28" count="1" type="stmt"/>
-        <line num="29" count="1" type="stmt"/>
-        <line num="30" count="1" type="stmt"/>
-        <line num="33" count="6" type="stmt"/>
-        <line num="34" count="11" type="stmt"/>
-        <line num="35" count="11" type="cond" truecount="1" falsecount="1"/>
-        <line num="36" count="0" type="stmt"/>
-        <line num="40" count="6" type="stmt"/>
-        <line num="41" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="42" count="0" type="stmt"/>
-        <line num="44" count="1" type="stmt"/>
-        <line num="48" count="6" type="stmt"/>
-        <line num="49" count="1" type="stmt"/>
-        <line num="50" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="51" count="1" type="stmt"/>
+      <file name="trashService.js" path="C:\Users\skravets\Desktop\Chicken Kitchen Extreme\servises\trashService.js">
+        <metrics statements="43" coveredstatements="35" conditionals="12" coveredconditionals="5" methods="15" coveredmethods="12"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="4" count="7" type="stmt"/>
+        <line num="5" count="7" type="stmt"/>
+        <line num="8" count="7" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="12" count="7" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="16" count="7" type="stmt"/>
+        <line num="17" count="11" type="stmt"/>
+        <line num="20" count="7" type="stmt"/>
+        <line num="21" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="24" count="7" type="stmt"/>
+        <line num="25" count="13" type="stmt"/>
+        <line num="28" count="7" type="stmt"/>
+        <line num="29" count="13" type="stmt"/>
+        <line num="30" count="13" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="35" count="7" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="37" count="2" type="stmt"/>
+        <line num="38" count="2" type="stmt"/>
+        <line num="41" count="7" type="stmt"/>
+        <line num="42" count="11" type="stmt"/>
+        <line num="43" count="11" type="cond" truecount="1" falsecount="1"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="48" count="7" type="stmt"/>
+        <line num="49" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="50" count="1" type="stmt"/>
         <line num="52" count="1" type="stmt"/>
-        <line num="54" count="0" type="stmt"/>
-        <line num="55" count="0" type="stmt"/>
-        <line num="56" count="0" type="stmt"/>
-        <line num="61" count="6" type="stmt"/>
-        <line num="63" count="6" type="stmt"/>
+        <line num="56" count="7" type="stmt"/>
+        <line num="57" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="60" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="69" count="7" type="stmt"/>
+        <line num="70" count="2" type="stmt"/>
+        <line num="71" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="72" count="2" type="stmt"/>
+        <line num="75" count="0" type="stmt"/>
+        <line num="77" count="0" type="stmt"/>
+        <line num="82" count="7" type="stmt"/>
+        <line num="84" count="7" type="stmt"/>
       </file>
-      <file name="warehousesHandler.js" path="C:\Users\User\Desktop\chicken-kitchen-extreme\servises\warehousesHandler.js">
+      <file name="warehousesHandler.js" path="C:\Users\skravets\Desktop\Chicken Kitchen Extreme\servises\warehousesHandler.js">
         <metrics statements="86" coveredstatements="86" conditionals="32" coveredconditionals="32" methods="21" coveredmethods="21"/>
         <line num="1" count="10" type="stmt"/>
         <line num="2" count="10" type="stmt"/>

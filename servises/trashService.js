@@ -1,8 +1,16 @@
-const fileReader = require("./fileReader");
-
 class TrashService {
     constructor() {
         this.poisoned = false;
+        this.trash = {};
+        this.wastePool = {}
+    }
+
+    getTrash = () => {
+        return this.trash;
+    }
+
+    getWastePool = () => {
+        return this.wastePool;
     }
 
     getPoisoned = () => {
@@ -37,22 +45,35 @@ class TrashService {
         }
     }
 
-    addToTrash = (trash, ingredient, wastedQuantity) => {
-        if (!!trash[ingredient]) {
-            trash[`${ingredient}`] = trash[ingredient] + wastedQuantity;
+    addToTrash = (ingredient, wastedQuantity) => {
+        if (!!this.trash[ingredient]) {
+            this.trash[`${ingredient}`] = this.trash[ingredient] + wastedQuantity;
         } else {
-            trash[`${ingredient}`] = wastedQuantity;
+            this.trash[`${ingredient}`] = wastedQuantity;
         }
+    }
+
+    addToWastePool = (trash, wastePool) => {
+        !Object.keys(wastePool).length ? this.wastePool = { ... this.trash } :
+        Object.keys(wastePool).forEach(el => {
+            Object.keys(trash).find(item => {
+                if (item === el) {
+                    return this.wastePool[el] += trash[item]
+                } else {
+                    return this.wastePool[el] = trash[item]
+                }
+            })
+        })
     }
 
     trashService = (wasteLimit, trash, wastedQuantity, ingredient) => {
         const freeSpace = this.checkFreeSpaceOfTrash(wasteLimit, trash, wastedQuantity);
         if (freeSpace) {
-            this.addToTrash(trash, ingredient, wastedQuantity);
-            fileReader.writeFile('./resources/output_files/trash.json', JSON.stringify(trash))
+            this.addToTrash(ingredient, wastedQuantity);
+            // fileReader.writeFile('./resources/output_files/trash.json', JSON.stringify(trash))
         } else {
-            this.addToTrash(trash, ingredient, wastedQuantity);
-            fileReader.writeFile('./resources/output_files/trash.json', JSON.stringify(trash))
+            this.addToTrash(ingredient, wastedQuantity);
+            // fileReader.writeFile('./resources/output_files/trash.json', JSON.stringify(trash))
             this.poisoned = true;
         }
     }

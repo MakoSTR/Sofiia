@@ -182,7 +182,7 @@ class BuyService {
                 warehousesService.reduceQuantities(order, warehouses);
                 ingredients.forEach(everyIngredient => {
                     trashService.trashService(commandConfiguration["waste limit"], trash, 1, everyIngredient)
-                })
+                });
                 break;
             case 'keep':
                 this.keep(order, warehouses, totalMax, localMax, ingredients, transactionTax, sum);
@@ -190,6 +190,9 @@ class BuyService {
             default:
                 if (sum.orderSum <= configuration) {
                     warehousesService.reduceQuantities(order, warehouses);
+                    ingredients.forEach(everyIngredient => {
+                        trashService.trashService(commandConfiguration["waste limit"], trash, 1, everyIngredient)
+                    });
                 } else {
                     console.log(configuration)
                 this.keep(order, warehouses, totalMax, localMax, ingredients, transactionTax, sum);

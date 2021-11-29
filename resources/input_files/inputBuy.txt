@@ -4,7 +4,12 @@ Table, Alexandra Smith, Adam Smith, Christian Donnovan, Irish Fish, Fries, Princ
 Buy, Bernard Unfortunate, Fries
 Buy, Bernard Unfortunate, Fries
 Buy, Bernard Unfortunate, Fries
+Throw trash away
 Order, Princess Chicken, 10, Tuna, 1
 Order, Princess Chicken, 15, Tuna, 1
 Order, Princess Chicken, 15, Tuna, 1
+Throw trash away
+Order, Potatoes, 1
+Buy, Bernard Unfortunate, Fries
+Throw trash away
 Audit, Resources

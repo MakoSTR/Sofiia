@@ -3,9 +3,10 @@ const warehousesService = require("../servises/warehousesHandler");
 const audit = require("../servises/audit");
 const taxService = require('../servises/taxService');
 const fileReader = require("../servises/fileReader");
+const trashService = require('../servises/trashService');
 
 const filePathForOutput = './resources/output_files/output.txt';
-const trashObj = require('../resources/output_files/trash.json');
+// const trashObj = require('../resources/output_files/trash.json');
 
 class KitchenHandler {
     isMalformedFood = (order, dishes) => {
@@ -50,9 +51,10 @@ class KitchenHandler {
         const warehousesCopy = { ...warehouses };
         const restaurantBudget = restaurantBudgetService.getRestaurantBudget();
         const transactionTax = taxService.getAlreadyCollectedTax();
-        const trash = {...trashObj}
+        const trash = trashService.getTrash();
+        const trashCopy = {...trash}
 
-        audit.addToAudit({ res: message, budget: restaurantBudget, warehouses: warehousesCopy, transactionTax, trash });
+        audit.addToAudit({ res: message, budget: restaurantBudget, warehouses: warehousesCopy, transactionTax, trash: trashCopy });
     };
 
     findLocalMax = (order, command) => {

@@ -18,7 +18,7 @@ const orderForIngredients = (inputArrays, command, resMessage, filePathForOutput
             orderData.wastedQuantity
                 ? trashService.trashService(command["waste limit"], trash, orderData.wastedQuantity, ingredient)
                 : console.log('nothing to add to trash');
-            kitchenHandler.auditAction(auditMessage);
+            kitchenHandler.auditAction(auditMessage, trash);
             fileReader.appendFile(filePathForOutput, auditMessage);
         }
         if (trashService.getPoisoned()) {
@@ -44,7 +44,7 @@ const orderForDish = (inputArrays, command, resMessage, filePathForOutput, i, tr
                     })
                 }
                 const auditMessage = helpers.createAuditMessage(i, resMessage);
-                kitchenHandler.auditAction(auditMessage);
+                kitchenHandler.auditAction(auditMessage, trash);
                 fileReader.appendFile(filePathForOutput, auditMessage);
             }
             if (trashService.getPoisoned()) {

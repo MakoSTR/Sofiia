@@ -21,50 +21,1200 @@ command: => Table,Alexandra Smith,Adam Smith,Christian Donnovan,Irish Fish,Fries
             All Transaction Tax: 20
             Trash: {}
 command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
-            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":1,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
-            Restaurant Budget: 30655
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":1,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
             All Transaction Tax: 21
-            Trash: {}
+            Trash: {"Potatoes":1}
 command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
-            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":1,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
-            Restaurant Budget: 30650
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 22
+            Trash: {"Potatoes":2}
+command: => Buy,Bernard Unfortunate,Fries => ERROR. Lack of ingredients
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 22
+            Trash: {"Potatoes":2}
+command: => Throw trash away => Throw trash away
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
             All Transaction Tax: 22
             Trash: {}
-command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
-            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":1,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
-            Restaurant Budget: 30645
-            All Transaction Tax: 23
-            Trash: {}
 command: => Order,Princess Chicken,10,Tuna,1 => success; sum = 25; tax = 3
-            Warehouse: {"Chicken":3,"Tuna":2,"Potatoes":1,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
-            Restaurant Budget: 30617
-            All Transaction Tax: 26
+            Warehouse: {"Chicken":3,"Tuna":2,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30632
+            All Transaction Tax: 25
             Trash: {}
 command: => Order,Princess Chicken,10,Tuna,1 => Wasted: 7 Princess Chicken (limit: 3)
-            Warehouse: {"Chicken":3,"Tuna":2,"Potatoes":1,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
-            Restaurant Budget: 29627
-            All Transaction Tax: 116
+            Warehouse: {"Chicken":3,"Tuna":2,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 29642
+            All Transaction Tax: 115
             Trash: {"Chicken":7,"Asparagus":7,"Milk":7,"Honey":7}
 command: => Order,Princess Chicken,15,Tuna,1 => success; sum = 25; tax = 3
-            Warehouse: {"Chicken":3,"Tuna":3,"Potatoes":1,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
-            Restaurant Budget: 29599
-            All Transaction Tax: 119
+            Warehouse: {"Chicken":3,"Tuna":3,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 29614
+            All Transaction Tax: 118
             Trash: {"Chicken":7,"Asparagus":7,"Milk":7,"Honey":7}
 command: => Order,Princess Chicken,15,Tuna,1 => Wasted: 15 Princess Chicken (limit: 3)
-            Warehouse: {"Chicken":3,"Tuna":3,"Potatoes":1,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
-            Restaurant Budget: 28114
-            All Transaction Tax: 254
+            Warehouse: {"Chicken":3,"Tuna":3,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 28129
+            All Transaction Tax: 253
             Trash: {"Chicken":22,"Asparagus":22,"Milk":22,"Honey":22}
-command: => Restaurant Poisoned
-            Warehouse: {"Chicken":3,"Tuna":3,"Potatoes":1,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
-            Restaurant Budget: 28114
-            All Transaction Tax: 254
+command: => Order,Princess Chicken,15,Tuna,1 => success; sum = 25; tax = 3
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 28101
+            All Transaction Tax: 256
             Trash: {"Chicken":22,"Asparagus":22,"Milk":22,"Honey":22}
-command: => Restaurant Poisoned
-            Warehouse: {"Chicken":3,"Tuna":3,"Potatoes":1,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
-            Restaurant Budget: 28114
-            All Transaction Tax: 254
+command: => Order,Princess Chicken,15,Tuna,1 => Wasted: 15 Princess Chicken (limit: 3)
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26616
+            All Transaction Tax: 391
+            Trash: {"Chicken":37,"Asparagus":37,"Milk":37,"Honey":37}
+command: => Throw trash away => Throw trash away
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26616
+            All Transaction Tax: 391
+            Trash: {}
+command: => Buy,Bernard Unfortunate,Fries => ERROR. Lack of ingredients
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26616
+            All Transaction Tax: 391
+            Trash: {}
+DAILY TAX: 2572.5
+
+        AUDIT END
+INIT
+            Warehouses: {"Chicken":3,"Tuna":1,"Potatoes":3,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":1,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":3}
+            Restaurant Budget: 500
+            Daily Tax: 0
+
+            START
+            
+command: => Budget,+,30000 => Restaurant budget: 30500
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":3,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":1,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":3}
+            Restaurant Budget: 30500
+            All Transaction Tax: 0
+            Trash: {}
+command: => Buy,Alexandra Smith,Fries => Alexandra Smith - Fries costs 5: success, tax = 1
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":3,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":1,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":3}
+            Restaurant Budget: 30504
+            All Transaction Tax: 1
+            Trash: {}
+command: => Table,Alexandra Smith,Adam Smith,Christian Donnovan,Irish Fish,Fries,Princess Chicken => Success, sum: 175, tax: 19
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":2,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 20
+            Trash: {}
+command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":1,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 21
+            Trash: {"Potatoes":1}
+command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 22
+            Trash: {"Potatoes":2}
+command: => Buy,Bernard Unfortunate,Fries => ERROR. Lack of ingredients
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 22
+            Trash: {"Potatoes":2}
+command: => Throw trash away => Throw trash away
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 22
+            Trash: {}
+command: => Order,Princess Chicken,10,Tuna,1 => success; sum = 25; tax = 3
+            Warehouse: {"Chicken":3,"Tuna":2,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30632
+            All Transaction Tax: 25
+            Trash: {}
+command: => Order,Princess Chicken,10,Tuna,1 => Wasted: 7 Princess Chicken (limit: 3)
+            Warehouse: {"Chicken":3,"Tuna":2,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 29642
+            All Transaction Tax: 115
+            Trash: {"Chicken":7,"Asparagus":7,"Milk":7,"Honey":7}
+command: => Order,Princess Chicken,15,Tuna,1 => success; sum = 25; tax = 3
+            Warehouse: {"Chicken":3,"Tuna":3,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 29614
+            All Transaction Tax: 118
+            Trash: {"Chicken":7,"Asparagus":7,"Milk":7,"Honey":7}
+command: => Order,Princess Chicken,15,Tuna,1 => Wasted: 15 Princess Chicken (limit: 3)
+            Warehouse: {"Chicken":3,"Tuna":3,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 28129
+            All Transaction Tax: 253
             Trash: {"Chicken":22,"Asparagus":22,"Milk":22,"Honey":22}
-DAILY TAX: 2736
+command: => Order,Princess Chicken,15,Tuna,1 => success; sum = 25; tax = 3
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 28101
+            All Transaction Tax: 256
+            Trash: {"Chicken":22,"Asparagus":22,"Milk":22,"Honey":22}
+command: => Order,Princess Chicken,15,Tuna,1 => Wasted: 15 Princess Chicken (limit: 3)
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26616
+            All Transaction Tax: 391
+            Trash: {"Chicken":37,"Asparagus":37,"Milk":37,"Honey":37}
+command: => Throw trash away => Throw trash away
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26616
+            All Transaction Tax: 391
+            Trash: {}
+command: => Order,Potatoes,1 => success; sum = 3; tax = 1
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":1,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26612
+            All Transaction Tax: 392
+            Trash: {}
+command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26612
+            All Transaction Tax: 393
+            Trash: {"Potatoes":1}
+DAILY TAX: 2571.9
+
+        AUDIT END
+INIT
+            Warehouses: {"Chicken":3,"Tuna":1,"Potatoes":3,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":1,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":3}
+            Restaurant Budget: 500
+            Daily Tax: 0
+
+            START
+            
+command: => Budget,+,30000 => Restaurant budget: 30500
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":3,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":1,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":3}
+            Restaurant Budget: 30500
+            All Transaction Tax: 0
+            Trash: {}
+command: => Buy,Alexandra Smith,Fries => Alexandra Smith - Fries costs 5: success, tax = 1
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":3,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":1,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":3}
+            Restaurant Budget: 30504
+            All Transaction Tax: 1
+            Trash: {}
+command: => Table,Alexandra Smith,Adam Smith,Christian Donnovan,Irish Fish,Fries,Princess Chicken => Success, sum: 175, tax: 19
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":2,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 20
+            Trash: {}
+command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":1,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 21
+            Trash: {"Potatoes":1}
+command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 22
+            Trash: {"Potatoes":2}
+command: => Buy,Bernard Unfortunate,Fries => ERROR. Lack of ingredients
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 22
+            Trash: {"Potatoes":2}
+command: => Throw trash away => Throw trash away
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 22
+            Trash: {}
+command: => Order,Princess Chicken,10,Tuna,1 => success; sum = 25; tax = 3
+            Warehouse: {"Chicken":3,"Tuna":2,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30632
+            All Transaction Tax: 25
+            Trash: {}
+command: => Order,Princess Chicken,10,Tuna,1 => Wasted: 7 Princess Chicken (limit: 3)
+            Warehouse: {"Chicken":3,"Tuna":2,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 29642
+            All Transaction Tax: 115
+            Trash: {"Chicken":7,"Asparagus":7,"Milk":7,"Honey":7}
+command: => Order,Princess Chicken,15,Tuna,1 => success; sum = 25; tax = 3
+            Warehouse: {"Chicken":3,"Tuna":3,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 29614
+            All Transaction Tax: 118
+            Trash: {"Chicken":7,"Asparagus":7,"Milk":7,"Honey":7}
+command: => Order,Princess Chicken,15,Tuna,1 => Wasted: 15 Princess Chicken (limit: 3)
+            Warehouse: {"Chicken":3,"Tuna":3,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 28129
+            All Transaction Tax: 253
+            Trash: {"Chicken":22,"Asparagus":22,"Milk":22,"Honey":22}
+command: => Order,Princess Chicken,15,Tuna,1 => success; sum = 25; tax = 3
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 28101
+            All Transaction Tax: 256
+            Trash: {"Chicken":22,"Asparagus":22,"Milk":22,"Honey":22}
+command: => Order,Princess Chicken,15,Tuna,1 => Wasted: 15 Princess Chicken (limit: 3)
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26616
+            All Transaction Tax: 391
+            Trash: {"Chicken":37,"Asparagus":37,"Milk":37,"Honey":37}
+command: => Throw trash away => Throw trash away
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26616
+            All Transaction Tax: 391
+            Trash: {}
+command: => Order,Potatoes,1 => success; sum = 3; tax = 1
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":1,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26612
+            All Transaction Tax: 392
+            Trash: {}
+command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26612
+            All Transaction Tax: 393
+            Trash: {"Potatoes":1}
+command: => Throw trash away => Throw trash away
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26612
+            All Transaction Tax: 393
+            Trash: {}
+DAILY TAX: 2571.9
+
+        AUDIT END
+INIT
+            Warehouses: {"Chicken":3,"Tuna":1,"Potatoes":3,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":1,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":3}
+            Restaurant Budget: 500
+            Daily Tax: 0
+
+            START
+            
+command: => Budget,+,30000 => Restaurant budget: 30500
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":3,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":1,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":3}
+            Restaurant Budget: 30500
+            All Transaction Tax: 0
+            Trash: {}
+command: => Buy,Alexandra Smith,Fries => Alexandra Smith - Fries costs 5: success, tax = 1
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":3,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":1,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":3}
+            Restaurant Budget: 30504
+            All Transaction Tax: 1
+            Trash: {}
+command: => Table,Alexandra Smith,Adam Smith,Christian Donnovan,Irish Fish,Fries,Princess Chicken => Success, sum: 175, tax: 19
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":2,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 20
+            Trash: {}
+command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":1,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 21
+            Trash: {"Potatoes":1}
+command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 22
+            Trash: {"Potatoes":2}
+command: => Buy,Bernard Unfortunate,Fries => ERROR. Lack of ingredients
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 22
+            Trash: {"Potatoes":2}
+command: => Throw trash away => Throw trash away
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 22
+            Trash: {}
+command: => Order,Princess Chicken,10,Tuna,1 => success; sum = 25; tax = 3
+            Warehouse: {"Chicken":3,"Tuna":2,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30632
+            All Transaction Tax: 25
+            Trash: {}
+command: => Order,Princess Chicken,10,Tuna,1 => Wasted: 7 Princess Chicken (limit: 3)
+            Warehouse: {"Chicken":3,"Tuna":2,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 29642
+            All Transaction Tax: 115
+            Trash: {"Chicken":7,"Asparagus":7,"Milk":7,"Honey":7}
+command: => Order,Princess Chicken,15,Tuna,1 => success; sum = 25; tax = 3
+            Warehouse: {"Chicken":3,"Tuna":3,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 29614
+            All Transaction Tax: 118
+            Trash: {"Chicken":7,"Asparagus":7,"Milk":7,"Honey":7}
+command: => Order,Princess Chicken,15,Tuna,1 => Wasted: 15 Princess Chicken (limit: 3)
+            Warehouse: {"Chicken":3,"Tuna":3,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 28129
+            All Transaction Tax: 253
+            Trash: {"Chicken":22,"Asparagus":22,"Milk":22,"Honey":22}
+command: => Order,Princess Chicken,15,Tuna,1 => success; sum = 25; tax = 3
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 28101
+            All Transaction Tax: 256
+            Trash: {"Chicken":22,"Asparagus":22,"Milk":22,"Honey":22}
+command: => Order,Princess Chicken,15,Tuna,1 => Wasted: 15 Princess Chicken (limit: 3)
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26616
+            All Transaction Tax: 391
+            Trash: {"Chicken":37,"Asparagus":37,"Milk":37,"Honey":37}
+command: => Throw trash away => Throw trash away
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26616
+            All Transaction Tax: 391
+            Trash: {}
+command: => Order,Potatoes,1 => success; sum = 3; tax = 1
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":1,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26612
+            All Transaction Tax: 392
+            Trash: {}
+command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26612
+            All Transaction Tax: 393
+            Trash: {"Potatoes":1}
+command: => Throw trash away => Throw trash away
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26612
+            All Transaction Tax: 393
+            Trash: {}
+DAILY TAX: 2571.9
+
+        AUDIT END
+INIT
+            Warehouses: {"Chicken":3,"Tuna":1,"Potatoes":3,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":1,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":3}
+            Restaurant Budget: 500
+            Daily Tax: 0
+
+            START
+            
+command: => Budget,+,30000 => Restaurant budget: 30500
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":3,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":1,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":3}
+            Restaurant Budget: 30500
+            All Transaction Tax: 0
+            Trash: {}
+command: => Buy,Alexandra Smith,Fries => Alexandra Smith - Fries costs 5: success, tax = 1
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":3,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":1,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":3}
+            Restaurant Budget: 30504
+            All Transaction Tax: 1
+            Trash: {}
+command: => Table,Alexandra Smith,Adam Smith,Christian Donnovan,Irish Fish,Fries,Princess Chicken => Success, sum: 175, tax: 19
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":2,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 20
+            Trash: {}
+command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":1,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 21
+            Trash: {"Potatoes":1}
+command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 22
+            Trash: {"Potatoes":2}
+command: => Buy,Bernard Unfortunate,Fries => ERROR. Lack of ingredients
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 22
+            Trash: {"Potatoes":2}
+command: => Throw trash away => Throw trash away
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 22
+            Trash: {}
+command: => Order,Princess Chicken,10,Tuna,1 => success; sum = 25; tax = 3
+            Warehouse: {"Chicken":3,"Tuna":2,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30632
+            All Transaction Tax: 25
+            Trash: {}
+command: => Order,Princess Chicken,10,Tuna,1 => Wasted: 7 Princess Chicken (limit: 3)
+            Warehouse: {"Chicken":3,"Tuna":2,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 29642
+            All Transaction Tax: 115
+            Trash: {"Chicken":7,"Asparagus":7,"Milk":7,"Honey":7}
+command: => Order,Princess Chicken,15,Tuna,1 => success; sum = 25; tax = 3
+            Warehouse: {"Chicken":3,"Tuna":3,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 29614
+            All Transaction Tax: 118
+            Trash: {"Chicken":7,"Asparagus":7,"Milk":7,"Honey":7}
+command: => Order,Princess Chicken,15,Tuna,1 => Wasted: 15 Princess Chicken (limit: 3)
+            Warehouse: {"Chicken":3,"Tuna":3,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 28129
+            All Transaction Tax: 253
+            Trash: {"Chicken":22,"Asparagus":22,"Milk":22,"Honey":22}
+command: => Order,Princess Chicken,15,Tuna,1 => success; sum = 25; tax = 3
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 28101
+            All Transaction Tax: 256
+            Trash: {"Chicken":22,"Asparagus":22,"Milk":22,"Honey":22}
+command: => Order,Princess Chicken,15,Tuna,1 => Wasted: 15 Princess Chicken (limit: 3)
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26616
+            All Transaction Tax: 391
+            Trash: {"Chicken":37,"Asparagus":37,"Milk":37,"Honey":37}
+command: => Throw trash away => Throw trash away
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26616
+            All Transaction Tax: 391
+            Trash: {}
+command: => Order,Potatoes,1 => success; sum = 3; tax = 1
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":1,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26612
+            All Transaction Tax: 392
+            Trash: {}
+command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26612
+            All Transaction Tax: 393
+            Trash: {"Potatoes":1}
+command: => Throw trash away => Throw trash away
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26612
+            All Transaction Tax: 393
+            Trash: {}
+DAILY TAX: 2571.9
+
+        AUDIT END
+INIT
+            Warehouses: {"Chicken":3,"Tuna":1,"Potatoes":3,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":1,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":3}
+            Restaurant Budget: 500
+            Daily Tax: 0
+
+            START
+            
+command: => Budget,+,30000 => Restaurant budget: 30500
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":3,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":1,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":3}
+            Restaurant Budget: 30500
+            All Transaction Tax: 0
+            Trash: {}
+command: => Buy,Alexandra Smith,Fries => Alexandra Smith - Fries costs 5: success, tax = 1
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":3,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":1,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":3}
+            Restaurant Budget: 30504
+            All Transaction Tax: 1
+            Trash: {}
+command: => Table,Alexandra Smith,Adam Smith,Christian Donnovan,Irish Fish,Fries,Princess Chicken => Success, sum: 175, tax: 19
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":2,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 20
+            Trash: {}
+command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":1,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 21
+            Trash: {"Potatoes":1}
+command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 22
+            Trash: {"Potatoes":2}
+command: => Buy,Bernard Unfortunate,Fries => ERROR. Lack of ingredients
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 22
+            Trash: {"Potatoes":2}
+command: => Throw trash away => Throw trash away
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 22
+            Trash: {}
+command: => Order,Princess Chicken,10,Tuna,1 => success; sum = 25; tax = 3
+            Warehouse: {"Chicken":3,"Tuna":2,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30632
+            All Transaction Tax: 25
+            Trash: {}
+command: => Order,Princess Chicken,10,Tuna,1 => Wasted: 7 Princess Chicken (limit: 3)
+            Warehouse: {"Chicken":3,"Tuna":2,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 29642
+            All Transaction Tax: 115
+            Trash: {"Chicken":7,"Asparagus":7,"Milk":7,"Honey":7}
+command: => Order,Princess Chicken,15,Tuna,1 => success; sum = 25; tax = 3
+            Warehouse: {"Chicken":3,"Tuna":3,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 29614
+            All Transaction Tax: 118
+            Trash: {"Chicken":7,"Asparagus":7,"Milk":7,"Honey":7}
+command: => Order,Princess Chicken,15,Tuna,1 => Wasted: 15 Princess Chicken (limit: 3)
+            Warehouse: {"Chicken":3,"Tuna":3,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 28129
+            All Transaction Tax: 253
+            Trash: {"Chicken":22,"Asparagus":22,"Milk":22,"Honey":22}
+command: => Order,Princess Chicken,15,Tuna,1 => success; sum = 25; tax = 3
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 28101
+            All Transaction Tax: 256
+            Trash: {"Chicken":22,"Asparagus":22,"Milk":22,"Honey":22}
+command: => Order,Princess Chicken,15,Tuna,1 => Wasted: 15 Princess Chicken (limit: 3)
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26616
+            All Transaction Tax: 391
+            Trash: {"Chicken":37,"Asparagus":37,"Milk":37,"Honey":37}
+command: => Throw trash away => Throw trash away
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26616
+            All Transaction Tax: 391
+            Trash: {}
+command: => Order,Potatoes,1 => success; sum = 3; tax = 1
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":1,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26612
+            All Transaction Tax: 392
+            Trash: {}
+command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26612
+            All Transaction Tax: 393
+            Trash: {"Potatoes":1}
+command: => Throw trash away => Throw trash away
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26612
+            All Transaction Tax: 393
+            Trash: {}
+DAILY TAX: 2571.9
+
+        AUDIT END
+INIT
+            Warehouses: {"Chicken":3,"Tuna":1,"Potatoes":3,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":1,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":3}
+            Restaurant Budget: 500
+            Daily Tax: 0
+
+            START
+            
+command: => Budget,+,30000 => Restaurant budget: 30500
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":3,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":1,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":3}
+            Restaurant Budget: 30500
+            All Transaction Tax: 0
+            Trash: {}
+command: => Buy,Alexandra Smith,Fries => Alexandra Smith - Fries costs 5: success, tax = 1
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":3,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":1,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":3}
+            Restaurant Budget: 30504
+            All Transaction Tax: 1
+            Trash: {}
+command: => Table,Alexandra Smith,Adam Smith,Christian Donnovan,Irish Fish,Fries,Princess Chicken => Success, sum: 175, tax: 19
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":2,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 20
+            Trash: {}
+command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":1,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 21
+            Trash: {"Potatoes":1}
+command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 22
+            Trash: {"Potatoes":2}
+command: => Buy,Bernard Unfortunate,Fries => ERROR. Lack of ingredients
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 22
+            Trash: {"Potatoes":2}
+command: => Throw trash away => Throw trash away
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 22
+            Trash: {}
+command: => Order,Princess Chicken,10,Tuna,1 => success; sum = 25; tax = 3
+            Warehouse: {"Chicken":3,"Tuna":2,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30632
+            All Transaction Tax: 25
+            Trash: {}
+command: => Order,Princess Chicken,10,Tuna,1 => Wasted: 7 Princess Chicken (limit: 3)
+            Warehouse: {"Chicken":3,"Tuna":2,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 29642
+            All Transaction Tax: 115
+            Trash: {"Chicken":7,"Asparagus":7,"Milk":7,"Honey":7}
+command: => Order,Princess Chicken,15,Tuna,1 => success; sum = 25; tax = 3
+            Warehouse: {"Chicken":3,"Tuna":3,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 29614
+            All Transaction Tax: 118
+            Trash: {"Chicken":7,"Asparagus":7,"Milk":7,"Honey":7}
+command: => Order,Princess Chicken,15,Tuna,1 => Wasted: 15 Princess Chicken (limit: 3)
+            Warehouse: {"Chicken":3,"Tuna":3,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 28129
+            All Transaction Tax: 253
+            Trash: {"Chicken":22,"Asparagus":22,"Milk":22,"Honey":22}
+command: => Order,Princess Chicken,15,Tuna,1 => success; sum = 25; tax = 3
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 28101
+            All Transaction Tax: 256
+            Trash: {"Chicken":22,"Asparagus":22,"Milk":22,"Honey":22}
+command: => Order,Princess Chicken,15,Tuna,1 => Wasted: 15 Princess Chicken (limit: 3)
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26616
+            All Transaction Tax: 391
+            Trash: {"Chicken":37,"Asparagus":37,"Milk":37,"Honey":37}
+command: => Throw trash away => Throw trash away
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26616
+            All Transaction Tax: 391
+            Trash: {}
+command: => Order,Potatoes,1 => success; sum = 3; tax = 1
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":1,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26612
+            All Transaction Tax: 392
+            Trash: {}
+command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26612
+            All Transaction Tax: 393
+            Trash: {"Potatoes":1}
+command: => Throw trash away => Throw trash away
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26612
+            All Transaction Tax: 393
+            Trash: {}
+DAILY TAX: 2571.9
+
+        AUDIT END
+INIT
+            Warehouses: {"Chicken":3,"Tuna":1,"Potatoes":3,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":1,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":3}
+            Restaurant Budget: 500
+            Daily Tax: 0
+
+            START
+            
+command: => Budget,+,30000 => Restaurant budget: 30500
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":3,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":1,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":3}
+            Restaurant Budget: 30500
+            All Transaction Tax: 0
+            Trash: {}
+command: => Buy,Alexandra Smith,Fries => Alexandra Smith - Fries costs 5: success, tax = 1
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":3,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":1,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":3}
+            Restaurant Budget: 30504
+            All Transaction Tax: 1
+            Trash: {}
+command: => Table,Alexandra Smith,Adam Smith,Christian Donnovan,Irish Fish,Fries,Princess Chicken => Success, sum: 175, tax: 19
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":2,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 20
+            Trash: {}
+command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":1,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 21
+            Trash: {"Potatoes":1}
+command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 22
+            Trash: {"Potatoes":2}
+command: => Buy,Bernard Unfortunate,Fries => ERROR. Lack of ingredients
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 22
+            Trash: {"Potatoes":2}
+command: => Throw trash away => Throw trash away
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 22
+            Trash: {}
+command: => Order,Princess Chicken,10,Tuna,1 => success; sum = 25; tax = 3
+            Warehouse: {"Chicken":3,"Tuna":2,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30632
+            All Transaction Tax: 25
+            Trash: {}
+command: => Order,Princess Chicken,10,Tuna,1 => Wasted: 7 Princess Chicken (limit: 3)
+            Warehouse: {"Chicken":3,"Tuna":2,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 29642
+            All Transaction Tax: 115
+            Trash: {"Chicken":7,"Asparagus":7,"Milk":7,"Honey":7}
+command: => Order,Princess Chicken,15,Tuna,1 => success; sum = 25; tax = 3
+            Warehouse: {"Chicken":3,"Tuna":3,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 29614
+            All Transaction Tax: 118
+            Trash: {"Chicken":7,"Asparagus":7,"Milk":7,"Honey":7}
+command: => Order,Princess Chicken,15,Tuna,1 => Wasted: 15 Princess Chicken (limit: 3)
+            Warehouse: {"Chicken":3,"Tuna":3,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 28129
+            All Transaction Tax: 253
+            Trash: {"Chicken":22,"Asparagus":22,"Milk":22,"Honey":22}
+command: => Order,Princess Chicken,15,Tuna,1 => success; sum = 25; tax = 3
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 28101
+            All Transaction Tax: 256
+            Trash: {"Chicken":22,"Asparagus":22,"Milk":22,"Honey":22}
+command: => Order,Princess Chicken,15,Tuna,1 => Wasted: 15 Princess Chicken (limit: 3)
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26616
+            All Transaction Tax: 391
+            Trash: {"Chicken":37,"Asparagus":37,"Milk":37,"Honey":37}
+command: => Throw trash away => Throw trash away
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26616
+            All Transaction Tax: 391
+            Trash: {}
+command: => Order,Potatoes,1 => success; sum = 3; tax = 1
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":1,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26612
+            All Transaction Tax: 392
+            Trash: {}
+command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26612
+            All Transaction Tax: 393
+            Trash: {"Potatoes":1}
+command: => Throw trash away => Throw trash away
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26612
+            All Transaction Tax: 393
+            Trash: {}
+DAILY TAX: 2571.9
+
+        AUDIT END
+INIT
+            Warehouses: {"Chicken":3,"Tuna":1,"Potatoes":3,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":1,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":3}
+            Restaurant Budget: 500
+            Daily Tax: 0
+
+            START
+            
+command: => Budget,+,30000 => Restaurant budget: 30500
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":3,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":1,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":3}
+            Restaurant Budget: 30500
+            All Transaction Tax: 0
+            Trash: {}
+command: => Buy,Alexandra Smith,Fries => Alexandra Smith - Fries costs 5: success, tax = 1
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":3,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":1,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":3}
+            Restaurant Budget: 30504
+            All Transaction Tax: 1
+            Trash: {}
+command: => Table,Alexandra Smith,Adam Smith,Christian Donnovan,Irish Fish,Fries,Princess Chicken => Success, sum: 175, tax: 19
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":2,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 20
+            Trash: {}
+command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":1,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 21
+            Trash: {"Potatoes":1}
+command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 22
+            Trash: {"Potatoes":2}
+command: => Buy,Bernard Unfortunate,Fries => ERROR. Lack of ingredients
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 22
+            Trash: {"Potatoes":2}
+command: => Throw trash away => Throw trash away
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 22
+            Trash: {}
+command: => Order,Princess Chicken,10,Tuna,1 => success; sum = 25; tax = 3
+            Warehouse: {"Chicken":3,"Tuna":2,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30632
+            All Transaction Tax: 25
+            Trash: {}
+command: => Order,Princess Chicken,10,Tuna,1 => Wasted: 7 Princess Chicken (limit: 3)
+            Warehouse: {"Chicken":3,"Tuna":2,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 29642
+            All Transaction Tax: 115
+            Trash: {"Chicken":7,"Asparagus":7,"Milk":7,"Honey":7}
+command: => Order,Princess Chicken,15,Tuna,1 => success; sum = 25; tax = 3
+            Warehouse: {"Chicken":3,"Tuna":3,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 29614
+            All Transaction Tax: 118
+            Trash: {"Chicken":7,"Asparagus":7,"Milk":7,"Honey":7}
+command: => Order,Princess Chicken,15,Tuna,1 => Wasted: 15 Princess Chicken (limit: 3)
+            Warehouse: {"Chicken":3,"Tuna":3,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 28129
+            All Transaction Tax: 253
+            Trash: {"Chicken":22,"Asparagus":22,"Milk":22,"Honey":22}
+command: => Order,Princess Chicken,15,Tuna,1 => success; sum = 25; tax = 3
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 28101
+            All Transaction Tax: 256
+            Trash: {"Chicken":22,"Asparagus":22,"Milk":22,"Honey":22}
+command: => Order,Princess Chicken,15,Tuna,1 => Wasted: 15 Princess Chicken (limit: 3)
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26616
+            All Transaction Tax: 391
+            Trash: {"Chicken":37,"Asparagus":37,"Milk":37,"Honey":37}
+command: => Throw trash away => Throw trash away
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26616
+            All Transaction Tax: 391
+            Trash: {}
+command: => Order,Potatoes,1 => success; sum = 3; tax = 1
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":1,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26612
+            All Transaction Tax: 392
+            Trash: {}
+command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26612
+            All Transaction Tax: 393
+            Trash: {"Potatoes":1}
+command: => Throw trash away => Throw trash away
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26612
+            All Transaction Tax: 393
+            Trash: {}
+DAILY TAX: 2571.9
+
+        AUDIT END
+INIT
+            Warehouses: {"Chicken":3,"Tuna":1,"Potatoes":3,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":1,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":3}
+            Restaurant Budget: 500
+            Daily Tax: 0
+
+            START
+            
+command: => Budget,+,30000 => Restaurant budget: 30500
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":3,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":1,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":3}
+            Restaurant Budget: 30500
+            All Transaction Tax: 0
+            Trash: {}
+command: => Buy,Alexandra Smith,Fries => Alexandra Smith - Fries costs 5: success, tax = 1
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":3,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":1,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":3}
+            Restaurant Budget: 30504
+            All Transaction Tax: 1
+            Trash: {}
+command: => Table,Alexandra Smith,Adam Smith,Christian Donnovan,Irish Fish,Fries,Princess Chicken => Success, sum: 175, tax: 19
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":2,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 20
+            Trash: {}
+command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":1,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 21
+            Trash: {"Potatoes":1}
+command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 22
+            Trash: {"Potatoes":2}
+command: => Buy,Bernard Unfortunate,Fries => ERROR. Lack of ingredients
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 22
+            Trash: {"Potatoes":2}
+command: => Throw trash away => Throw trash away
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 22
+            Trash: {}
+command: => Order,Princess Chicken,10,Tuna,1 => success; sum = 25; tax = 3
+            Warehouse: {"Chicken":3,"Tuna":2,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30632
+            All Transaction Tax: 25
+            Trash: {}
+command: => Order,Princess Chicken,10,Tuna,1 => Wasted: 7 Princess Chicken (limit: 3)
+            Warehouse: {"Chicken":3,"Tuna":2,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 29642
+            All Transaction Tax: 115
+            Trash: {"Chicken":7,"Asparagus":7,"Milk":7,"Honey":7}
+command: => Order,Princess Chicken,15,Tuna,1 => success; sum = 25; tax = 3
+            Warehouse: {"Chicken":3,"Tuna":3,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 29614
+            All Transaction Tax: 118
+            Trash: {"Chicken":7,"Asparagus":7,"Milk":7,"Honey":7}
+command: => Order,Princess Chicken,15,Tuna,1 => Wasted: 15 Princess Chicken (limit: 3)
+            Warehouse: {"Chicken":3,"Tuna":3,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 28129
+            All Transaction Tax: 253
+            Trash: {"Chicken":22,"Asparagus":22,"Milk":22,"Honey":22}
+command: => Order,Princess Chicken,15,Tuna,1 => success; sum = 25; tax = 3
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 28101
+            All Transaction Tax: 256
+            Trash: {"Chicken":22,"Asparagus":22,"Milk":22,"Honey":22}
+command: => Order,Princess Chicken,15,Tuna,1 => Wasted: 15 Princess Chicken (limit: 3)
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26616
+            All Transaction Tax: 391
+            Trash: {"Chicken":37,"Asparagus":37,"Milk":37,"Honey":37}
+command: => Throw trash away => Throw trash away
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26616
+            All Transaction Tax: 391
+            Trash: {}
+command: => Order,Potatoes,1 => success; sum = 3; tax = 1
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":1,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26612
+            All Transaction Tax: 392
+            Trash: {}
+command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26612
+            All Transaction Tax: 393
+            Trash: {"Potatoes":1}
+command: => Throw trash away => Throw trash away
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26612
+            All Transaction Tax: 393
+            Trash: {}
+DAILY TAX: 2571.9
+
+        AUDIT END
+INIT
+            Warehouses: {"Chicken":3,"Tuna":1,"Potatoes":3,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":1,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":3}
+            Restaurant Budget: 500
+            Daily Tax: 0
+
+            START
+            
+command: => Budget,+,30000 => Restaurant budget: 30500
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":3,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":1,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":3}
+            Restaurant Budget: 30500
+            All Transaction Tax: 0
+            Trash: {}
+command: => Buy,Alexandra Smith,Fries => Alexandra Smith - Fries costs 5: success, tax = 1
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":3,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":1,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":3}
+            Restaurant Budget: 30504
+            All Transaction Tax: 1
+            Trash: {}
+command: => Table,Alexandra Smith,Adam Smith,Christian Donnovan,Irish Fish,Fries,Princess Chicken => Success, sum: 175, tax: 19
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":2,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 20
+            Trash: {}
+command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":1,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 21
+            Trash: {"Potatoes":1}
+command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 22
+            Trash: {"Potatoes":2}
+command: => Buy,Bernard Unfortunate,Fries => ERROR. Lack of ingredients
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 22
+            Trash: {"Potatoes":2}
+command: => Throw trash away => Throw trash away
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 22
+            Trash: {}
+command: => Order,Princess Chicken,10,Tuna,1 => success; sum = 25; tax = 3
+            Warehouse: {"Chicken":3,"Tuna":2,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30632
+            All Transaction Tax: 25
+            Trash: {}
+command: => Order,Princess Chicken,10,Tuna,1 => Wasted: 7 Princess Chicken (limit: 3)
+            Warehouse: {"Chicken":3,"Tuna":2,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 29642
+            All Transaction Tax: 115
+            Trash: {"Chicken":7,"Asparagus":7,"Milk":7,"Honey":7}
+command: => Order,Princess Chicken,15,Tuna,1 => success; sum = 25; tax = 3
+            Warehouse: {"Chicken":3,"Tuna":3,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 29614
+            All Transaction Tax: 118
+            Trash: {"Chicken":7,"Asparagus":7,"Milk":7,"Honey":7}
+command: => Order,Princess Chicken,15,Tuna,1 => Wasted: 15 Princess Chicken (limit: 3)
+            Warehouse: {"Chicken":3,"Tuna":3,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 28129
+            All Transaction Tax: 253
+            Trash: {"Chicken":22,"Asparagus":22,"Milk":22,"Honey":22}
+command: => Order,Princess Chicken,15,Tuna,1 => success; sum = 25; tax = 3
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 28101
+            All Transaction Tax: 256
+            Trash: {"Chicken":22,"Asparagus":22,"Milk":22,"Honey":22}
+command: => Order,Princess Chicken,15,Tuna,1 => Wasted: 15 Princess Chicken (limit: 3)
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26616
+            All Transaction Tax: 391
+            Trash: {"Chicken":37,"Asparagus":37,"Milk":37,"Honey":37}
+command: => Throw trash away => Throw trash away
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26616
+            All Transaction Tax: 391
+            Trash: {}
+command: => Order,Potatoes,1 => success; sum = 3; tax = 1
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":1,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26612
+            All Transaction Tax: 392
+            Trash: {}
+command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26612
+            All Transaction Tax: 393
+            Trash: {"Potatoes":1}
+command: => Throw trash away => Throw trash away
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26612
+            All Transaction Tax: 393
+            Trash: {}
+DAILY TAX: 2571.9
+
+        AUDIT END
+INIT
+            Warehouses: {"Chicken":3,"Tuna":1,"Potatoes":3,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":1,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":3}
+            Restaurant Budget: 500
+            Daily Tax: 0
+
+            START
+            
+command: => Budget,+,30000 => Restaurant budget: 30500
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":3,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":1,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":3}
+            Restaurant Budget: 30500
+            All Transaction Tax: 0
+            Trash: {}
+command: => Buy,Alexandra Smith,Fries => Alexandra Smith - Fries costs 5: success, tax = 1
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":3,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":1,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":3}
+            Restaurant Budget: 30504
+            All Transaction Tax: 1
+            Trash: {}
+command: => Table,Alexandra Smith,Adam Smith,Christian Donnovan,Irish Fish,Fries,Princess Chicken => Success, sum: 175, tax: 19
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":2,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 20
+            Trash: {}
+command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":1,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 21
+            Trash: {"Potatoes":1}
+command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 22
+            Trash: {"Potatoes":2}
+command: => Buy,Bernard Unfortunate,Fries => ERROR. Lack of ingredients
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 22
+            Trash: {"Potatoes":2}
+command: => Throw trash away => Throw trash away
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 22
+            Trash: {}
+command: => Order,Princess Chicken,10,Tuna,1 => success; sum = 25; tax = 3
+            Warehouse: {"Chicken":3,"Tuna":2,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30632
+            All Transaction Tax: 25
+            Trash: {}
+command: => Order,Princess Chicken,10,Tuna,1 => Wasted: 7 Princess Chicken (limit: 3)
+            Warehouse: {"Chicken":3,"Tuna":2,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 29642
+            All Transaction Tax: 115
+            Trash: {"Chicken":7,"Asparagus":7,"Milk":7,"Honey":7}
+command: => Order,Princess Chicken,15,Tuna,1 => success; sum = 25; tax = 3
+            Warehouse: {"Chicken":3,"Tuna":3,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 29614
+            All Transaction Tax: 118
+            Trash: {"Chicken":7,"Asparagus":7,"Milk":7,"Honey":7}
+command: => Order,Princess Chicken,15,Tuna,1 => Wasted: 15 Princess Chicken (limit: 3)
+            Warehouse: {"Chicken":3,"Tuna":3,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 28129
+            All Transaction Tax: 253
+            Trash: {"Chicken":22,"Asparagus":22,"Milk":22,"Honey":22}
+command: => Order,Princess Chicken,15,Tuna,1 => success; sum = 25; tax = 3
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 28101
+            All Transaction Tax: 256
+            Trash: {"Chicken":22,"Asparagus":22,"Milk":22,"Honey":22}
+command: => Order,Princess Chicken,15,Tuna,1 => Wasted: 15 Princess Chicken (limit: 3)
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26616
+            All Transaction Tax: 391
+            Trash: {"Chicken":37,"Asparagus":37,"Milk":37,"Honey":37}
+command: => Throw trash away => Throw trash away
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26616
+            All Transaction Tax: 391
+            Trash: {}
+command: => Order,Potatoes,1 => success; sum = 3; tax = 1
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":1,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26612
+            All Transaction Tax: 392
+            Trash: {}
+command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26612
+            All Transaction Tax: 393
+            Trash: {"Potatoes":1}
+command: => Throw trash away => Throw trash away
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26612
+            All Transaction Tax: 393
+            Trash: {}
+DAILY TAX: 2571.9
+
+        AUDIT END
+INIT
+            Warehouses: {"Chicken":3,"Tuna":1,"Potatoes":3,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":1,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":3}
+            Restaurant Budget: 500
+            Daily Tax: 0
+
+            START
+            
+command: => Budget,+,30000 => Restaurant budget: 30500
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":3,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":1,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":1,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":3}
+            Restaurant Budget: 30500
+            All Transaction Tax: 0
+            Trash: {}
+command: => Buy,Alexandra Smith,Fries => Alexandra Smith - Fries costs 5: success, tax = 1
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":3,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":1,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":3}
+            Restaurant Budget: 30504
+            All Transaction Tax: 1
+            Trash: {}
+command: => Table,Alexandra Smith,Adam Smith,Christian Donnovan,Irish Fish,Fries,Princess Chicken => Success, sum: 175, tax: 19
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":2,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 20
+            Trash: {}
+command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":1,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 21
+            Trash: {"Potatoes":1}
+command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 22
+            Trash: {"Potatoes":2}
+command: => Buy,Bernard Unfortunate,Fries => ERROR. Lack of ingredients
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 22
+            Trash: {"Potatoes":2}
+command: => Throw trash away => Throw trash away
+            Warehouse: {"Chicken":3,"Tuna":1,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30660
+            All Transaction Tax: 22
+            Trash: {}
+command: => Order,Princess Chicken,10,Tuna,1 => success; sum = 25; tax = 3
+            Warehouse: {"Chicken":3,"Tuna":2,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":0,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 30632
+            All Transaction Tax: 25
+            Trash: {}
+command: => Order,Princess Chicken,10,Tuna,1 => Wasted: 7 Princess Chicken (limit: 3)
+            Warehouse: {"Chicken":3,"Tuna":2,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 29642
+            All Transaction Tax: 115
+            Trash: {"Chicken":7,"Asparagus":7,"Milk":7,"Honey":7}
+command: => Order,Princess Chicken,15,Tuna,1 => success; sum = 25; tax = 3
+            Warehouse: {"Chicken":3,"Tuna":3,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 29614
+            All Transaction Tax: 118
+            Trash: {"Chicken":7,"Asparagus":7,"Milk":7,"Honey":7}
+command: => Order,Princess Chicken,15,Tuna,1 => Wasted: 15 Princess Chicken (limit: 3)
+            Warehouse: {"Chicken":3,"Tuna":3,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 28129
+            All Transaction Tax: 253
+            Trash: {"Chicken":22,"Asparagus":22,"Milk":22,"Honey":22}
+command: => Order,Princess Chicken,15,Tuna,1 => success; sum = 25; tax = 3
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 28101
+            All Transaction Tax: 256
+            Trash: {"Chicken":22,"Asparagus":22,"Milk":22,"Honey":22}
+command: => Order,Princess Chicken,15,Tuna,1 => Wasted: 15 Princess Chicken (limit: 3)
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26616
+            All Transaction Tax: 391
+            Trash: {"Chicken":37,"Asparagus":37,"Milk":37,"Honey":37}
+command: => Throw trash away => Throw trash away
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26616
+            All Transaction Tax: 391
+            Trash: {}
+command: => Order,Potatoes,1 => success; sum = 3; tax = 1
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":1,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26612
+            All Transaction Tax: 392
+            Trash: {}
+command: => Buy,Bernard Unfortunate,Fries => Bernard Unfortunate can’t order Fries, allergic to: Potatoes
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26612
+            All Transaction Tax: 393
+            Trash: {"Potatoes":1}
+command: => Throw trash away => Throw trash away
+            Warehouse: {"Chicken":3,"Tuna":4,"Potatoes":0,"Asparagus":3,"Milk":3,"Honey":3,"Paprika":3,"Garlic":3,"Water":1,"Lemon":1,"Tomatoes":1,"Pickles":3,"Feta":3,"Vinegar":1,"Rice":3,"Chocolate":3,"Emperor Chicken":1,"Fat Cat Chicken":3,"Princess Chicken":3,"Youth Sauce":3,"Spicy Sauce":3,"Omega Sauce":3,"Diamond Salad":3,"Ruby Salad":1,"Fries":0,"Smashed Potatoes":3,"Tuna Cake":3,"Fish In Water":3,"Irish Fish":2}
+            Restaurant Budget: 26612
+            All Transaction Tax: 393
+            Trash: {}
+DAILY TAX: 2571.9
 
         AUDIT END
