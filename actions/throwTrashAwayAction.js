@@ -2,22 +2,23 @@ const fileReader = require("../servises/fileReader");
 const helpers = require("../helpers/helpers");
 const kitchenHandler = require("../handlers/kitchenHandler");
 const trashService = require('../servises/trashService');
+const command = require("../resources/input_files/commandConfiguration.json");
 
-const throwTrashAwayAction = (trash, wastePool, i, filePathForOutput) => {
-    // const getTrash = trashService.getTrash();
-    // const getWastePool = trashService.getWastePool();
+const throwTrashAwayAction = (i, filePathForOutput) => {
+    if (command[i[0].toLowerCase()] === 'yes') { //якщо команда дозволена
+        const trash = trashService.getTrash();
+        const wastePool = trashService.addToWastePool(); //додати вміст смітника в wastePool
 
-    trashService.addToWastePool(trash, wastePool);
-    // const wastePoolUpd = trashService.getWastePool();
-    console.log(wastePool)
+        fileReader.writeFile('./resources/output_files/wastePool.json', JSON.stringify(wastePool)); // запис wastePool у файл
 
-    fileReader.writeFile('./resources/output_files/wastePool.json', JSON.stringify(wastePool));
+        trashService.cleaner(); //очистити смітник
 
-    trashService.trash = {}; //очищує смітник
-
-    const message = helpers.createAuditMessage(i, i);
-    kitchenHandler.auditAction(message, trash);
-    fileReader.appendFile(filePathForOutput, message);
+        const message = helpers.createAuditMessage(i, i);
+        kitchenHandler.auditAction(message, trash);
+        fileReader.appendFile(filePathForOutput, message);
+    } else {
+        helpers.disabler(i) //якщо команда не дозволена
+    }
 };
 
 module.exports = { throwTrashAwayAction };

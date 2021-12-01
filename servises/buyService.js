@@ -32,7 +32,7 @@ class BuyService {
                 }
             });
         });
-        return foundAllergy ? [foundAllergy] : [];
+        return foundAllergy ? [foundAllergy] : []; //ф-я поверне алергію, якщо знайде, якщо ні - порожній масив
     };
 
     profitMargin = margin => {
@@ -64,6 +64,7 @@ class BuyService {
         return totalBudget - sum + discount;
     };
 
+    //функція перевіряє на алегрію, брак грошей в клієнта, або саксес
     sendResult = (foundAllergies, name, order, sum, configuration, totalMax, localMax, ingredients, trash) => {
         const warehouses = warehousesService.getWarehouses();
         if (foundAllergies) {

@@ -10,6 +10,7 @@ const budgetAction = require('../../actions/budgetAction');
 const tableAction = require('../../actions/tableAction');
 const orderAction = require('../../actions/orderAction');
 const auditAction = require('../../actions/auditAction');
+const throwTrashAwayAction = require('../../actions/throwTrashAwayAction');
 
 describe('main switcher', () => {
     afterEach(() => {
@@ -54,6 +55,14 @@ describe('main switcher', () => {
         main(array);
 
         expect(auditAction.auditAction).to.have.been.called();
+    });
+    test('expect throwTrashAwayAction to have been called',  () => {
+        chai.spy.on(throwTrashAwayAction, 'throwTrashAwayAction', () => {});
+
+        const array = ['Throw trash away']
+        main(array);
+
+        expect(throwTrashAwayAction.throwTrashAwayAction).to.have.been.called();
     });
     test('expect disabler to have been called',  () => {
         chai.spy.on(helpers, 'disabler', () => {});

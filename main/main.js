@@ -11,12 +11,10 @@ const throwTrashAwayAction = require('../actions/throwTrashAwayAction');
 const trashService = require('../servises/trashService');
 
 const filePathForOutput = './resources/output_files/output.txt';
-// const wastePool = require('../resources/output_files/wastePool.json');
 const customers = Object.keys(jsonData['Regular customer']);
 const dishes = Object.keys(jsonData.Food);
 const baseIngredient = jsonData["Base ingredients"];
 const trash = trashService.getTrash();
-const wastePool = trashService.getWastePool();
 
 const main = (newArr) => {
     for (const i of newArr) {
@@ -41,7 +39,7 @@ const main = (newArr) => {
                     auditAction.auditAction(i)
                     break;
                 case 'Throw trash away' :
-                    throwTrashAwayAction.throwTrashAwayAction(trash, wastePool, i, filePathForOutput)
+                    throwTrashAwayAction.throwTrashAwayAction(i, filePathForOutput)
                     console.log('Throw trash away');
                     break
                 default:

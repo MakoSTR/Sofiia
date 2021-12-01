@@ -6,14 +6,13 @@ const fileReader = require("../servises/fileReader");
 const trashService = require('../servises/trashService');
 
 const filePathForOutput = './resources/output_files/output.txt';
-// const trashObj = require('../resources/output_files/trash.json');
 
 class KitchenHandler {
-    isMalformedFood = (order, dishes) => {
+    isMalformedFood = (order, dishes) => { // перевіряє, чи існує замовлена страва в меню
         return dishes.every(dish => order !== dish);
     };
 
-    sendRestaurantBudget = () => {
+    sendRestaurantBudget = () => { // записує суму бюджету (або що банкрут) в файл
         const validBudget = this.checkRestaurantBudget();
         if (validBudget) {
             const modifiedRestaurantBudget = `Restaurant budget: ${validBudget}`;
@@ -25,7 +24,7 @@ class KitchenHandler {
         return validBudget > 0 ? validBudget : `RESTAURANT BANKRUPT`;
     };
 
-    checkRestaurantBudget = () => {
+    checkRestaurantBudget = () => { // повертає суму бюджету, якщо вона більше нуля
         const restaurantBudget = restaurantBudgetService.getRestaurantBudget();
         if (restaurantBudget > 0) {
             return restaurantBudget;
@@ -33,19 +32,20 @@ class KitchenHandler {
         return false;
     };
 
-    order = (ingredient, number, tax, totalMax, maxLimit, userIngredients) => {
+    order = (ingredient, number, tax, totalMax, maxLimit, userIngredients) => { //команда ордер
         const quantity = parseInt(number);
         const warehouses = warehousesService.getWarehouses();
         const transactionResult = restaurantBudgetService.decreaseRestaurantBudget(ingredient, quantity, tax, userIngredients);
         const warehouseResult = warehousesService.checkWarehouseSpace(warehouses, quantity, totalMax, ingredient, maxLimit);
-        if (warehouseResult.res) {
+        if (warehouseResult.res) { // якщо є місце на складі на всі інградієнти
             warehousesService.addIngredients(warehouses, ingredient, quantity);
-        } else if (warehouseResult.freeSpace) {
+        } else if (warehouseResult.freeSpace) { //якщо є місце на складі на частину інградієнтів
             warehousesService.addIngredients(warehouses, ingredient, warehouseResult.freeSpace);
         }
         return {...transactionResult, ...warehouseResult};
     };
 
+    // add info to audit (on the every step)
     auditAction = (message) => {
         const warehouses = warehousesService.getWarehouses();
         const warehousesCopy = { ...warehouses };
@@ -57,14 +57,14 @@ class KitchenHandler {
         audit.addToAudit({ res: message, budget: restaurantBudget, warehouses: warehousesCopy, transactionTax, trash: trashCopy });
     };
 
-    findLocalMax = (order, command) => {
+    findLocalMax = (order, command) => { //знайти яке значення брати взалежності це базовий ел чи готова страва
         let localMax;
         const dishArray = warehousesService.checkIsDish(order);
         dishArray.length === 0 ? localMax = command["max ingredient type"] : localMax = command["max dish type"];
         return localMax;
     };
 
-    messagePoisoned = (filePathForOutput) => {
+    messagePoisoned = (filePathForOutput) => { // повідом про отруєння
         const message = 'Restaurant Poisoned';
         fileReader.appendFile(filePathForOutput, message);
         kitchenHandler.auditAction(message);

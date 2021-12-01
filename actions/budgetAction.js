@@ -5,9 +5,9 @@ const kitchenHandler = require('../handlers/kitchenHandler');
 const trashService = require("../servises/trashService");
 
 const budgetAction = (i, trash, filePathForOutput) => {
-    if (command[i[0].toLowerCase()] === 'yes') {
+    if (command[i[0].toLowerCase()] === 'yes') { //якщо команда дозволена
         trashService.checkIsPoisoned(trash, command["waste limit"]);
-        if (!trashService.getPoisoned()) {
+        if (!trashService.getPoisoned()) { //якщо ресторан не отруєно
             let sign = i[1];
             let amount = parseInt(i[2]);
             restaurantBudgetService.modifyRestaurantBudget(sign, amount)
@@ -16,12 +16,12 @@ const budgetAction = (i, trash, filePathForOutput) => {
             const message = helpers.createAuditMessage(i, resMessage);
             kitchenHandler.auditAction(message);
         }
-        if (trashService.getPoisoned()) {
+        if (trashService.getPoisoned()) {  //якщо ресторан отруєно
             kitchenHandler.messagePoisoned(filePathForOutput);
         }
     }
     else {
-    helpers.disabler(i)
+    helpers.disabler(i) //якщо команда дозволена
     }
 };
 

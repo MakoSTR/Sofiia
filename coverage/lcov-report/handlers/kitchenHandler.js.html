@@ -132,22 +132,21 @@
 <a name='L73'></a><a href='#L73'>73</a>
 <a name='L74'></a><a href='#L74'>74</a>
 <a name='L75'></a><a href='#L75'>75</a>
-<a name='L76'></a><a href='#L76'>76</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
+<a name='L76'></a><a href='#L76'>76</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -159,7 +158,7 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">4x</span>
@@ -167,7 +166,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -180,7 +179,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -191,23 +191,23 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span></td><td class="text"><pre class="prettyprint lang-js">const restaurantBudgetService = require("../servises/restaurantBudget");
+<span class="cline-any cline-yes">7x</span></td><td class="text"><pre class="prettyprint lang-js">const restaurantBudgetService = require("../servises/restaurantBudget");
 const warehousesService = require("../servises/warehousesHandler");
 const audit = require("../servises/audit");
 const taxService = require('../servises/taxService');
@@ -215,14 +215,13 @@ const fileReader = require("../servises/fileReader");
 const trashService = require('../servises/trashService');
 &nbsp;
 const filePathForOutput = './resources/output_files/output.txt';
-// const trashObj = require('../resources/output_files/trash.json');
 &nbsp;
 class KitchenHandler {
-    isMalformedFood = (order, dishes) =&gt; {
+    isMalformedFood = (order, dishes) =&gt; { // перевіряє, чи існує замовлена страва в меню
         return dishes.every(dish =&gt; order !== dish);
     };
 &nbsp;
-    sendRestaurantBudget = () =&gt; {
+    sendRestaurantBudget = () =&gt; { // записує суму бюджету (або що банкрут) в файл
         const validBudget = this.checkRestaurantBudget();
         if (validBudget) {
             const modifiedRestaurantBudget = `Restaurant budget: ${validBudget}`;
@@ -234,7 +233,7 @@ class KitchenHandler {
         return validBudget &gt; 0 ? validBudget : `RESTAURANT BANKRUPT`;
     };
 &nbsp;
-    checkRestaurantBudget = () =&gt; {
+    checkRestaurantBudget = () =&gt; { // повертає суму бюджету, якщо вона більше нуля
         const restaurantBudget = restaurantBudgetService.getRestaurantBudget();
         if (restaurantBudget &gt; 0) {
             return restaurantBudget;
@@ -242,19 +241,20 @@ class KitchenHandler {
         return false;
     };
 &nbsp;
-    order = (ingredient, number, tax, totalMax, maxLimit, userIngredients) =&gt; {
+    order = (ingredient, number, tax, totalMax, maxLimit, userIngredients) =&gt; { //команда ордер
         const quantity = parseInt(number);
         const warehouses = warehousesService.getWarehouses();
         const transactionResult = restaurantBudgetService.decreaseRestaurantBudget(ingredient, quantity, tax, userIngredients);
         const warehouseResult = warehousesService.checkWarehouseSpace(warehouses, quantity, totalMax, ingredient, maxLimit);
-        <span class="missing-if-branch" title="if path not taken" >I</span>if (warehouseResult.res) {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (warehouseResult.res) { // якщо є місце на складі на всі інградієнти
 <span class="cstat-no" title="statement not covered" >            warehousesService.addIngredients(warehouses, ingredient, quantity);</span>
-        } else <span class="missing-if-branch" title="if path not taken" >I</span>if (warehouseResult.freeSpace) {
+        } else <span class="missing-if-branch" title="if path not taken" >I</span>if (warehouseResult.freeSpace) { //якщо є місце на складі на частину інградієнтів
 <span class="cstat-no" title="statement not covered" >            warehousesService.addIngredients(warehouses, ingredient, warehouseResult.freeSpace);</span>
         }
         return {...transactionResult, ...warehouseResult};
     };
 &nbsp;
+    // add info to audit (on the every step)
     auditAction = <span class="fstat-no" title="function not covered" >(m</span>essage) =&gt; {
         const warehouses = <span class="cstat-no" title="statement not covered" >warehousesService.getWarehouses();</span>
         const warehousesCopy = <span class="cstat-no" title="statement not covered" >{ ...warehouses };</span>
@@ -266,14 +266,14 @@ class KitchenHandler {
 <span class="cstat-no" title="statement not covered" >        audit.addToAudit({ res: message, budget: restaurantBudget, warehouses: warehousesCopy, transactionTax, trash: trashCopy });</span>
     };
 &nbsp;
-    findLocalMax = (order, command) =&gt; {
+    findLocalMax = (order, command) =&gt; { //знайти яке значення брати взалежності це базовий ел чи готова страва
         let localMax;
         const dishArray = warehousesService.checkIsDish(order);
         dishArray.length === 0 ? localMax = command["max ingredient type"] : localMax = command["max dish type"];
         return localMax;
     };
 &nbsp;
-    messagePoisoned = <span class="fstat-no" title="function not covered" >(f</span>ilePathForOutput) =&gt; {
+    messagePoisoned = <span class="fstat-no" title="function not covered" >(f</span>ilePathForOutput) =&gt; { // повідом про отруєння
         const message = <span class="cstat-no" title="statement not covered" >'Restaurant Poisoned';</span>
 <span class="cstat-no" title="statement not covered" >        fileReader.appendFile(filePathForOutput, message);</span>
 <span class="cstat-no" title="statement not covered" >        kitchenHandler.auditAction(message);</span>
@@ -289,7 +289,7 @@ module.exports = kitchenHandler;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Nov 29 2021 16:49:30 GMT+0200 (Eastern European Standard Time)
+                at Wed Dec 01 2021 11:34:15 GMT+0200 (за східноєвропейським стандартним часом)
             </div>
         </div>
         <script src="../prettify.js"></script>

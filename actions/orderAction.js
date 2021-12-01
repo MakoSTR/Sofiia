@@ -4,6 +4,7 @@ const trashService = require('../servises/trashService');
 const orderService = require('../servises/orderService');
 const fileReader = require("../servises/fileReader");
 
+// замовити інградієнт
 const orderForIngredients = (inputArrays, command, resMessage, filePathForOutput, i, trash) => {
     inputArrays.forEach((array) => {
         if (!trashService.getPoisoned()) {
@@ -27,6 +28,7 @@ const orderForIngredients = (inputArrays, command, resMessage, filePathForOutput
     });
 };
 
+// замовити страву
 const orderForDish = (inputArrays, command, resMessage, filePathForOutput, i, trash) => {
     inputArrays.forEach(array => {
             if (!trashService.getPoisoned()) {

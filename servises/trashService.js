@@ -9,10 +9,6 @@ class TrashService {
         return this.trash;
     }
 
-    getWastePool = () => {
-        return this.wastePool;
-    }
-
     getPoisoned = () => {
         return  this.poisoned;
     }
@@ -43,6 +39,7 @@ class TrashService {
         if (totalSum > wasteLimit) {
             return this.poisoned = true;
         }
+        else return false;
     }
 
     addToTrash = (ingredient, wastedQuantity) => {
@@ -53,27 +50,32 @@ class TrashService {
         }
     }
 
-    addToWastePool = (trash, wastePool) => {
-        !Object.keys(wastePool).length ? this.wastePool = { ... this.trash } :
-        Object.keys(wastePool).forEach(el => {
-            Object.keys(trash).find(item => {
-                if (item === el) {
-                    return this.wastePool[el] += trash[item]
-                } else {
-                    return this.wastePool[el] = trash[item]
-                }
-            })
-        })
+    cleaner = () => {
+        this.trash = {}; //очищує смітник
+    }
+
+    addToWastePool = () => {
+        !Object.keys(this.wastePool).length ? this.wastePool = { ...this.wastePool, ... this.trash } :
+        Object.keys(this.trash).forEach(el => {
+            const foundItem = Object.keys(this.wastePool).find(key => {
+                return el === key;
+            });
+            if (foundItem) {
+                this.wastePool[el] += this.trash[el]; //якщо поля однакові: сумуємо показники
+            } else {
+                this.wastePool[el] = this.trash[el]; //поле не існує: записуємо поле
+            }
+        });
+
+        return this.wastePool;
     }
 
     trashService = (wasteLimit, trash, wastedQuantity, ingredient) => {
         const freeSpace = this.checkFreeSpaceOfTrash(wasteLimit, trash, wastedQuantity);
         if (freeSpace) {
             this.addToTrash(ingredient, wastedQuantity);
-            // fileReader.writeFile('./resources/output_files/trash.json', JSON.stringify(trash))
         } else {
             this.addToTrash(ingredient, wastedQuantity);
-            // fileReader.writeFile('./resources/output_files/trash.json', JSON.stringify(trash))
             this.poisoned = true;
         }
     }

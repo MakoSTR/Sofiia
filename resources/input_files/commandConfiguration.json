@@ -4,6 +4,7 @@
   "audit": "yes",
   "table": "yes",
   "budget": "yes",
+  "throw trash away": "yes",
   "profit margin": 40,
   "transaction tax": 10,
   "daily tax": 10,
