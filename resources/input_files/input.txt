@@ -1,15 +1,5 @@
-Budget, +, 30000
-Buy, Alexandra Smith, Fries
-Table, Alexandra Smith, Adam Smith, Christian Donnovan, Irish Fish, Fries, Princess Chicken
-Buy, Bernard Unfortunate, Fries
-Buy, Bernard Unfortunate, Fries
-Buy, Bernard Unfortunate, Fries
-Throw trash away
-Order, Princess Chicken, 10, Tuna, 1
-Order, Princess Chicken, 15, Tuna, 1
-Order, Princess Chicken, 15, Tuna, 1
-Throw trash away
-Order, Potatoes, 1
-Buy, Bernard Unfortunate, Fries
-Throw trash away
+Buy, Alexandra Smith, Princess Chicken
+Order, Princess Chicken, 1
+Buy, Alexandra Smith, Princess Chicken
+Order, Chicken, 1
 Audit, Resources

@@ -14,5 +14,10 @@
   "max dish type": 3,
   "dishes with allergies": "waste",
   "spoil rate": 0.1,
-  "waste limit": 500
+  "waste limit": 500,
+  "max tip": 10,
+  "max volatility for ingredients": 1.1,
+  "min volatility for ingredients": 0.9,
+  "max volatility for ready meals": 1.25,
+  "min volatility for ready meals": 0.75
 }

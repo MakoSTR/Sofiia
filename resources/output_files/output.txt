@@ -1,74 +1,725 @@
-Success: money amount 10; tax amount 2
-{
-    Barbara Smith - Smashed Potatoes costs 5: success, tax = 1
-    Adam Smith - Fries costs 5: success, tax = 1
-}
-FAILURE. Barbara Smith can’t order Tuna Cake, allergic to: Chocolate. So, whole table fails.
-FAILURE. Julie Mirage – can’t order, budget 100 and Princess Chicken costs 126. So, whole table fails.
-s command disabled
-t command disabled
-Buy command disabled
-Audit command disabled
 Restaurant budget: 500
-Restaurant budget: 500
-Restaurant budget: 30500
-Alexandra Smith - Fries costs 5: success, tax = 1
-Success: money amount 175; tax amount 19
-{
-    Alexandra Smith - Irish Fish costs 44: success, tax = 5
-    Adam Smith - Fries costs 5: success, tax = 1
-    Christian Donnovan - Princess Chicken costs 126: success, tax = 13
-}
-Bernard Unfortunate can’t order Fries, allergic to: Potatoes
-Bernard Unfortunate can’t order Fries, allergic to: Potatoes
-Buy,Bernard Unfortunate,Fries => ERROR. Lack of ingredients
-Throw trash away => Throw trash away
-Order,Princess Chicken,10,Tuna,1 => success; sum = 25; tax = 3
-Order,Princess Chicken,10,Tuna,1 => Wasted: 7 Princess Chicken (limit: 3)
-Order,Princess Chicken,15,Tuna,1 => success; sum = 25; tax = 3
-Order,Princess Chicken,15,Tuna,1 => Wasted: 15 Princess Chicken (limit: 3)
-Order,Princess Chicken,15,Tuna,1 => success; sum = 25; tax = 3
-Order,Princess Chicken,15,Tuna,1 => Wasted: 15 Princess Chicken (limit: 3)
-Throw trash away => Throw trash away
+Order,Princess Chicken,1 => success; sum = 72; tax = 8
+Order,Potatoes,1 => success; sum = 3.3000000000000003; tax = 1
 Order,Potatoes,1 => success; sum = 3; tax = 1
-Bernard Unfortunate can’t order Fries, allergic to: Potatoes
-Throw trash away => Throw trash away
-Restaurant budget: 26612
-Daily tax: 2571.9
+Restaurant budget: 413.20000000000005
+Daily tax: 0
 Restaurant budget: 500
-Restaurant budget: 30500
-Alexandra Smith - Fries costs 5: success, tax = 1
-Success: money amount 175; tax amount 19
-{
-    Alexandra Smith - Irish Fish costs 44: success, tax = 5
-    Adam Smith - Fries costs 5: success, tax = 1
-    Christian Donnovan - Princess Chicken costs 126: success, tax = 13
-}
-Bernard Unfortunate can’t order Fries, allergic to: Potatoes
-Bernard Unfortunate can’t order Fries, allergic to: Potatoes
-Buy,Bernard Unfortunate,Fries => ERROR. Lack of ingredients
-Throw trash away => Throw trash away
-Order,Princess Chicken,10,Tuna,1 => success; sum = 25; tax = 3
-Order,Princess Chicken,10,Tuna,1 => Wasted: 7 Princess Chicken (limit: 3)
-Order,Princess Chicken,15,Tuna,1 => success; sum = 25; tax = 3
-Order,Princess Chicken,15,Tuna,1 => Wasted: 15 Princess Chicken (limit: 3)
-Order,Princess Chicken,15,Tuna,1 => success; sum = 25; tax = 3
-Order,Princess Chicken,15,Tuna,1 => Wasted: 15 Princess Chicken (limit: 3)
-Throw trash away => Throw trash away
+Order,Princess Chicken,1 => success; sum = 99.00000000000001; tax = 10
 Order,Potatoes,1 => success; sum = 3; tax = 1
-Bernard Unfortunate can’t order Fries, allergic to: Potatoes
-Throw trash away => Throw trash away
-Restaurant budget: 26612
-Daily tax: 2571.9
-Success: money amount 10; tax amount 2
-{
-    Barbara Smith - Smashed Potatoes costs 5: success, tax = 1
-    Adam Smith - Fries costs 5: success, tax = 1
-}
-FAILURE. Barbara Smith can’t order Tuna Cake, allergic to: Chocolate. So, whole table fails.
-FAILURE. Julie Mirage – can’t order, budget 100 and Princess Chicken costs 126. So, whole table fails.
-s command disabled
-t command disabled
-Buy command disabled
-Audit command disabled
+Order,Potatoes,1 => success; sum = 3.3000000000000003; tax = 1
+Restaurant budget: 381.6
+Daily tax: 0
 Restaurant budget: 500
+Order,Princess Chicken,1 => success; sum = 90; tax = 9
+Order,Potatoes,1 => success; sum = 3.3000000000000003; tax = 1
+Order,Potatoes,1 => success; sum = 3; tax = 1
+Order,Princess Chicken,1 => success; sum = 72; tax = 8
+Restaurant budget: 314.20000000000005
+Daily tax: 0
+Restaurant budget: 500
+Order,Princess Chicken,1 => success; sum = 99.00000000000001; tax = 10
+Order,Potatoes,1 => success; sum = 3; tax = 1
+Order,Potatoes,1 => success; sum = 2.7; tax = 1
+Restaurant budget: 382.4
+Daily tax: 0
+Restaurant budget: 500
+Order,Princess Chicken,1 => success; sum = 108; tax = 11
+Order,Potatoes,1 => success; sum = 3; tax = 1
+Order,Potatoes,1 => success; sum = 2.7; tax = 1
+Order,Potatoes,1 => success; sum = 2.7; tax = 1
+Restaurant budget: 367.59999999999997
+Daily tax: 0
+Restaurant budget: 500
+Order,Princess Chicken,1 => success; sum = 90; tax = 9
+Order,Princess Chicken,1 => success; sum = 117; tax = 12
+Restaurant budget: 268.4
+Daily tax: 0
+Restaurant budget: 500
+Order,Princess Chicken,1 => success; sum = 72; tax = 8
+Order,Princess Chicken,1 => success; sum = 108; tax = 11
+Restaurant budget: 300.40000000000003
+Daily tax: 0
+Restaurant budget: 500
+Order,Princess Chicken,1 => success; sum = 62.99999999999999; tax = 7
+Order,Potatoes,1 => success; sum = 2.7; tax = 1
+Order,Princess Chicken,1 => success; sum = 81; tax = 9
+Order,Potatoes,1 => success; sum = 3; tax = 1
+Restaurant budget: 335.4
+Daily tax: 0
+Restaurant budget: 500
+Order,Princess Chicken,1 => success; sum = 108; tax = 11
+Order,Potatoes,1 => success; sum = 3; tax = 1
+Order,Princess Chicken,1 => success; sum = 108; tax = 11
+Order,Potatoes,1 => success; sum = 3; tax = 1
+Restaurant budget: 249.60000000000002
+Daily tax: 0
+Restaurant budget: 500
+Order,Princess Chicken,1 => success; sum = 99.00000000000001; tax = 10
+Order,Potatoes,1 => success; sum = 2.7; tax = 1
+Order,Princess Chicken,1 => success; sum = 90; tax = 9
+Order,Potatoes,1 => success; sum = 2.7; tax = 1
+Restaurant budget: 283.79999999999995
+Daily tax: 0
+Restaurant budget: 500
+Order,Princess Chicken,1 => success; sum = 72; tax = 8
+Order,Potatoes,1 => success; sum = 3.3000000000000003; tax = 1
+Order,Princess Chicken,1 => success; sum = 72; tax = 8
+Order,Potatoes,1 => success; sum = 3.3000000000000003; tax = 1
+Restaurant budget: 334.4000000000001
+Daily tax: 0
+Restaurant budget: 500
+Order,Princess Chicken,1 => success; sum = 90; tax = 9
+Order,Potatoes,1 => success; sum = 2.7; tax = 1
+Order,Princess Chicken,1 => success; sum = 90; tax = 9
+Order,Potatoes,1 => success; sum = 3; tax = 1
+Restaurant budget: 294.4
+Daily tax: 0
+Restaurant budget: 294.4
+Order,Princess Chicken,1 => Wasted: 1 Princess Chicken (limit: 3)
+Order,Potatoes,1 => success; sum = 3; tax = 1
+Order,Princess Chicken,1 => Wasted: 1 Princess Chicken (limit: 3)
+Order,Potatoes,1 => success; sum = 2.7; tax = 1
+Restaurant budget: 66.59999999999998
+Daily tax: 0
+Restaurant budget: 500
+Order,Princess Chicken,1 => success; sum = 108; tax = 11
+Order,Potatoes,1 => success; sum = 3.3000000000000003; tax = 1
+Order,Princess Chicken,1 => success; sum = 108; tax = 11
+Order,Potatoes,1 => success; sum = 3.3000000000000003; tax = 1
+Restaurant budget: 248.80000000000004
+Daily tax: 0
+Restaurant budget: 500
+Order,Princess Chicken,1 => success; sum = 108; tax = 11
+Order,Potatoes,1 => success; sum = 3; tax = 1
+Order,Princess Chicken,1 => success; sum = 117; tax = 12
+Order,Potatoes,1 => success; sum = 2.7; tax = 1
+Restaurant budget: 238.60000000000002
+Daily tax: 0
+Restaurant budget: 500
+Order,Princess Chicken,1 => success; sum = 72; tax = 8
+Order,Potatoes,1 => success; sum = 2.7; tax = 1
+Order,Princess Chicken,1 => success; sum = 90; tax = 9
+Order,Potatoes,1 => success; sum = 3; tax = 1
+Restaurant budget: 315
+Daily tax: 0
+Restaurant budget: 500
+Order,Princess Chicken,1 => success; sum = 90; tax = 9
+Order,Potatoes,1 => success; sum = 3; tax = 1
+Order,Princess Chicken,1 => success; sum = 72; tax = 8
+Order,Potatoes,1 => success; sum = 2.7; tax = 1
+Restaurant budget: 315
+Daily tax: 0
+Restaurant budget: 500
+Order,Princess Chicken,1 => success; sum = 72; tax = 8
+Order,Potatoes,1 => success; sum = 3; tax = 1
+Order,Princess Chicken,1 => success; sum = 108; tax = 11
+Order,Potatoes,1 => success; sum = 3.3000000000000003; tax = 1
+Restaurant budget: 292.00000000000006
+Daily tax: 0
+Restaurant budget: 500
+Order,Princess Chicken,1 => success; sum = 95.4; tax = 10
+Order,Potatoes,1 => success; sum = 3.21; tax = 1
+Order,Princess Chicken,1 => success; sum = 69.3; tax = 7
+Order,Potatoes,1 => success; sum = 3; tax = 1
+Restaurant budget: 311.03000000000003
+Daily tax: 0
+Restaurant budget: 500
+Buy,Princess Chicken,1 => Princess Chicken can’t buy 1, cook has no idea how to make it
+Restaurant budget: 500
+Daily tax: 0
+Restaurant budget: 500
+Buy,Princess Chicken,1 => Princess Chicken can’t buy 1, cook has no idea how to make it
+Restaurant budget: 500
+Daily tax: 0
+Restaurant budget: 500
+Buy,Princess Chicken,1 => Princess Chicken can’t buy 1, cook has no idea how to make it
+Restaurant budget: 500
+Daily tax: 0
+Restaurant budget: 500
+Buy,Princess Chicken,1 => Princess Chicken can’t buy 1, cook has no idea how to make it
+Restaurant budget: 500
+Daily tax: 0
+Restaurant budget: 500
+Buy,Princess Chicken,1 => Princess Chicken can’t buy 1, cook has no idea how to make it
+Restaurant budget: 500
+Daily tax: 0
+Restaurant budget: 500
+Buy,Princess Chicken,1 => Princess Chicken can’t buy 1, cook has no idea how to make it
+Restaurant budget: 500
+Daily tax: 0
+Restaurant budget: 500
+Buy,Princess Chicken,1 => Princess Chicken can’t buy 1, cook has no idea how to make it
+Restaurant budget: 500
+Daily tax: 0
+Restaurant budget: 500
+Buy,Princess Chicken,1 => Princess Chicken can’t buy 1, cook has no idea how to make it
+Restaurant budget: 500
+Daily tax: 0
+Restaurant budget: 500
+Buy,Princess Chicken,1 => Princess Chicken can’t buy 1, cook has no idea how to make it
+Restaurant budget: 500
+Daily tax: 0
+Restaurant budget: 500
+Buy,Princess Chicken,1 => Princess Chicken can’t buy 1, cook has no idea how to make it
+Restaurant budget: 500
+Daily tax: 0
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Restaurant budget: 613
+Daily tax: 10
+Restaurant budget: 500
+Barbara Smith - Princess Chicken costs 126: success, tax = 13
+Restaurant budget: 613
+Daily tax: 10
+Restaurant budget: 500
+Buy,Barbara Smith,Potatoes,1 => Barbara Smith can’t buy Potatoes, cook has no idea how to make it
+Restaurant budget: 500
+Daily tax: 0
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Buy,Barbara Smith,Fries,1 => ERROR. Lack of ingredients
+Restaurant budget: 500
+Daily tax: 0
+Restaurant budget: 500
+Buy,Barbara Smith,Fries,1 => ERROR. Lack of ingredients
+Restaurant budget: 500
+Daily tax: 0
+Restaurant budget: 500
+Buy,Barbara Smith,Fries,1 => ERROR. Lack of ingredients
+Restaurant budget: 500
+Daily tax: 0
+Restaurant budget: 500
+Buy,Barbara Smith,Fries,1 => ERROR. Lack of ingredients
+Restaurant budget: 500
+Daily tax: 0
+Restaurant budget: 500
+Buy,Barbara Smith,Fries,1 => ERROR. Lack of ingredients
+Restaurant budget: 500
+Daily tax: 0
+Restaurant budget: 500
+Buy,Barbara Smith,Fries,1 => ERROR. Lack of ingredients
+Restaurant budget: 500
+Daily tax: 0
+Restaurant budget: 500
+Buy,Barbara Smith,Fries,1 => ERROR. Lack of ingredients
+Restaurant budget: 500
+Daily tax: 0
+Restaurant budget: 500
+Buy,Barbara Smith,Fries,1 => ERROR. Lack of ingredients
+Restaurant budget: 500
+Daily tax: 0
+Restaurant budget: 500
+Buy,Barbara Smith,Fries,1 => ERROR. Lack of ingredients
+Restaurant budget: 500
+Daily tax: 0
+Restaurant budget: 500
+Buy,Barbara Smith,Fries,1 => ERROR. Lack of ingredients
+Restaurant budget: 500
+Daily tax: 0
+Restaurant budget: 500
+Buy,Barbara Smith,Fries,1 => ERROR. Lack of ingredients
+Restaurant budget: 500
+Daily tax: 0
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 504
+Buy,Barbara Smith,Fries,1 => ERROR. Lack of ingredients
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Buy,Barbara Smith,Fries,1 => ERROR. Lack of ingredients
+Restaurant budget: 500
+Daily tax: 0
+Restaurant budget: 500
+Buy,Barbara Smith,Fries,1 => ERROR. Lack of ingredients
+Restaurant budget: 500
+Daily tax: 0
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Buy,Barbara Smith,Fries,1 => ERROR. Lack of ingredients
+Restaurant budget: 500
+Daily tax: 0
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Buy,Barbara Smith,Fries,1 => ERROR. Lack of ingredients
+Restaurant budget: 500
+Daily tax: 0
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Buy,Barbara Smith,Fries,1 => ERROR. Lack of ingredients
+Restaurant budget: 500
+Daily tax: 0
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Buy,Barbara Smith,Fries,1 => ERROR. Lack of ingredients
+Restaurant budget: 500
+Daily tax: 0
+Restaurant budget: 500
+Barbara Smith - Fries costs 5: success, tax = 1
+Restaurant budget: 504
+Daily tax: 0.3
+Restaurant budget: 500
+Restaurant budget: 500
+Julie Mirage – can’t order, budget 100 and Princess Chicken costs 126
+Order,Chicken,1 => success; sum = 21.8; tax = 3
+Restaurant budget: 474.93
+Daily tax: 0
+Restaurant budget: 500
+Julie Mirage – can’t order, budget 100 and Princess Chicken costs 126
+Order,Chicken,1 => success; sum = 21.400000000000002; tax = 3
+Restaurant budget: 475.39
+Daily tax: 0
+Restaurant budget: 500
+Order,Chicken,1 => success; sum = 20.2; tax = 3
+Restaurant budget: 476.77
+Daily tax: 0
+Restaurant budget: 500
+Order,Chicken,1 => success; sum = 21.6; tax = 3
+Julie Mirage – can’t order, budget 100 and Princess Chicken costs 126
+Restaurant budget: 475.15999999999997
+Daily tax: 0
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Order,Chicken,1 => success; sum = 21.400000000000002; tax = 3
+Restaurant budget: 588.39
+Daily tax: 7.24
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Restaurant budget: 613
+Daily tax: 10
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Restaurant budget: 613
+Daily tax: 10
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Order,Chicken,1 => success; sum = 20; tax = 2
+Restaurant budget: 591
+Daily tax: 7.6
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Order,Chicken,1 => success; sum = 19.2; tax = 2
+Restaurant budget: 591.88
+Daily tax: 7.69
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Order,Chicken,1 => success; sum = 18.6; tax = 2
+Restaurant budget: 592.54
+Daily tax: 7.75
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Restaurant budget: 613
+Daily tax: 10
+Restaurant budget: 500
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Restaurant budget: 613
+Daily tax: 10
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Restaurant budget: 613
+Daily tax: 10
+Restaurant budget: 613
+Alexandra Smith – can’t order, budget 4 and Princess Chicken costs 126
+Restaurant budget: 613
+Daily tax: 10
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Restaurant budget: 613
+Daily tax: 10
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Restaurant budget: 613
+Daily tax: 10
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Restaurant budget: 613
+Daily tax: 10
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Restaurant budget: 613
+Daily tax: 10
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Restaurant budget: 613
+Daily tax: 10
+Restaurant budget: 613
+Alexandra Smith – can’t order, budget 4 and Princess Chicken costs 126
+Restaurant budget: 613
+Daily tax: 10
+Restaurant budget: 613
+Alexandra Smith – can’t order, budget 4 and Princess Chicken costs 126
+Restaurant budget: 613
+Daily tax: 10
+Restaurant budget: 613
+Alexandra Smith – can’t order, budget 4 and Princess Chicken costs 126
+Restaurant budget: 613
+Daily tax: 10
+Restaurant budget: 613
+Alexandra Smith – can’t order, budget 4 and Princess Chicken costs 126
+Restaurant budget: 613
+Daily tax: 10
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Restaurant budget: 613
+Daily tax: 10
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Restaurant budget: 613
+Daily tax: 10
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Restaurant budget: 613
+Daily tax: 10
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Restaurant budget: 613
+Daily tax: 10
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Restaurant budget: 613
+Daily tax: 10
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Restaurant budget: 613
+Daily tax: 10
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Restaurant budget: 613
+Daily tax: 10
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Restaurant budget: 613
+Daily tax: 10
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Restaurant budget: 613
+Daily tax: 10
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Restaurant budget: 613
+Daily tax: 10
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Order,Chicken,2 => success; sum = 36.800000000000004; tax = 4
+Restaurant budget: 572.52
+Daily tax: 5.55
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Restaurant budget: 613
+Daily tax: 10
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Restaurant budget: 613
+Daily tax: 10
+Restaurant budget: 500
+Order,Princess Chicken,1 => success; sum = 95.4; tax = 10
+Restaurant budget: 394
+Daily tax: 0
+Restaurant budget: 500
+Order,Princess Chicken,1 => success; sum = 108; tax = 11
+Restaurant budget: 378.8
+Daily tax: 0
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Order,Princess Chicken,1 => success; sum = 80.1; tax = 9
+Restaurant budget: 524.89
+Daily tax: 0.29
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Order,Princess Chicken,1 => success; sum = 93.60000000000001; tax = 10
+Restaurant budget: 509
+Daily tax: 0
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Order,Princess Chicken,1 => success; sum = 83.7; tax = 9
+Restaurant budget: 520.93
+Daily tax: 0
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Order,Princess Chicken,1 => success; sum = 80.1; tax = 9
+Restaurant budget: 524.89
+Daily tax: 0.29
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Order,Princess Chicken,1 => success; sum = 92.7; tax = 10
+Restaurant budget: 510
+Daily tax: 0
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Order,Princess Chicken,1 => success; sum = 72; tax = 8
+Restaurant budget: 534.6
+Daily tax: 1.36
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Order,Princess Chicken,1 => success; sum = 105.3; tax = 11
+Restaurant budget: 494.83
+Daily tax: 0
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Order,Princess Chicken,1 => success; sum = 94.5; tax = 10
+Restaurant budget: 508
+Daily tax: 0
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Order,Princess Chicken,1 => success; sum = 94.5; tax = 10
+Restaurant budget: 508
+Daily tax: 0
+Restaurant budget: 500
+Order,Princess Chicken,1 => success; sum = 98.10000000000001; tax = 10
+Order,Chicken,1 => success; sum = 19.8; tax = 2
+Restaurant budget: 369.22
+Daily tax: 0
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Order,Princess Chicken,1 => success; sum = 105.3; tax = 11
+Order,Chicken,1 => success; sum = 21.6; tax = 3
+Restaurant budget: 469.99
+Daily tax: 0
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Order,Princess Chicken,1 => success; sum = 93.60000000000001; tax = 10
+Order,Chicken,1 => success; sum = 20.4; tax = 3
+Restaurant budget: 485.54
+Daily tax: 0
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Order,Princess Chicken,1 => success; sum = 89.1; tax = 9
+Alexandra Smith – can’t order, budget 4 and Princess Chicken costs 126
+Order,Chicken,1 => success; sum = 18.2; tax = 2
+Restaurant budget: 494.97
+Daily tax: 0
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Order,Princess Chicken,1 => success; sum = 106.19999999999999; tax = 11
+Alexandra Smith – can’t order, budget 4 and Princess Chicken costs 126
+Order,Chicken,1 => success; sum = 21.6; tax = 3
+Restaurant budget: 468.98
+Daily tax: 0
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Order,Princess Chicken,1 => success; sum = 92.7; tax = 10
+Alexandra Smith – can’t order, budget 4 and Princess Chicken costs 126
+Order,Chicken,1 => success; sum = 18.6; tax = 2
+Restaurant budget: 489.54
+Daily tax: 0
+Restaurant budget: 500
+Alexandra Smith - Princess Chicken costs 126: success, tax = 13
+Order,Princess Chicken,1 => success; sum = 71.10000000000001; tax = 8
+Alexandra Smith – can’t order, budget 4 and Princess Chicken costs 126
+Order,Chicken,1 => success; sum = 21; tax = 3
+Restaurant budget: 511.42999999999995
+Daily tax: 0

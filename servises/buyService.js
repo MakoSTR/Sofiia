@@ -9,8 +9,9 @@ const warehousesService = require('./warehousesHandler');
 const taxService = require('./taxService');
 const discountService = require('./discountService');
 const orderService = require("./orderService");
-const { checkAllIngredients } = require("../helpers/helpers");
+const {checkAllIngredients} = require("../helpers/helpers");
 const trashService = require("../servises/trashService");
+const audit = require("../servises/audit")
 
 const filePathForOutput = './resources/output_files/output.txt';
 const regularCustomer = jsonData['Regular customer'];
@@ -19,10 +20,14 @@ const base = jsonData['Base ingredients'];
 const price = priceData['Base ingredients'];
 const budget = budgetData['Regular customer budget'];
 
+
 class BuyService {
     constructor() {
         this.clientBudget = {};
+        this.price = 0
+        this.name = ""
     }
+
     getAllergies = (name, userIngredients) => {
         const allergies = regularCustomer[name];
         const foundAllergy = allergies.find(element => {
@@ -37,7 +42,7 @@ class BuyService {
 
     profitMargin = margin => {
         const getMargin = this.getMargin(margin)
-        return 1 + getMargin/100
+        return 1 + getMargin / 100
     }
 
     getMargin = margin => {
@@ -48,6 +53,7 @@ class BuyService {
         const sumArray = [];
         const profitMargin = this.profitMargin(margin)
         ingredients.forEach(i => sumArray.push(price[i]));
+        this.price = Math.ceil(sumArray.reduce((total, amount) => total + amount) * profitMargin)
         return Math.ceil(sumArray.reduce((total, amount) => total + amount) * profitMargin);
     };
 
@@ -57,12 +63,16 @@ class BuyService {
     }
 
     getTotalBudget = (name, sum, totalBudget, discountValue) => {
+
         const discount = this.discount(name, sum, discountValue)
         console.log('totalBudget', name, totalBudget - sum + discount);
         console.log('discount', name, discount);
 
+        this.name = name
+
         return totalBudget - sum + discount;
     };
+
 
     //функція перевіряє на алегрію, брак грошей в клієнта, або саксес
     sendResult = (foundAllergies, name, order, sum, configuration, totalMax, localMax, ingredients, trash) => {
@@ -70,13 +80,11 @@ class BuyService {
         if (foundAllergies) {
             this.dishesWithAllergies(configuration, order, warehouses, totalMax, localMax, ingredients, commandConfiguration["transaction tax"], trash);
             return `${name} can’t order ${order}, allergic to: ${foundAllergies}`
-        } else
-        if (this.clientBudget[name] < sum) {
+        } else if (this.clientBudget[name] < sum) {
             return `${name} – can’t order, budget ${this.clientBudget[name]} and ${order} costs ${sum}`
-        }
-        else {
+        } else {
             discountService.addPerson(name);
-            this.clientBudget[name] = this.getTotalBudget(name, sum, this.clientBudget[name],  commandConfiguration["every third discount"]);
+            this.clientBudget[name] = this.getTotalBudget(name, sum, this.clientBudget[name], commandConfiguration["every third discount"]);
             restaurantBudgetService.increaseRestaurantBudget(name, sum, commandConfiguration["transaction tax"], commandConfiguration["every third discount"]);
             taxService.addAlreadyCollectedTax(sum, commandConfiguration["transaction tax"]);
             warehousesService.reduceQuantities(order, warehouses);
@@ -91,7 +99,7 @@ class BuyService {
         const userIngredients = [];
         checkAllIngredients(order, userIngredients, food, base);
 
-        const foundAllergy =  this.getAllergies(person, userIngredients)[0] || '';
+        const foundAllergy = this.getAllergies(person, userIngredients)[0] || '';
 
         let sum = this.getSum(userIngredients, margin);
         if (!this.clientBudget[person] && this.clientBudget[person] !== 0) {
@@ -99,26 +107,37 @@ class BuyService {
         }
         const sendRes = this.sendResult(foundAllergy, person, order, sum, configuration, totalMax, localMax, userIngredients, trash);
         fileReader.appendFile(filePathForOutput, sendRes);
-        return { sendRes, sum };
+        return {sendRes, sum};
     }
 
     buyForTable = (person, order, margin) => {
         const userIngredients = [];
         checkAllIngredients(order, userIngredients, food, base);
 
-        const foundAllergy =  this.getAllergies(person, userIngredients)[0] || '';
+        const foundAllergy = this.getAllergies(person, userIngredients)[0] || '';
 
         let sum = this.getSum(userIngredients, margin);
         if (!this.clientBudget[person] && this.clientBudget[person] !== 0) {
             this.clientBudget[person] = budget[person];
         }
         if (foundAllergy) {
-            return { code: messageCodes.allergy, message: `FAILURE. ${person} can’t order ${order}, allergic to: ${foundAllergy}. So, whole table fails.` };
+            return {
+                code: messageCodes.allergy,
+                message: `FAILURE. ${person} can’t order ${order}, allergic to: ${foundAllergy}. So, whole table fails.`
+            };
         } else if (this.clientBudget[person] < sum) {
-            return { code: messageCodes.budget, message: `FAILURE. ${person} – can’t order, budget ${this.clientBudget[person]} and ${order} costs ${sum}. So, whole table fails.` };
+            return {
+                code: messageCodes.budget,
+                message: `FAILURE. ${person} – can’t order, budget ${this.clientBudget[person]} and ${order} costs ${sum}. So, whole table fails.`
+            };
         } else {
             const tax = taxService.transactionTaxSum(sum, commandConfiguration["transaction tax"]);
-            return { code: messageCodes.success, sum, tax, message: `${person} - ${order} costs ${sum}: success, tax = ${tax}`};
+            return {
+                code: messageCodes.success,
+                sum,
+                tax,
+                message: `${person} - ${order} costs ${sum}: success, tax = ${tax}`
+            };
         }
     }
 
@@ -151,21 +170,21 @@ class BuyService {
                 fileReader.appendFile(filePathForOutput, `    ${resArr[index].message}${discount}`);
             });
             fileReader.appendFile(filePathForOutput, `}`);
-            return { message: messageCodes.success, totalTax, totalSum }
+            return {message: messageCodes.success, totalTax, totalSum}
         } else {
             const errorMessage = resArr.find(res => {
                 return res.code !== messageCodes.success;
             }).message;
             fileReader.appendFile(filePathForOutput, errorMessage);
 
-            return { message: errorMessage };
+            return {message: errorMessage};
         }
     }
 
     keep = (order, warehouses, totalMax, localMax, ingredients, transactionTax, sum) => {
         const totalSum = warehousesService.getTotalSumFromWarehouse(warehouses);
         const localSum = warehousesService.getAmountFromWarehouse(warehouses, order)
-        if(1 + totalSum <= totalMax && 1 + localSum <= localMax) {
+        if (1 + totalSum <= totalMax && 1 + localSum <= localMax) {
             restaurantBudgetService.restaurantBudget -= sum.orderSum + sum.extraSum;
             if (warehousesService.checkIsDish(order).length > 0 && warehouses[order] === 0) {
                 warehousesService.reduceQuantities(order, warehouses);
@@ -196,9 +215,35 @@ class BuyService {
                     });
                 } else {
                     console.log(configuration)
-                this.keep(order, warehouses, totalMax, localMax, ingredients, transactionTax, sum);
-            }
+                    this.keep(order, warehouses, totalMax, localMax, ingredients, transactionTax, sum);
+                }
         }
+    }
+
+    getTips = (value) => {
+
+        // if
+        var result1 = commandConfiguration["max tip"]
+        var result2 = this.getRandomInt(1, 3)
+        if (result2 === 2) {
+            var result3 = this.getRandomInt(1, result1)
+            var result5 = this.price / 100 * result3
+            // console.log(result3 + " %")
+            // console.log(parseFloat(result5.toFixed(1)))
+            if ((this.clientBudget[this.name] - result5) < 0){
+                return this.clientBudget[this.name]
+            }else{
+                return parseFloat(result5.toFixed(1))
+            }
+        } else {
+            return 0
+        }
+    }
+
+    getRandomInt = (min, max) => {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min;
     }
 }
 

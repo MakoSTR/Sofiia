@@ -5,6 +5,7 @@ const helpers = require("../helpers/helpers");
 const kitchenHandler = require('../handlers/kitchenHandler');
 const fileReader = require('../servises/fileReader');
 const trashService = require("../servises/trashService");
+const restaurantBudget = require("../servises/restaurantBudget")
 
 const buyAction = (i, validBudget, filePathForOutput, dishes, trash) => {
     if (command[i[0].toLowerCase()] === 'yes') { //якщо команда дозволена
@@ -19,6 +20,7 @@ const buyAction = (i, validBudget, filePathForOutput, dishes, trash) => {
                 const warehouses = warehousesService.getWarehouses();
                 const warehousesCopy = { ...warehouses };
                 const warehouseCheckResult = warehousesService.checkDishIngredientsInWarehouse(order, warehousesCopy);
+                restaurantBudget.array.push(0)
                 if (warehouses[order] > 0 || !warehouseCheckResult) { // все є на складі
                     const res = buyService.buy(person, order, command["profit margin"], command["dishes with allergies"], command["total maximum"], localMax, trash);
                     const message = helpers.createAuditMessage(i, res.sendRes);
